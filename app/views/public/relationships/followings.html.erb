@@ -1,0 +1,12 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-3"><h3 class="mb-5 mini-title">フォロー中</h3></div>
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+      <% if @users.exists? %>
+        <%= render "public/users/index", users: @users %>
+      <% else %>
+        <p>ユーザーがいません</p>
+      <% end %>
+    </div>
+  </div>
+</div>
