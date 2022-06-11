@@ -2,7 +2,7 @@
 
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-  <%= link_to "マイページ", my_page_path(current_user.id) %><br>
+  <%= link_to "マイページ", user_path(current_user.id) %><br>
   <%= link_to "新規投稿", new_article_path %><br>
   <%= link_to "投稿一覧", articles_path %><br>
   <%= render "public/searches/form" %>
