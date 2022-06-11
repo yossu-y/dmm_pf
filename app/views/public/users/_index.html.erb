@@ -13,7 +13,7 @@
             <tr>
               <td><%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %></td>
               <td><%= user.screen_name %></td>
-              <td>フォローボタン</td>
+              <td><%= render "public/relationships/btn", user: user %></td>
               <td><%= link_to "マイページへ", user_path(user) %></td>
             </tr>
           <% end %>

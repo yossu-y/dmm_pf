@@ -10,7 +10,7 @@
           <td><%= @user.screen_name %></td>
           <td>
             <% if @user.screen_name != "guest" %>
-              <p>フォローボタンを追加</p>
+              <p><%= render "public/relationships/btn", user: @user %></p>
             <% end %>
           </td>
         </tr>
@@ -26,7 +26,12 @@
         </tr>
         <tr>
           <td>
-            フォロー・フォロワー人数
+            <%= link_to user_followings_path(@user) do %>
+              <strong><%= @user.followings.count %></strong>フォロー
+            <% end %>
+            <%= link_to user_followings_path(@user) do %>
+              <strong><%= @user.followers.count %></strong>フォロワー
+            <% end %>
           </td>
         </tr>
       </table>
@@ -35,4 +40,3 @@
   </div>
 </div>
 
-<%= link_to "変更", edit_user_path(@user) %>
