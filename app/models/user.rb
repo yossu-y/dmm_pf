@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
+  has_many :articles, dependent: :destroy
+
+
   def get_profile_image
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"
   end
