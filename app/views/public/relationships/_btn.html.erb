@@ -1,5 +1,5 @@
-<div class="follow-button">
-  <% if user != current_user %>
+<div>
+  <% if current_user != user %>
     <% if current_user.following?(user) %>
       <%= link_to user_relationship_path(user.id), class: "btn btn-success btn-sm btn-block", method: :delete do %>
         <i class="fa-solid fa-user-check"></i>フォロー中
@@ -10,8 +10,8 @@
       <% end %>
     <% end %>
   <% else %>
-     <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
-      <i class="fas fa-user-cog"></i> 編集
-     <% end %>
+      <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+        <i class="fas fa-user-cog"></i> 編集
+      <% end %>
   <% end %>
 </div>

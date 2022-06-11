@@ -29,7 +29,7 @@
             <%= link_to user_followings_path(@user) do %>
               <strong><%= @user.followings.count %></strong>フォロー
             <% end %>
-            <%= link_to user_followings_path(@user) do %>
+            <%= link_to user_followers_path(@user) do %>
               <strong><%= @user.followers.count %></strong>フォロワー
             <% end %>
           </td>
