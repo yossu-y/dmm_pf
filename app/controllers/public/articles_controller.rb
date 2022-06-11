@@ -1,4 +1,4 @@
-class Public::ArticlesController <
+class Public::ArticlesController < ApplicationController
 
   def index
   end
