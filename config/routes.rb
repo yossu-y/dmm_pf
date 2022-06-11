@@ -40,13 +40,27 @@ Rails.application.routes.draw do
     resources :contacts, only: [:create, :new]
 
   end
-  
-  
+
+
 
   # 管理者用
 
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
+
+  namespace :admin do
+
+    resources :users, only: [:index, :show, :edit, :update]
+
+    resources :articles, only: [:index, :show, :destroy] do
+      resources :comments, only: [:destroy]
+    end
+
+    resources :groups, only: [:index, :show, :destroy]
+
+  end
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
