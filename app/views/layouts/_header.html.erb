@@ -1,0 +1,20 @@
+<h3>ヘッダー</h3>
+
+<% if user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+  <%= link_to "マイページ", my_page_path(current_user.id) %><br>
+  <%= link_to "新規投稿", new_article_path %><br>
+  <%= link_to "投稿一覧", articles_path %><br>
+  <%= render "public/searches/form" %>
+
+<% else %>
+  <%= link_to "新規登録", new_user_registration_path %><br>
+  <%= link_to "ログイン", new_user_session_path %><br>
+<% end %>
+  <%= link_to "アバウト", about_path %><br>
+
+<% if admin_signed_in? %>
+  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
+<% else %>
+  <%= link_to "管理者ログイン", admin_session_path %>
+<% end %>
