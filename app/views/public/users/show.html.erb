@@ -1,2 +1,38 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-3"><h3 class="mb-5 mini-title">マイページ</h3></div>
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+      <table>
+        <tr>
+          <td><%= image_tag @user.get_profile_image, class: "my__page_img rounded-circle" %></td>
+        </tr>
+        <tr>
+          <td><%= @user.screen_name %></td>
+          <td>
+            <% if @user.screen_name != "guest" %>
+              <p>フォローボタンを追加</p>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= @user.introduction %></td>
+          <td>
+            <% if @user == current_user %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary btn-block" do %>
+                <i class="fas fa-sign-out-alt"></i>ログアウト
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            フォロー・フォロワー人数
+          </td>
+        </tr>
+      </table>
+      過去の投稿一覧
+    </div>
+  </div>
+</div>
+
+<%= link_to "変更", edit_user_path(@user) %>
