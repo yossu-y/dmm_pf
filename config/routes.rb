@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
-    sessions: 'public/sessions'
+    sessions: "public/sessions"
   }
 
   scope module: :public do
@@ -40,9 +40,9 @@ Rails.application.routes.draw do
     resources :contacts, only: [:create, :new]
 
   end
-  
+
   # ゲストログイン用
-  
+
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end

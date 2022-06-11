@@ -12,3 +12,9 @@
   <%= link_to "ログイン", new_user_session_path %><br>
 <% end %>
   <%= link_to "アバウト", about_path %><br>
+
+<% if admin_signed_in? %>
+  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
+<% else %>
+  <%= link_to "管理者ログイン", admin_session_path %>
+<% end %>
