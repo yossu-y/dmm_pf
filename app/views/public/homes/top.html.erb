@@ -4,7 +4,7 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
 
         <div class="row">
-          <p>ゲストログインのボタンを追加</p>
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
         </div>
         <div class="row">
           <%= link_to 'Log in',new_user_session_path, class: "btn btn-success btn-sm btn-block mb-3" %>
