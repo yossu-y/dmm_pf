@@ -1,2 +1,54 @@
-<h1>Public::Articles#show</h1>
-<p>Find me in app/views/public/articles/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-3"><h3 class="mb-5 mini-title">公開された記事</h3></div>
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+      <table class="table">
+        <tr>
+          <td></td>
+          <td><%= image_tag @article.get_image, class: "show-img" %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= @article.title %></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <%= link_to @article.user do %>
+              <%= image_tag @article.user.get_profile_image, class: "icon rounded-circle" %>
+              <%= @article.user.screen_name %>
+            <% end %>
+          </td>
+          <td>
+            <%= @article.created_at.strftime("%Y-%m-%d %H:%M") %>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="3"><%= @article.body %></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            投稿時のタグを表示
+          </td>
+        </tr>
+        <tr>
+          <td id="like_buttons_<%= @article.id %>">
+            いいねボタン
+          </td>
+          <td class="comments-counter">
+            コメント数を表示
+          </td>
+          <td>
+            <% if @article.user == current_user %>
+              <%= link_to "編集", edit_article_path(@article) %>
+              <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"} %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>
