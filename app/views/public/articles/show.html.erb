@@ -35,10 +35,10 @@
         </tr>
         <tr>
           <td id="like_buttons_<%= @article.id %>">
-            いいねボタン
+            <%= render "public/likes/btn", article: @article %>
           </td>
           <td class="comments-counter">
-            コメント数を表示
+            <%= render "public/comments/counter", article: @article %>
           </td>
           <td>
             <% if @article.user == current_user %>
@@ -48,6 +48,12 @@
           </td>
         </tr>
       </table>
+      <div class="comments-index">
+        <%= render "public/comments/index", article: @article %>
+      </div>
+      <div class="comments-form">
+        <%= render "public/comments/form", article: @article, comment: @comment %>
+      </div>
 
     </div>
   </div>

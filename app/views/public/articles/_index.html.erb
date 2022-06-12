@@ -21,10 +21,10 @@
             </div>
             <div class="card-link">
               <td id="like_buttons_<%= article.id %>">
-                いいね数を表示
+                <%= render "public/likes/btn", article: article %>
               </td>
               <div class="comments-counter">
-                コメント数を表示
+                <%= render "public/comments/counter", article: article %>
               </div>
             </div>
           </div>
