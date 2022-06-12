@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get "about" => "homes#about", as: "about"
 
+    get "tag_search" => "articles#tag_search"
     resources :articles do
       resources :comments, only: [:create, :destroy]
       resource :like, only: [:create, :destroy]

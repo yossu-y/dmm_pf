@@ -4,6 +4,7 @@ class Public::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all.order(created_at: :desc)
+    # 記述を変えて、タグの付いた記事だけ絞り込めるようにする
     @tag_list = Tag.all
   end
 
@@ -48,6 +49,11 @@ class Public::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+  end
+
+  def tag_search
+    @tag = Tag.find(params[:tag_id])
+    @tag_articles = @tag.articles.all
   end
 
   private
