@@ -1,14 +1,20 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-3"><h3 class="mb-5 mini-title">マイページ</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
-      <table>
+    <div class="mx-3"><h3 class="mb-2 mini-title">マイページ</h3></div>
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+      <table class="table ">
         <tr>
-          <td><%= image_tag @user.get_profile_image, class: "my__page_img rounded-circle" %></td>
-        </tr>
-        <tr>
-          <td><%= @user.screen_name %></td>
-          <td>
+          <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
+          <td style="text-align: left;">
+            <%= @user.screen_name %><br>
+            <%= link_to user_followings_path(@user) do %>
+              <strong><%= @user.followings.count %></strong>フォロー
+            <% end %>
+            <%= link_to user_followers_path(@user) do %>
+              <strong><%= @user.followers.count %></strong>フォロワー
+            <% end %>
+          </td>
+          <td width="22%">
             <% if @user.screen_name != "guest" %>
               <p><%= render "public/relationships/btn", user: @user %></p>
             <% end %>
@@ -24,22 +30,12 @@
             <% end %>
           </td>
         </tr>
-        <tr>
-          <td>
-            <%= link_to user_followings_path(@user) do %>
-              <strong><%= @user.followings.count %></strong>フォロー
-            <% end %>
-            <%= link_to user_followers_path(@user) do %>
-              <strong><%= @user.followers.count %></strong>フォロワー
-            <% end %>
-          </td>
-        </tr>
       </table>
 
       <ul class="nav nav-tabs" id="tabs">
         <li class="tab tab-active">投稿一覧</li>
         <li class="tab">いいねした投稿一覧</li>
-        <li class="tab">〇〇</li>
+        <li class="tab">参加コミュニティ一覧</li>
       </ul>
       <!--タブで選択された要素部分-->
       <div class="tabbox-contents">
@@ -53,7 +49,6 @@
           〇〇
         </div>
       </div>
-
     </div>
   </div>
 </div>

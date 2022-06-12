@@ -10,8 +10,8 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @articles = @user.articles.all
-    @likes = @user.likes.all
+    @articles = @user.articles.all.order(created_at: :desc)
+    @likes = @user.likes.all.order(created_at: :desc)
     @like_articles = Article.find(@likes.pluck(:article_id))
     # pluckでarticle_idのみ取得
   end

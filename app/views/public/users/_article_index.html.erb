@@ -1,35 +1,23 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-3"><h3 class="mb-5 mini-title">過去の投稿</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+    <div class="mx-3"><h3 class="mb-4 mini-title">過去の投稿</h3></div>
+    <table class="table table-hover table-inverse">
       <% @articles.each do |article| %>
-        <div class="card">
-          <div class="card-img">
-            <%= link_to article_path(article.id) do %>
-              <%= image_tag article.get_image, class: "card-img" %>
-            <% end %>
-          </div>
-          <div class="card-body">
-            <div class="card-title">
-              <%= article.title %>
-            </div>
-            <div class="card-icon">
-              <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
-              <%= link_to article.user do %>
-                <%= article.user.screen_name %>
-              <% end %>
-            </div>
-            <div class="card-link">
-              <td id="like_buttons_<%= article.id %>">
-                <%= render "public/likes/btn", article: article %>
-              </td>
-              <div class="comments-counter">
-                <%= render "public/comments/counter", article: article %>
-              </div>
-            </div>
-          </div>
-        </div>
+      <tr>
+        <td>
+          <%= image_tag article.get_image, class: "posting-img" %>
+        </td>
+        <td><%= article.title %></td>
+        <td><%= link_to "詳細", article_path, class: "text-dark" %></td>
+        <td id="like_buttons_<%= article.id %>">
+          <%= render "public/likes/btn", article: article %>
+        </td>
+        <td class="comments-counter">
+          <%= render "public/comments/counter", article: article %>
+        </td>
+        <td><%= article.created_at.strftime("%Y-%m-%d") %></td>
+      </tr>
       <% end %>
-    </div>
+    </table>
   </div>
 </div>
