@@ -48,8 +48,13 @@
           </td>
         </tr>
       </table>
-      <%= render "public/comments/index", article: @article %>
-      <%= render "public/comments/form", article: @article, comment: @comment %>
+      <div class="comments-index">
+        <%= render "public/comments/index", article: @article %>
+      </div>
+      <div class="comments-form">
+        <%= render "public/comments/form", article: @article, comment: @comment %>
+      </div>
+
     </div>
   </div>
 </div>
