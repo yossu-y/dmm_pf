@@ -1,1 +1,17 @@
-<%= render "public/articles/index" %>
+<ul class="nav nav-tabs" id="tabs">
+  <li class="tab tab-active">投稿一覧</li>
+  <li class="tab">いいねした投稿一覧</li>
+  <li class="tab">〇〇</li>
+</ul>
+<!--タブで選択された要素部分-->
+<div class="tabbox-contents">
+  <div class="tabbox box-show">
+    <%= render "public/articles/index" %>
+  </div>
+  <div class="tabbox">
+    グループ一覧
+  </div>
+  <div class="tabbox">
+    
+  </div>
+</div>
