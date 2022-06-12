@@ -50,6 +50,11 @@ class Public::ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def tag_search
+    @tag = Tag.find(params[:tag_id])
+    @tag_articles = @tag.articles.all
+  end
+
   private
 
   def article_params
@@ -62,5 +67,5 @@ class Public::ArticlesController < ApplicationController
     redirect_to(articles_path) unless @user == current_user
   end
 
-
 end
+
