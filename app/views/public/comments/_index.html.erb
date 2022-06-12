@@ -1,0 +1,22 @@
+<table>
+  <tbody>
+    <% article.comments.each do |comment| %>
+    <tr>
+      <td>
+        <%= link_to user_path(comment.user) do %>
+          <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %>
+          <%= comment.user.screen_name %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><%= comment.comment %></td>
+      <td>
+        <% if comment.user == current_user %>
+          <%= link_to "削除", article_comment_path(comment.article, comment), method: :delete, class: "btn btn-sm btn-danger" %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
