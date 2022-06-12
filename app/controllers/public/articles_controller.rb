@@ -4,25 +4,30 @@ class Public::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all.order(created_at: :desc)
+    @tag_list = Tag.all
   end
 
   def new
     @article = Article.new
+    @tag = Tag.new
   end
 
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
-
+    @article_tags = @article.tags
   end
 
   def edit
     @article = Article.find(params[:id])
+    @tag_list = @article.tags.pluck(:name).join("、")
   end
 
   def create
     @article = current_user.articles.new(article_params)
+    tag_list = params[:article][:tag_name].split("、")
     if @article.save
+      @article.save_tag(tag_list)
       redirect_to articles_path
     else
       @articles = Article.all

@@ -30,7 +30,9 @@
         </tr>
         <tr>
           <td colspan="3">
-            投稿時のタグを表示
+            <% @article_tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
           </td>
         </tr>
         <tr>
