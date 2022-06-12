@@ -35,7 +35,25 @@
           </td>
         </tr>
       </table>
-      過去の投稿一覧といいねした記事をタブで切り替え表示
+
+      <ul class="nav nav-tabs" id="tabs">
+        <li class="tab tab-active">投稿一覧</li>
+        <li class="tab">いいねした投稿一覧</li>
+        <li class="tab">〇〇</li>
+      </ul>
+      <!--タブで選択された要素部分-->
+      <div class="tabbox-contents">
+        <div class="tabbox box-show">
+          <%= render "public/users/article_index", user: @user %>
+        </div>
+        <div class="tabbox">
+          <%= render "public/users/like", user: @user %>
+        </div>
+        <div class="tabbox">
+          〇〇
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

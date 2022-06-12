@@ -10,6 +10,10 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @articles = @user.articles.all
+    @likes = @user.likes.all
+    @like_articles = Article.find(@likes.pluck(:article_id))
+    # pluckでarticle_idのみ取得
   end
 
   def edit
