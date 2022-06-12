@@ -21,6 +21,8 @@ class User < ApplicationRecord
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"
   end
 
+  # フォロー機能のメソッド
+
   def follow(user)
     relationships.create(followed_id: user.id)
   end
@@ -31,6 +33,16 @@ class User < ApplicationRecord
 
   def following?(user)
     followings.include?(user)
+  end
+
+  # 検索機能のメソッド
+
+  def self.search(search, keyword)
+    if search != ""
+      @user = User.where(['screen_name LIKE(?)', "%#{keyword}%"])
+    else
+      @user = User.all
+    end
   end
 
 

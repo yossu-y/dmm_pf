@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="mx-3"><h3 class="mb-5 mini-title">記事一覧</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5 list">
       <% @articles.each do |article| %>
         <div class="card">
           <div class="card-img">
@@ -19,9 +19,9 @@
                 <%= article.user.screen_name %>
               <% end %>
             </div>
-            <div class="card-link">
+            <div class="card-item">
               <td id="like_buttons_<%= article.id %>">
-                <%= render "public/likes/btn", article: article %>
+                <%= render "public/likes/btn", article: article %>&emsp;
               </td>
               <div class="comments-counter">
                 <%= render "public/comments/counter", article: article %>

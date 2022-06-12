@@ -1,0 +1,7 @@
+<% if @range == "User" %>
+    <%= render "public/users/index", users: @users %>
+<% elsif @range == "Article" %>
+    <%= render "public/articles/index", articles: @articles %>
+<% else %>
+  タグを表示
+<% end %>
