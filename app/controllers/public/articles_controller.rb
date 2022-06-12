@@ -5,6 +5,7 @@ class Public::ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(created_at: :desc)
     @tag_list = Tag.all
+    @groups = Group.all
   end
 
   def new

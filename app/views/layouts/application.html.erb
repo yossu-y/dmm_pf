@@ -14,20 +14,16 @@
 
   <body>
     <header>
-      <%= render 'layouts/header' %>
+      <%= render "layouts/header", user: @user %>
     </header>
     <main>
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-12">
-            <p id="notice"><%= notice %></p>
-          </div>
-        </div>
+      <div class="row d-flex justify-content-center">
+          <p id="notice"><%= notice %></p>
       </div>
       <%= yield %>
     </main>
     <footer>
-      <%= render 'layouts/footer' %>
+      <%= render "layouts/footer" %>
     </footer>
   </body>
 </html>

@@ -1,4 +1,84 @@
-<h3>ヘッダー</h3>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4a460">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><strong>Leniect</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="search">
+            <%= render "public/searches/form" %>
+          </li>
+          <li>
+            <%= link_to articles_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">
+                <i class="fa-solid fa-book-open"></i> 投稿一覧
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_article_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">
+                <i class="fa-solid fa-pen"></i> 新規投稿
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_path(current_user.id), class: "nav-link" do %>
+              プロフィール画像を挿入
+            <% end %>
+          </li>
+
+        <% elsif admin_signed_in? %>
+          <li>
+
+              <button type="button" class="btn btn-outline-light">投稿一覧</button>
+
+          </li>
+          <li>
+
+              <button type="button" class="btn btn-outline-light">会員一覧</button>
+
+          </li>
+          <li>
+
+              <button type="button" class="btn btn-outline-light">グループ一覧</button>
+
+          </li>
+          <li>
+            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">Log out</button>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to root_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">Home</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to about_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">About</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">新規登録</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">ログイン</button>
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
@@ -18,4 +98,4 @@
   <%= link_to "管理者ログイン", admin_session_path %>
 <% end %>
 
-<%= render "public/searches/form" %>
+

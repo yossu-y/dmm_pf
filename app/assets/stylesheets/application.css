@@ -20,6 +20,10 @@
 
 /*共通*/
 
+.search {
+  margin-top: 12px !important;
+}
+
 body {
   min-height: 100vh;
   position: relative;
@@ -38,6 +42,17 @@ footer {
   border-top: solid 1px #000000;
 }
 
+.mini-title {
+  margin: 0 !important;
+}
+
+#notice {
+  width: 90%;
+  text-align: center;
+  border-radius: 1px;
+  background-color: #f4a460;
+}
+
 /*cardのレイアウト*/
 .list {
   display: flex;
@@ -52,6 +67,16 @@ footer {
   flex-basis: 200px;
   z-index: 10 !important;
 }
+.group-card {
+  margin: 3px !important;
+  width: 27% !important;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  flex-basis: 250px;
+  z-index: 10 !important;
+}
+
 .card-img {
   padding: 1px;
   border-radius: 5px 5px 0 0;
@@ -72,22 +97,41 @@ footer {
   flex-wrap: wrap;
 }
 
+.card-text {
+  text-align: right !important;
+}
+
+/*テーブルのレイアウト*/
+
+.table {
+  border-color: #dcdcdc !important;
+  margin-top: 0px;
+}
+
+td {
+
+  vertical-align: middle !important;
+}
+
 
 /*画像サイズ*/
 .icon {
   height: 100px !important;
   width: 100px !important;
+  border: 1px solid #dcdcdc;
 }
 
 .icon-mini {
   height: 60px !important;
   width: 60px !important;
   margin: 1px;
+  border: 1px solid #dcdcdc;
 }
 
 .my_page_img {
-  height: 150px !important;
-  width: 150px !important;
+  height: 250px !important;
+  width: 250px !important;
+  border: 1px solid #dcdcdc;
 }
 
 .article-img {
@@ -95,12 +139,21 @@ footer {
   width: 80px !important;
   margin-top: 3px;
   border-radius: 5px;
+  border: 1px solid #dcdcdc;
 }
 
 .posting-img {
   width: 60px !important;
   height: 60px !important;
+  border: 1px solid #dcdcdc;
 }
+
+.header-icon {
+  height: 10px !important;
+  width: 10px !important;
+  border: 1px solid #dcdcdc;
+}
+
 
 /*検索ボックス*/
 
@@ -150,7 +203,7 @@ footer {
 /*タブがactiveのときのデザイン*/
 .tab-active {
   color: #FFF;
-  background: #228b22;
+  background: #f4a460;
   transition: all 0.2s ease-in-out;
 }
 /*タブの中身、最初は非表示*/
