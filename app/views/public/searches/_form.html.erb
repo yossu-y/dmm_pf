@@ -1,0 +1,5 @@
+<%= form_with url: search_path, local: true, method: :get, class: "search-form" do |f| %>
+  <%= f.text_field :keyword, placeholder: "検索ワードを入力", class: "search-input" %>
+  <%= f.select :range, options_for_select([["User"], ["Article"], ["Tag"]]), class: "search-tag" %>
+  <%= f.submit "検索", class: "search-btn" %>
+<% end %>

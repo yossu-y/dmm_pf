@@ -18,4 +18,12 @@ class Article < ApplicationRecord
     likes.exists?(user_id: user.id)
   end
 
+  def self.search(search, keyword)
+    if search != ""
+      @article = Article.where(['title LIKE(?)', "%#{keyword}%"])
+    else
+      @article = Article.all
+    end
+  end
+
 end
