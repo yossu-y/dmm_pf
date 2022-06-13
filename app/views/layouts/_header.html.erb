@@ -98,8 +98,9 @@
   </nav>
 
 </header>
-<div class="search">
-  <%= render "public/searches/form" %>
-</div>
-
+<% if user_signed_in? %>
+  <div class="search">
+    <%= render "public/searches/form" %>
+  </div>
+<% end %>
 
