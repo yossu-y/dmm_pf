@@ -31,7 +31,9 @@
         <tr>
           <td colspan="3">
             <% @article_tags.each do |tag| %>
-              <%= link_to tag.name, tag_search_path(tag_id: tag.id) %>
+            <button type="button" class="btn btn-outline-secondary">
+              <%= link_to tag.name, tag_search_path(tag_id: tag.id), class: "text-dark" %>
+            </button>
             <% end %>
           </td>
         </tr>

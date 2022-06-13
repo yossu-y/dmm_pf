@@ -1,6 +1,10 @@
 <div class="container px-5 px-sm-0">
   <div style="text-align: right;">
-    <%= link_to "グループを作成", new_group_path %>
+    <%= link_to new_group_path do %>
+      <button type="button" class="btn btn-outline-dark">
+        グループを作成<i class="fa-solid fa-people-group mark"></i>
+      </button>
+    <% end %>
   </div>
   <div class="row">
     <div class="mx-3"><h3 class="mb-3 mini-title">グループ一覧</h3></div>

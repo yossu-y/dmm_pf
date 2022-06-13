@@ -21,12 +21,42 @@
 /*共通*/
 
 .navbar-brand {
-  font-size: 30px !important;
+  font-size: 40px !important;
+  color: black !important;
+  font-family: cursive !important;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.navbar-toggler {
+  border: 1px solid #f4a460 !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-color: #f4a460 !important;
 }
 
 .search {
-  margin-top: 12px !important;
+  margin-top: 1px !important;
+  list-style: none;
+  text-align: right;
+  border-top: solid 1px #000000;
+  padding-top: 25px !important;
 }
+
+.n-circle {
+  position: absolute;
+  padding-left: 0.7rem;
+  padding-bottom: 0.5rem;
+  color: #efa04c;
+  font-size: 13px !important;
+}
+
+.mark {
+  font-size: 18px;
+  background-color: transparent !important;
+}
+
 
 body {
   min-height: 100vh;
@@ -44,17 +74,21 @@ footer {
   letter-spacing: 2px;
   color: black;
   border-top: solid 1px #000000;
+  font-family: cursive !important;
 }
 
 .mini-title {
   margin: 0 !important;
+  font-family: cursive !important;
 }
 
 #notice {
-  width: 90%;
+  width: 95%;
   text-align: center;
   border-radius: 1px;
   background-color: #f4a460;
+  margin-top: 10px;
+  font-family: cursive !important;
 }
 
 /*cardのレイアウト*/
@@ -200,6 +234,8 @@ td {
   cursor: pointer;
   border-left: solid 1px #CCC;
   border-bottom: solid 1px #CCC;
+  font-size: 20px !important;
+  font-family: cursive !important;
 }
 .tab:first-child {
   border-left: none;
@@ -223,5 +259,10 @@ td {
 .tab:hover{
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
+}
+
+
+.tag {
+  color: black !important;
 }
 
