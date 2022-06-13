@@ -50,23 +50,23 @@
 
         <% elsif admin_signed_in? %>
           <li>
-
-              <button type="button" class="btn btn-outline-light">投稿一覧</button>
-
+            <%= link_to admin_articles_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">投稿一覧</button>
+            <% end %>
           </li>
           <li>
-
-              <button type="button" class="btn btn-outline-light">会員一覧</button>
-
+            <%= link_to admin_users_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">会員一覧</button>
+            <% end %>
           </li>
           <li>
-
-              <button type="button" class="btn btn-outline-light">グループ一覧</button>
-
+            <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">グループ一覧</button>
+            <% end %>
           </li>
           <li>
             <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">Log out</button>
+              <button type="button" class="btn btn-outline-dark">Log out</button>
             <% end %>
           </li>
         <% else %>
