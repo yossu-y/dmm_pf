@@ -10,7 +10,7 @@
       <%= form_with model: @article, local: true do |f| %>
         <div class="form-group">
           <%= f.label :image, "変更する画像" %><br>
-          <%= f.file_field :image, class: "form" %>
+          <%= f.file_field :image, class: "edit" %>
         </div>
 
         <div class="form-group">
@@ -20,12 +20,12 @@
 
         <div class="form-group">
           <%= f.label :body, "記事の内容" %>
-          <%= f.rich_text_area :body, class: "form" %>
+          <%= f.rich_text_area :body, class: "form-body" %>
         </div>
 
-        <div class="form-group">
-          <%= link_to "キャンセル", article_path(@article) %>
-          <%= f.submit "投稿を更新", class: "form" %>
+        <div class="actions">
+          <%= link_to "キャンセル", article_path(@article), class: "btn" %>
+          <%= f.submit "投稿を更新", :name => "update_post", class: "btn" %>
         </div>
       <% end %>
     </div>

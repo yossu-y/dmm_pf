@@ -3,12 +3,13 @@ class Public::ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.where(is_draft: false).order(created_at: :desc)
     @tag_list = Tag.all
     @groups = Group.all
   end
 
   def new
+    @articles = Article.where(is_draft: true).order(created_at: :desc)
     @article = Article.new
     @tag = Tag.new
   end
@@ -27,21 +28,49 @@ class Public::ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、")
-    if @article.save
-      @article.save_tag(tag_list)
-      redirect_to articles_path
+    if params[:post]
+      if @article.save(context: :publicize)
+        @article.save_tag(tag_list)
+        redirect_to articles_path, notice: "記事を投稿しました！"
+      else
+        @articles = Article.all
+        render "new"
+      end
     else
-      @articles = Article.all
-      render "new"
+      if @article.update(is_draft: true)
+        redirect_to user_path(current_user), notice: "下書きに保存しました！"
+      else
+        render "new"
+      end
     end
   end
 
   def update
     @article = Article.find(params[:id])
-    if @article.update(article_params)
-      redirect_to article_path(@article)
+    # 下書き公開
+    if params[:publicize_draft]
+      @article.attributes = article_params.merge(is_draft: false)
+      if @article.save(context: :publicize)
+        redirect_to article_path(@article), notice: "下書きを公開しました！"
+      else
+        @article.is_draft = true
+        render "edit"
+      end
+    # 投稿を更新
+    elsif params[:update_post]
+      @article.attributes = article_params
+      if @article.save(context: :publicize)
+        redirect_to article_path(@article)
+      else
+        render "edit"
+      end
+    # 下書きを更新
     else
-      render "edit"
+      if @article.update(article_params)
+        redirect_to article_path(@article)
+      else
+        render "edit"
+      end
     end
   end
 

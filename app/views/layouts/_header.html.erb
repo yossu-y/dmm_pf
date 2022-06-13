@@ -44,7 +44,8 @@
           </li>
           <li>
             <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
-              プロフィール画像を挿入
+            プロフィール画像
+              <%#= image_tag @user.get_profile_image, class: "icon-mini" %>
             <% end %>
           </li>
 
@@ -71,23 +72,23 @@
           </li>
         <% else %>
           <li>
-            <%= link_to root_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">Home</button>
+            <%= link_to root_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">Home</button>
             <% end %>
           </li>
           <li>
-            <%= link_to about_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">About</button>
+            <%= link_to about_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">About</button>
             <% end %>
           </li>
           <li>
-            <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">新規登録</button>
+            <%= link_to new_user_registration_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">新規登録</button>
             <% end %>
           </li>
           <li>
-            <%= link_to new_user_session_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">ログイン</button>
+            <%= link_to new_user_session_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">ログイン</button>
             <% end %>
           </li>
         <% end %>
