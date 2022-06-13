@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #f4a460">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: ">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><strong>Leniect</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,39 +8,42 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li class="search">
-            <%= render "public/searches/form" %>
-          </li>
           <li>
             <%= link_to about_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">
-                <i class="fa-solid fa-chalkboard"></i> about
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-chalkboard mark"></i> about
               </button>
             <% end %>
           </li>
           <li>
-
-              <button type="button" class="btn btn-outline-light">
-                <i class="fa-solid fa-bell"></i> 通知
+            <%= link_to notifications_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <% if unchecked_notifications.any? %>
+                <i class="fa-solid fa-circle n-circle"></i>
+                  <i class="fa-solid fa-bell mark" size="5px"></i>
+                   通知
+                <% else %>
+                  <i class="fa-solid fa-bell mark"></i> 通知
+                <% end %>
               </button>
-
+            <% end %>
           </li>
           <li>
             <%= link_to articles_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">
-                <i class="fa-solid fa-book-open"></i> 投稿一覧
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-book-open mark"></i> 投稿一覧
               </button>
             <% end %>
           </li>
           <li>
             <%= link_to new_article_path, class: "nav-link text-light" do %>
-              <button type="button" class="btn btn-outline-light">
-                <i class="fa-solid fa-pen"></i> 新規投稿
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-pen mark"></i> 新規投稿
               </button>
             <% end %>
           </li>
           <li>
-            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
+            <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
               プロフィール画像を挿入
             <% end %>
           </li>
@@ -92,5 +95,10 @@
       </div>
     </div>
   </nav>
+
 </header>
+<div class="search">
+  <%= render "public/searches/form" %>
+</div>
+
 

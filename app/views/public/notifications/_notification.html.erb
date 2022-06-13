@@ -1,0 +1,21 @@
+<% visiter = notification.visiter %>
+<% visited = notification.visited %>
+
+<table>
+  <tr>
+    <%= link_to user_path(visiter) do %>
+      <%= image_tag visiter.get_profile_image, class: "icon-mini rounded-circle" %>
+      <%= visiter.screen_name %> さん
+    <% end %>が
+    <% case notification.action %>
+    <% when "comment" %>
+      <%= link_to "あなたの投稿", notification.article %>
+      にコメントをしました<%= " (#{time_ago_in_words(notification.created_at)}前)" %>
+    <% when "like" %>
+      <%= link_to "あなたの投稿", notification.article %>
+      にいいね!しました<%= " (#{time_ago_in_words(notification.created_at)}前)" %>
+    <% when "follow" %>
+      あなたをフォローしました<%= " (#{time_ago_in_words(notification.created_at)}前)" %>
+    <% end %>
+  </tr>
+</table>

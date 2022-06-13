@@ -1,5 +1,7 @@
-<%= form_with url: search_path, local: true, method: :get, class: "search-form" do |f| %>
-  <%= f.text_field :keyword, placeholder: "検索ワードを入力", class: "search-input", size: 25 %>
-  <%= f.select :range, options_for_select([["User"], ["Article"], ["Tag"]]), class: "search-tag" %>
-  <%= f.submit "検索", class: "search-btn" %>
-<% end %>
+<div style="margin-right: 20px">
+  <%= form_with url: search_path, local: true, method: :get, class: "search-form" do |f| %>
+    <%= f.text_field :keyword, placeholder: "検索ワードを入力", class: "search-input", size: 30 %>
+    <%= f.select :range, options_for_select([["User"], ["Article"], ["Tag"]]), class: "search-tag" %>
+    <%= f.submit "検索", class: "search-btn" %>
+  <% end %>
+</div>
