@@ -20,10 +20,14 @@
       <div class="row d-flex justify-content-center">
           <p id="notice"><%= notice %></p>
       </div>
+      <span id ="back"><a href="#">
+        <%= image_tag asset_path("top-back.jpeg"), class:"back-img"%></a>
+      </span>
       <%= yield %>
     </main>
     <footer>
       <%= render "layouts/footer" %>
     </footer>
   </body>
+
 </html>
