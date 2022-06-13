@@ -12,8 +12,14 @@ class Article < ApplicationRecord
   has_many :tags, through: :article_tags
   has_many :notifications, dependent: :destroy
 
-  validates :title, presence: true, length: {maximum: 50}
-  validates :body,  presence: true, length: {maximum: 1500}
+  validates :title, presence: true, length: {maximum: 50}, on: :publicize
+  validates :body,  presence: true, length: {maximum: 1500}, on: :publicize
+
+  # 投稿時のバリテーション
+  with_options presence: true, on: :publicize do
+    validates :title
+    validates :body
+  end
 
   def get_image
     (image.attached?)? image: "no_image.jpg"

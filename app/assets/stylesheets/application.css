@@ -91,6 +91,24 @@ footer {
   font-family: cursive !important;
 }
 
+.form {
+  border: solid 2px #dcdcdc !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+  height: 40px !important;
+}
+
+.form-body {
+  height: 800px !important;
+}
+
+.form-group-info {
+  width: 100% !important;
+  height: 400px !important;
+  border: solid 2px #dcdcdc !important;
+  border-radius: 5px !important;
+}
+
 /*cardのレイアウト*/
 .list {
   display: flex;
@@ -107,7 +125,7 @@ footer {
 }
 .group-card {
   margin: 3px !important;
-  width: 27% !important;
+  width: 23% !important;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
@@ -134,7 +152,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
 }
-
 .card-text {
   text-align: right !important;
 }
@@ -261,8 +278,16 @@ td {
   transform: translateY(-1px);
 }
 
-
 .tag {
   color: black !important;
 }
 
+
+
+/* ボタン */
+.search-btn {
+  border: 2px solid #f4a460 !important;
+  background-color: white;
+  border-radius: 5px;
+  width: 60px;
+}

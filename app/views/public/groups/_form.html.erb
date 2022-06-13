@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <%= f.label :グループ画像 %><br>
-    <%= f.file_field :image, class: "form" %>
+    <%= f.file_field :image, class: "" %>
   </div>
 
   <div class="form-group">
@@ -12,10 +12,10 @@
 
   <div class="form-group">
     <%= f.label :グループの概要 %><br>
-    <%= f.text_area :introduction, class: "form-control" %>
+    <%= f.text_area :introduction, class: "form-group-info" %>
   </div>
 
-  <div class="form-group">
+  <div class="actions">
     <%= f.submit class: "btn" %>
   </div>
 
