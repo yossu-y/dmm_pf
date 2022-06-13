@@ -10,10 +10,15 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    # ユーザーの投稿した記事一覧
     @articles = @user.articles.all.order(created_at: :desc)
+    # ユーザーのいいねした記事一覧
     @likes = @user.likes.all.order(created_at: :desc)
-    @like_articles = Article.find(@likes.pluck(:article_id))
     # pluckでarticle_idのみ取得
+    @like_articles = Article.find(@likes.pluck(:article_id))
+    # 参加中のグループ一覧
+    @groups = @user.groups.all.order(created_at: :desc)
+
   end
 
   def edit

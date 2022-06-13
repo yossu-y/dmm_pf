@@ -20,6 +20,10 @@
 
 /*共通*/
 
+.navbar-brand {
+  font-size: 30px !important;
+}
+
 .search {
   margin-top: 12px !important;
 }

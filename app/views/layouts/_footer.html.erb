@@ -22,3 +22,9 @@
     <p>© 2022 Leniect</p>
   </div>
 </div>
+
+<% if admin_signed_in? %>
+  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
+<% else %>
+  <%= link_to "管理者ログイン", admin_session_path %>
+<% end %>

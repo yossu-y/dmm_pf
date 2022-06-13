@@ -12,6 +12,20 @@
             <%= render "public/searches/form" %>
           </li>
           <li>
+            <%= link_to about_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-light">
+                <i class="fa-solid fa-chalkboard"></i> about
+              </button>
+            <% end %>
+          </li>
+          <li>
+
+              <button type="button" class="btn btn-outline-light">
+                <i class="fa-solid fa-bell"></i> 通知
+              </button>
+
+          </li>
+          <li>
             <%= link_to articles_path, class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-light">
                 <i class="fa-solid fa-book-open"></i> 投稿一覧
@@ -26,7 +40,7 @@
             <% end %>
           </li>
           <li>
-            <%= link_to user_path(current_user.id), class: "nav-link" do %>
+            <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
               プロフィール画像を挿入
             <% end %>
           </li>
@@ -79,23 +93,4 @@
     </div>
   </nav>
 </header>
-
-<% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
-  <%= link_to "マイページ", user_path(current_user.id) %><br>
-  <%= link_to "新規投稿", new_article_path %><br>
-  <%= link_to "投稿一覧", articles_path %><br>
-
-<% else %>
-  <%= link_to "新規登録", new_user_registration_path %><br>
-  <%= link_to "ログイン", new_user_session_path %><br>
-<% end %>
-  <%= link_to "アバウト", about_path %><br>
-
-<% if admin_signed_in? %>
-  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
-<% else %>
-  <%= link_to "管理者ログイン", admin_session_path %>
-<% end %>
-
 
