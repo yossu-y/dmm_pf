@@ -1,2 +1,28 @@
-<h1>Admin::Articles#show</h1>
-<p>Find me in app/views/admin/articles/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <h3 class="title">投稿詳細</h3>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <%= image_tag @article.get_image, class: "my_page_img" %>
+            </td>
+          </tr>
+          <tr>
+            <td>投稿ID</td>
+            <td><%= @article.id %></td>
+          </tr>
+          <tr>
+            <td>記事のタイトル</td>
+            <td><%= @article.title %></td>
+          </tr>
+          <tr>
+            <td>記事の内容</td>
+            <td><%= @article.body %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
