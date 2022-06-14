@@ -4,14 +4,14 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
       <%= form_with model: @user, local: true do |f| %>
 
-        <div class="form-group">
+        <div class="img-position">
           <%= f.label :登録中の画像 %><br>
-          <%= image_tag @user.get_profile_image, class: "my_page_img rouded-circle" %>
+          <%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %>
         </div>
 
         <div class="form-group">
           <%= f.label :変更する画像 %><br>
-          <%= f.file_field :profile_image, class: "form", accept: "image/*" %>
+          <%= f.file_field :profile_image, accept: "image/*" %>
         </div>
 
         <div class="form-group">
@@ -21,17 +21,16 @@
 
         <div class="form-group">
           <%= f.label :introduction, "自己紹介" %><br>
-          <%= f.text_area :introduction, class: "form" %>
+          <%= f.text_area :introduction, class: "form-content-info" %>
         </div>
 
-        <div class="form-group">
-          <%= link_to "キャンセル", user_path(current_user), class: "back" %>
-          <%= f.submit "変更する", class: "form" %>
+        <div class="actions">
+          <%= link_to "キャンセル", user_path(current_user), class: "btn btn-light back" %>
+          <%= f.submit "変更する", class: "btn btn-info" %>
         </div>
       <% end %>
-
-      <div class="withdraw">
-        <%= link_to "退会する", unsubscribe_path %>
+      <div class="withdraw actions">
+        <%= link_to "退会する", unsubscribe_path, class: "btn btn-danger" %>
       </div>
     </div>
   </div>

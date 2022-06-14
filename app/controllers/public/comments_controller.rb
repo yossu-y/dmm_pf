@@ -5,7 +5,10 @@ class Public::CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
     @comment.article_id = article.id
     @comment.save
-    article.create_notification_comment!(current_user, @comment.id)
+    # 自分の記事へのコメントは通知しない
+    if @article.user_id != current_user.id
+      article.create_notification_comment!(current_user, @comment.id)
+    end
   end
 
   def destroy

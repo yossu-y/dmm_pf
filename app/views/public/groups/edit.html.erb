@@ -5,7 +5,7 @@
       <%= form_with model: @group, local: true do |f| %>
         <div class="form-group">
           <%= f.label :コミュニティ画像 %><br>
-          <%= f.file_field :image, class: "" %>
+          <%= f.file_field :image %>
         </div>
         <div class="form-group">
           <%= f.label :コミュニティ名 %><br>
@@ -13,9 +13,10 @@
         </div>
         <div class="form-group">
           <%= f.label :コミュニティの概要 %><br>
-          <%= f.text_area :introduction, class: "form-group-info" %>
+          <%= f.text_area :introduction, class: "form-content-info" %>
         </div>
         <div class="actions">
+          <%= link_to "キャンセル", group_path(@group), class: "btn btn-light back" %>
           <%= f.submit :コミュニテイを更新, class: "btn btn-info" %>
         </div>
       <% end %>
