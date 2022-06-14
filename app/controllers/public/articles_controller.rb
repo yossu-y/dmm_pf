@@ -77,6 +77,7 @@ class Public::ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
+
     @article.destroy
     redirect_to articles_path
   end
@@ -84,6 +85,10 @@ class Public::ArticlesController < ApplicationController
   def tag_search
     @tag = Tag.find(params[:tag_id])
     @tag_articles = @tag.articles.all
+  end
+
+  def draft
+    @articles = Article.where(is_draft: true).order(created_at: :desc)
   end
 
   private
