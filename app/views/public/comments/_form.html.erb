@@ -1,4 +1,14 @@
-<%= form_with(model: [article, comment], local: false) do |f| %>
-  <%= f.text_area :comment, placeholder: "コメントを入力" %>
-  <%= f.submit "送信" %>
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5 d-flex justify-content-end">
+      <%= form_with(model: [article, comment], local: false) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :comment, placeholder: "コメントを入力", class: "form comment-form" %><br>
+        </div>
+        <div class="actions">
+          <%= f.submit "送信" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

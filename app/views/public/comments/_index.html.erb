@@ -1,14 +1,25 @@
-<table>
+
+<table class="table comment-table">
   <% article.comments.each do |comment| %>
   <tr>
+    <td rowspan="2" width="20px">
+      <%= link_to user_path(comment.user) do %>
+        <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %>
+      <% end %>
+    </td>
     <td>
       <%= link_to user_path(comment.user) do %>
-        <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %><br>
         <%= comment.user.screen_name %>
       <% end %>
     </td>
+    <td></td>
   </tr>
   <tr>
+    <td><%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
     <td><%= comment.comment %></td>
     <td>
       <% if comment.user == current_user %>
