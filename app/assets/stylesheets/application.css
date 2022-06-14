@@ -63,7 +63,9 @@ body {
   min-height: 100vh;
   padding-bottom: 120px;
   box-sizing: border-box;
+  word-break: break-all !important;
 }
+
 footer {
   position: absolute;
   width: 100%;
@@ -98,7 +100,7 @@ footer {
 }
 
 .form-body {
-  height: 800px !important;
+  /*height: 800px !important;*/
 }
 
 .form-group-info {
@@ -138,8 +140,10 @@ footer {
   max-width: 100%;
   height: auto;
 }
+
 .card-body {
-  padding: 5px;
+  padding: 0px;
+  margin: 0 !important;
 }
 .card-title {
   font-size: 20px;
@@ -150,6 +154,8 @@ footer {
 .card-item {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 5px;
+  padding-left: 15px;
 }
 .card-text {
   text-align: right !important;
@@ -188,6 +194,16 @@ td {
   border: 1px solid #dcdcdc;
 }
 
+.img-position {
+  text-align: center;
+}
+
+.show-img {
+  height: 300px !important;
+  width: 450px !important;
+  border: 1px solid #dcdcdc;
+}
+
 .article-img {
   height: 80px !important;
   width: 80px !important;
@@ -206,6 +222,10 @@ td {
   height: 10px !important;
   width: 10px !important;
   border: 1px solid #dcdcdc;
+}
+
+.img {
+  text-align: center;
 }
 
 
@@ -245,13 +265,13 @@ td {
 
 /*タブ切り替え*/
 .tab {
-  width: 33%;
+  width: 33% !important;
   padding: 10px;
   cursor: pointer;
   border-left: solid 1px #CCC;
   border-bottom: solid 1px #CCC;
   font-size: 20px !important;
-  font-family: cursive !important;
+
 }
 .tab:first-child {
   border-left: none;
@@ -303,3 +323,16 @@ td {
   background-color: transparent !important;
 }
 
+
+/* articles/show */
+.title {
+  font-size: 30px;
+  padding-left: 30px;
+  font-weight: 500;
+}
+
+.body {
+  font-size: 17px;
+  /*height: 500px;*/
+
+}

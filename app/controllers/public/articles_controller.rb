@@ -46,22 +46,23 @@ class Public::ArticlesController < ApplicationController
   end
 
   def update
+    # 記事を公開の処理は上手くいっている。他はまだ。。
     @article = Article.find(params[:id])
-    # 下書き公開
-    if params[:publicize_draft]
-      @article.attributes = article_params.merge(is_draft: false)
-      if @article.save(context: :publicize)
-        redirect_to article_path(@article), notice: "下書きを公開しました！"
-      else
-        @article.is_draft = true
-        render "edit"
-      end
     # 投稿を更新
-    elsif params[:update_post]
+    if params[:publicize_draft]
       @article.attributes = article_params
       if @article.save(context: :publicize)
-        redirect_to article_path(@article)
+        redirect_to root_path
       else
+        render "edit"
+      end
+    # 記事を公開
+    elsif params[:update_post]
+      @article.attributes = article_params.merge(is_draft: false)
+      if @article.save(context: :publicize)
+        redirect_to article_path(@article), notice: "記事を更新しました！"
+      else
+        @article.is_draft = true
         render "edit"
       end
     # 下書きを更新

@@ -4,29 +4,13 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
       <table class="table">
         <tr>
-          <td></td>
-          <td><%= image_tag @article.get_image, class: "show-img" %></td>
-          <td></td>
+          <td class="img-position" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
         </tr>
         <tr>
-          <td><%= @article.title %></td>
-          <td></td>
-          <td></td>
+          <td class="title" colspan="3"><%= @article.title %></td>
         </tr>
         <tr>
-          <td>
-            <%= link_to @article.user do %>
-              <%= image_tag @article.user.get_profile_image, class: "icon rounded-circle" %>
-              <%= @article.user.screen_name %>
-            <% end %>
-          </td>
-          <td>
-            <%= @article.created_at.strftime("%Y-%m-%d %H:%M") %>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <td colspan="3"><%= @article.body %></td>
+          <td class="body" colspan="3"><%= @article.body %></td>
         </tr>
         <tr>
           <td colspan="3">
@@ -49,6 +33,17 @@
               <%= link_to "編集", edit_article_path(@article) %>
               <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"} %>
             <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= link_to @article.user do %>
+              <%= image_tag @article.user.get_profile_image, class: "icon rounded-circle" %>
+              <%= @article.user.screen_name %>
+            <% end %>
+          </td>
+          <td width="30%">
+            <%= @article.created_at.strftime("%Y-%m-%d %H:%M") %>
           </td>
         </tr>
       </table>
