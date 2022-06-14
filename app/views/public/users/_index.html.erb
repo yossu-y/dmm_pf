@@ -1,6 +1,6 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
       <table class="table table-hover table-inverse" style="border: 1px solid black; border-collapse: collapse;">
         <thead>
           <tr>
@@ -10,10 +10,13 @@
         <tbody>
           <% users.each do |user| %>
             <tr>
-              <td width="23%"><%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %></td>
-              <td><%= user.screen_name %></td>
-              <td width="20%"><%= render "public/relationships/btn", user: user %></td>
-              <td width="18%"><%= link_to "マイページ", user_path(user) %></td>
+              <td width="20%"><%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %></td>
+              <td>
+                <%= link_to user_path(user), class: "text-dark", style: "text-decoration:underline" do %>
+                  <%= user.screen_name %>
+                <% end %>
+              </td>
+              <td width="25%"><%= render "public/relationships/btn", user: user %></td>
             </tr>
           <% end %>
         </tbody>

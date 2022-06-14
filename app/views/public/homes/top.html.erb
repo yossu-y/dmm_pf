@@ -1,18 +1,15 @@
-<div class="container px-5 px-sm-0">
-  <div class="row">
-    <div class="mx-3"><h3 class="mb-5 mini-title">トップ</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+<div class="mx-3" style="text-align: center"><h1 class="mb-6 top-title">Leniect</h3></div>
+<div class="col-5 col-md-5 col-sm-5 mx-2 mx-sm-auto px-0 my-5">
 
-        <div class="row">
-          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
-        </div>
-        <div class="row">
-          <%= link_to 'Log in',new_user_session_path, class: "btn btn-success btn-sm btn-block mb-3" %>
-        </div>
-        <div class="row">
-          <%= link_to 'Sign Up',new_user_registration_path, class: "btn btn-success btn-sm btn-block" %>
-        </div>
-      </div>
+    <div class="row">
+      <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "btn btn-sm btn-block guest-login mb-3", style: "text-align: center" %>
+    </div>
+    <div class="row">
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-login btn-sm btn-block mb-3", style: "text-align: center" %>
+    </div>
+    <div class="row">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-login btn-sm btn-block", style: "text-align: center" %>
     </div>
   </div>
 </div>
+

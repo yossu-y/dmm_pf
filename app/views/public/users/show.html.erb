@@ -7,10 +7,10 @@
           <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
           <td style="text-align: left;">
             <%= @user.screen_name %><br>
-            <%= link_to user_followings_path(@user) do %>
-              <strong><%= @user.followings.count %></strong>フォロー
+            <%= link_to user_followings_path(@user), class: "text-dark" do %>
+              <strong><%= @user.followings.count %></strong>フォロー&nbsp;
             <% end %>
-            <%= link_to user_followers_path(@user) do %>
+            <%= link_to user_followers_path(@user), class: "text-dark" do %>
               <strong><%= @user.followers.count %></strong>フォロワー
             <% end %>
           </td>
@@ -24,14 +24,14 @@
           <td><%= @user.introduction %></td>
           <td>
             <% if @user == current_user %>
-              <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary btn-block" do %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block" do %>
                 <i class="fas fa-sign-out-alt"></i>ログアウト
               <% end %>
             <% end %>
           </td>
         </tr>
       </table>
-
+      
       <ul class="nav nav-tabs" id="tabs">
         <li class="tab tab-active">投稿一覧</li>
         <li class="tab">いいねした投稿一覧</li>
