@@ -90,7 +90,6 @@ class Article < ApplicationRecord
       visited_id: visited_id,
       action: "comment"
     )
-    # 自分の投稿に対するコメントの場合は、通知済みとする
     if notification.visiter_id == notification.visited_id
       notification.checked = true
     end
