@@ -13,15 +13,15 @@
         </div>
         <div class="form-group">
           <%= f.label :body, "記事の内容" %>
-          <%= f.rich_text_area :body, rows: 50, class: "form-body" %>
+          <%= f.rich_text_area :body, class: "form-body" %>
         </div>
         <div class="form-group">
           <%= f.label "Tag (、を入力することで複数タグが付きます。)" %><br>
           <%= f.text_field :tag_name, class: "form" %>
         </div>
         <div class="actions">
-          <%= f.submit "下書きに保存する", :name => "draft", class: "" %>
-          <%= f.submit "投稿する", :name => "post", class: "" %>
+          <%= f.submit "下書きに保存する", :name => "draft", class: "btn" %>
+          <%= f.submit "投稿する", :name => "post", class: "btn" %>
         </div>
       <% end %>
 
@@ -34,6 +34,7 @@
           <td><%= article.title %></td>
           <td><%= article.created_at.strftime("%Y-%m-%d") %></td>
           <td><%= link_to "編集", edit_article_path(article) %></td>
+          <td><%= link_to "下書きを削除", new_article_path, method: :delete, data: {confirm: "下書きを削除しますか？"} %></td>
         </tr>
         <% end %>
       </table>

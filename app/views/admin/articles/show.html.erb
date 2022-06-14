@@ -9,19 +9,26 @@
             </td>
           </tr>
           <tr>
-            <td>投稿ID</td>
+            <td width="30%">投稿ID</td>
             <td><%= @article.id %></td>
           </tr>
           <tr>
-            <td>記事のタイトル</td>
+            <td width="30%">記事のタイトル</td>
             <td><%= @article.title %></td>
           </tr>
           <tr>
-            <td>記事の内容</td>
+            <td width="30%">記事の内容</td>
             <td><%= @article.body %></td>
           </tr>
         </tbody>
       </table>
+      <div class="admin-comment">
+        <% @article.comments.each do |comment| %>
+          <%= comment.user.name %>：
+          <%= comment.comment %>
+          <%= link_to "削除する", admin_article_comment_path(comment.article, comment), method: :delete, data: {confirm: "#{comment.user.name}さんのコメントを削除しますか？"} %><br>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
