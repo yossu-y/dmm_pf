@@ -25,13 +25,11 @@
         </div>
 
         <div class="actions">
+          <%= link_to "退会する", unsubscribe_path, class: "btn btn-danger" %>
           <%= link_to "キャンセル", user_path(current_user), class: "btn btn-light back" %>
           <%= f.submit "変更する", class: "btn btn-info" %>
         </div>
       <% end %>
-      <div class="withdraw actions">
-        <%= link_to "退会する", unsubscribe_path, class: "btn btn-danger" %>
-      </div>
     </div>
   </div>
 </div>
