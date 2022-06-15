@@ -1,4 +1,5 @@
 
+// 複数のタブで表示
 $(document).on('turbolinks:load', function() {
   $(function() {
     $('.tab').click(function(){
@@ -11,7 +12,7 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
+// トップの戻るボタン
 $(function() {
   $('#back a').on('click',function(event){
     $('body, html').animate({
@@ -20,4 +21,6 @@ $(function() {
     event.preventDefault();
   });
 });
+
+
 

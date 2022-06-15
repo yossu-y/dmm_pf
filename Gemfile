@@ -62,3 +62,4 @@ group :production do
   gem 'mysql2'
 end
 
+gem "enum_help"
