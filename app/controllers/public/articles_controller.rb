@@ -3,13 +3,14 @@ class Public::ArticlesController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @articles = Article.where(is_draft: false).order(created_at: :desc)
-    @tag_list = Tag.all
-    @groups = Group.all
+    @articles = Article.where(is_draft: false).order(updated_at: :desc)
+    # タグの多い順に並べ替えたい
+    @tag_lists = Tag.all
+    @groups = Group.all.order(updated_at: :desc)
   end
 
   def new
-    @articles = Article.where(is_draft: true).order(created_at: :desc)
+    @articles = Article.where(is_draft: true)
     @article = Article.new
     @tag = Tag.new
   end
@@ -38,7 +39,7 @@ class Public::ArticlesController < ApplicationController
       end
     else
       if @article.update(is_draft: true)
-        redirect_to user_path(current_user), notice: "下書きに保存しました！"
+        redirect_to draft_path, notice: "下書きに保存しました！"
       else
         render "new"
       end
@@ -46,21 +47,23 @@ class Public::ArticlesController < ApplicationController
   end
 
   def update
-    # 記事を公開の処理は上手くいっている。他はまだ。。
     @article = Article.find(params[:id])
-    # 投稿を更新
+    tag_list = params[:article][:tag_name].split("、")
+    # 下書きを公開
     if params[:publicize_draft]
       @article.attributes = article_params
       if @article.save(context: :publicize)
-        redirect_to root_path
+        @article.save_tag(tag_list)
+        redirect_to article_path(@article), notice: "下書きを公開しました！"
       else
         render "edit"
       end
-    # 記事を公開
+    # 公開中の記事を更新
     elsif params[:update_post]
       @article.attributes = article_params.merge(is_draft: false)
       if @article.save(context: :publicize)
-        redirect_to article_path(@article), notice: "記事を更新しました！"
+        @article.save_tag(tag_list)
+        redirect_to article_path(@article), notice: "投稿を更新しました！"
       else
         @article.is_draft = true
         render "edit"
@@ -68,7 +71,8 @@ class Public::ArticlesController < ApplicationController
     # 下書きを更新
     else
       if @article.update(article_params)
-        redirect_to article_path(@article)
+        @article.save_tag(tag_list)
+        redirect_to draft_path, notice: "下書きを更新しました"
       else
         render "edit"
       end
@@ -78,7 +82,7 @@ class Public::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path
+    redirect_to articles_path, notice: "記事を削除しました！"
   end
 
   def tag_search
@@ -87,7 +91,7 @@ class Public::ArticlesController < ApplicationController
   end
 
   def draft
-    @articles = Article.where(is_draft: true).order(created_at: :desc)
+    @articles = Article.where(is_draft: true).order(update_at: :desc)
   end
 
   private

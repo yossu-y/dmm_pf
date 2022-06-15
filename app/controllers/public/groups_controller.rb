@@ -4,7 +4,7 @@ class Public::GroupsController < ApplicationController
 
   def index
     @article = Article.new
-    @groups = Group.all
+    @groups = Group.all.order(updated_at: :desc)
   end
 
   def new
