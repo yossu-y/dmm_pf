@@ -8,7 +8,7 @@
           <th>記事のタイトル</th>
           <th>投稿者</th>
           <th>詳細</th>
-          <th style="text-align: center">ステータス</th>
+          <th>投稿日</th>
         </tr>
       </thead>
       <tbody>
@@ -16,8 +16,9 @@
         <tr>
           <td><%= article.id %></td>
           <td><%= article.title %></td>
-          <td><%= article.user.name %></td>
+          <td><%= article.user.screen_name %></td>
           <td><%= link_to "詳細", admin_article_path(article) %></td>
+          <td><%= article.created_at.strftime("%Y-%m-%d %H:%M") %></td>
         </tr>
         <% end %>
       </tbody>

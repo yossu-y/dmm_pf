@@ -30,12 +30,18 @@
         <div class="form-gropu row">
           <%= f.label :is_deleted, '会員ステータス', class: "col-3" %>
           <div class="custom-control custom-radio">
-            <%= f.radio_button :is_deleted, false %> <%= f.label :is_active, "有効", class:"mr-3 text-muted" %>
-            <%= f.radio_button :is_deleted, true %> <%= f.label :is_active, "退会", class:"text-muted" %>
+            <%= f.radio_button :is_deleted, false %>
+            <%= f.label :is_active, "有効", class:"mr-3 text-muted" %>
+            <%= f.radio_button :is_deleted, true %>
+            <%= f.label :is_active, "退会", class:"text-muted" %>
           </div>
         </div>
 
+<<<<<<< HEAD
         <div class="admin-actions">
+=======
+         <div class="admin-actions">
+>>>>>>> c1ad72e051db24f6b287359441e369ef8d0ee7a4
           <%= f.submit "変更を保存", class: "btn btn-warning col-2 offset-3" %>
           <%= link_to "キャンセル", admin_user_path(@user), class: "btn btn-secondary col-2" %>
         </div>
