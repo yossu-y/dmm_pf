@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_112151) do
+ActiveRecord::Schema.define(version: 2022_06_15_072946) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -107,13 +107,21 @@ ActiveRecord::Schema.define(version: 2022_06_13_112151) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.integer "visiter_id", null: false
     t.integer "visited_id", null: false
     t.integer "article_id"
     t.integer "comment_id"
     t.integer "like_id"
-    t.string "action", default: "", null: false
+    t.string "action", default: "f", null: false
     t.boolean "checked", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

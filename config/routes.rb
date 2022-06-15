@@ -28,8 +28,9 @@ Rails.application.routes.draw do
       get "followers" => "relationships#followers", as: "followers"
     end
 
+    get "groups/:id/room" => "groups#room", as: "room"
     resources :groups, only: [:index, :new, :show, :edit, :create, :update, :destroy] do
-      resources :chats, only:[:create, :destroy]
+      resources :messages, only:[:create, :destroy]
       resource :group_user, onyl: [:create, :destroy]
     end
 

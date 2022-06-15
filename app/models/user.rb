@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :group_users, dependent: :destroy
   has_many :groups, through: :group_users, dependent: :destroy
+  has_many :messages, through: :groups, dependent: :destroy
 
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -68,7 +69,7 @@ class User < ApplicationRecord
       user.name = "guestuser"
     end
   end
-  
+
   # 退会済みユーザーをブロック
   def active_for_authentication?
     super && (is_deleted == false)

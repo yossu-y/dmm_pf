@@ -38,7 +38,7 @@
       <% else %>
         <% if @group.includesUser?(current_user) %>
           <%= link_to "退会する", group_group_user_path(@group), method: :delete %>
-          <p>チャット画面</p>
+          <%= link_to "チャット画面へ", room_path(@group) %>
         <% else %>
           <%= link_to "参加する", group_group_user_path(@group), method: :post %>
         <% end %>

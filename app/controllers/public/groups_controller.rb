@@ -41,6 +41,11 @@ class Public::GroupsController < ApplicationController
     # 削除機能は実装未定
   end
 
+  def room
+    @group = Group.find(params[:id])
+    @messages = Message.all
+  end
+
   private
 
   def group_params
