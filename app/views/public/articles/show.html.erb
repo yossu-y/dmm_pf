@@ -13,7 +13,7 @@
           <td class="body" colspan="3"><%= @article.body %></td>
         </tr>
         <tr>
-          <td colspan="3">
+          <td colspan="3"><i class="fa-solid fa-tag"></i>
             <% @article_tags.each do |tag| %>
               <%= link_to tag_search_path(tag_id: tag.id), class: "text-dark" do %>
                 <button type="button" class="btn btn-outline-dark">
@@ -41,11 +41,11 @@
           <td colspan="2">
             <%= link_to @article.user do %>
               <%= image_tag @article.user.get_profile_image, class: "icon rounded-circle" %>
-              <%= @article.user.screen_name %>
+              <id class="text-dark"><%= @article.user.screen_name %></id>
             <% end %>
           </td>
-          <td width="35%">
-            <%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+          <td width="38%">
+            <%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
           </td>
         </tr>
       </table>
