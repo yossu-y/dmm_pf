@@ -1,6 +1,6 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <h3 class="title">グループ詳細</h3>
+    <h3 class="title">コミュニティ詳細</h3>
       <table class="table table-borderless">
         <tbody>
           <tr>
@@ -13,11 +13,11 @@
             <td><%= @group.id %></td>
           </tr>
           <tr>
-            <td>グループ名</td>
+            <td>コミュニティ名</td>
             <td><%= @group.name %></td>
           </tr>
           <tr>
-            <td>グループ説明</td>
+            <td>コミュニティ説明</td>
             <td><%= @group.introduction %></td>
           </tr>
           <tr>
@@ -25,7 +25,7 @@
             <td><%= @group.users.count %></td>
           </tr>
           <tr>
-            <td>グループオーナー</td>
+            <td>コミュニティオーナー</td>
             <td><%= @group.owner.name %></td>
           </tr>
         </tbody>
