@@ -87,10 +87,167 @@ footer {
   width: 95%;
   text-align: center;
   border-radius: 1px;
-  background-color: #f4a460;
+  background-color: #ee7b1a;
   margin-top: 10px;
+  color: #fff;
+}
+
+/* ログイン・新規登録 */
+.login-container{
+  position: relative;
+  width: 310px;
+  margin: 80px auto;
+  padding: 20px 40px 40px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+#output{
+  position: absolute;
+  width: 300px;
+  top: -75px;
+  left: 0;
+  color: #fff;
+}
+
+#output.alert-success{
+  background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+  background: rgb(228, 105, 105);
+}
+
+.login-container::before,.login-container::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 3.5px;left: 0;
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: rotateZ(4deg);
+  -moz-transform: rotateZ(4deg);
+  -ms-transform: rotateZ(4deg);
+  border: 1px solid #ccc;
+}
+
+.login-container::after{
+  top: 5px;
+  z-index: -2;
+  -webkit-transform: rotateZ(-2deg);
+  -moz-transform: rotateZ(-2deg);
+  -ms-transform: rotateZ(-2deg);
+}
+
+.avatar{
+  width: 130px;
+  height: 130px;
+  margin: 10px auto 30px;
+  border-radius: 100%;
+  border: 1px solid #ee7b1a;
+  background-size: cover;
   font-family: cursive !important;
 }
+
+.form-box input{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  height:40px;
+  border: 1px solid #ccc;;
+  background: #fafafa;
+  transition:0.2s ease-in-out;
+}
+
+.site-name {
+  padding-top: 35px;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.form-box input:focus{
+  outline: 0;
+  background: #eee;
+}
+
+.name-form {
+  border-radius: 3px;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+
+.email-form {
+  border-radius: 3px;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+
+.password-form {
+  border-radius: 3px;
+  border-top: 0;
+  margin-top: 5px;
+}
+
+.form-box button.login{
+  margin-top:15px;
+  padding: 10px 20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+/*-----------------------------------------------------------*/
+
+/* トップ画面 */
+
+.top-title {
+  font-family: cursive !important;
+  font-size: 80px;
+}
+
+
 
 .form {
   border: solid 2px #dcdcdc !important;
@@ -103,7 +260,7 @@ footer {
   /*height: 800px !important;*/
 }
 
-.form-group-info {
+.form-content-info {
   width: 100% !important;
   height: 400px !important;
   border: solid 2px #dcdcdc !important;
@@ -115,6 +272,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
 }
+
 .card {
   margin: 3px !important;
   width: 20% !important;
@@ -124,13 +282,14 @@ footer {
   flex-basis: 200px;
   z-index: 10 !important;
 }
+
 .group-card {
   margin: 3px !important;
-  width: 23% !important;
+  width: 20% !important;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
-  flex-basis: 250px;
+  flex-basis: 180px;
   z-index: 10 !important;
 }
 
@@ -159,6 +318,7 @@ footer {
 }
 .card-text {
   text-align: right !important;
+  padding-bottom: 3px;
 }
 
 /*テーブルのレイアウト*/
@@ -189,8 +349,8 @@ td {
 }
 
 .my_page_img {
-  height: 250px !important;
-  width: 250px !important;
+  height: 280px !important;
+  width: 280px !important;
   border: 1px solid #dcdcdc;
 }
 
@@ -264,6 +424,10 @@ td {
 
 
 /*タブ切り替え*/
+.nav-tabs {
+  margin-top: 65px;
+}
+
 .tab {
   width: 33% !important;
   padding: 10px;
@@ -279,7 +443,7 @@ td {
 /*タブがactiveのときのデザイン*/
 .tab-active {
   color: #FFF;
-  background: #f4a460;
+  background: #ee7b1a;
   transition: all 0.2s ease-in-out;
 }
 /*タブの中身、最初は非表示*/
@@ -300,7 +464,6 @@ td {
 .tag {
   color: black !important;
 }
-
 
 
 /* ボタン */
@@ -335,4 +498,67 @@ td {
   font-size: 17px;
   /*height: 500px;*/
 }
+
+.comment-form {
+  margin-top: 70px;
+  margin-left: 360px;
+  width: 45% !important;
+  text-align: right !important;
+}
+
+.comment-table {
+  margin-top: 50px !important;
+  margin-bottom: 10px !important;
+}
+
+.comment-table tr td {
+  border: none;
+  padding: 0;
+}
+
+.balloon {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon .faceicon {
+  float: left;
+  margin-right: -140px;
+  width: 80px;
+}
+
+.balloon .faceicon img{
+  width: 100%;
+  height: auto;
+}
+
+.balloon .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 16px 0px 0 90px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #f5f5f5;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
 

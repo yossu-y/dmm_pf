@@ -8,7 +8,11 @@
           <%= image_tag group.get_image, class: "posting-img" %>
         </td>
         <td><%= group.name %></td>
-        <td><%= link_to "詳細", group_path, class: "text-dark" %></td>
+        <td>
+          <%= link_to group_path, class: "text-dark" do %>
+            <button type="button" class="btn btn-outline-dark">詳細</button>
+          <% end %>
+        </td>
       </tr>
       <% end %>
     </table>

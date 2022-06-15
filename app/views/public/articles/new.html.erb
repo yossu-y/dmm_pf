@@ -1,7 +1,12 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-5"><h3 class="mb-4 mini-title">新規投稿</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+    <div class="mx-5"><h3 class="mb-3 mini-title">新規投稿</h3></div>
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+      <%= link_to draft_path(@articles), class: "text-light" do %>
+        <button type="button" class="btn btn-outline-dark">
+          <i class="fa-solid fa-pen-ruler"></i>下書きを更新
+        </button>
+      <% end %>
       <%= form_with model: @article, local: true do |f| %>
         <div class="form-group">
           <%= f.label :image, "画像" %><br>
@@ -20,24 +25,12 @@
           <%= f.text_field :tag_name, class: "form" %>
         </div>
         <div class="actions">
-          <%= f.submit "下書きに保存する", :name => "draft", class: "btn" %>
-          <%= f.submit "投稿する", :name => "post", class: "btn" %>
+          <%= f.submit "下書きに保存", :name => "draft", class: "btn btn-light" %>
+          <%= f.submit "投稿する", :name => "post", class: "btn btn-info" %>
         </div>
       <% end %>
 
-      <table class="table">
-        <% @articles.each do |article| %>
-        <tr>
-          <td>
-            <%= image_tag article.get_image, class: "posting-img" %>
-          </td>
-          <td><%= article.title %></td>
-          <td><%= article.created_at.strftime("%Y-%m-%d") %></td>
-          <td><%= link_to "編集", edit_article_path(article) %></td>
-          <td><%= link_to "下書きを削除", new_article_path, method: :delete, data: {confirm: "下書きを削除しますか？"} %></td>
-        </tr>
-        <% end %>
-      </table>
+
     </div>
   </div>
 </div>

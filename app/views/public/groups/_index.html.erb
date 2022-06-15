@@ -1,14 +1,14 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-4 px-sm-0">
   <div style="text-align: right;">
     <%= link_to new_group_path do %>
       <button type="button" class="btn btn-outline-dark">
-        グループを作成<i class="fa-solid fa-people-group mark"></i>
+        コミュニティを作成<i class="fa-solid fa-people-group mark"></i>
       </button>
     <% end %>
   </div>
   <div class="row">
-    <div class="mx-3"><h3 class="mb-3 mini-title">グループ一覧</h3></div>
-    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+    <div class="mx-2"><h3 class="mb-3 mini-title">コミュニティ一覧</h3></div>
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5 list">
       <% groups.each do |group| %>
         <div class="group-card">
           <div class="card-img">

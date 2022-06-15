@@ -55,7 +55,7 @@ class User < ApplicationRecord
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,
-        action: 'follow'
+        action: "follow"
       )
       notification.save if notification.valid?
     end

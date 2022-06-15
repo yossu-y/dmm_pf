@@ -1,37 +1,40 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-3"><h3 class="mb-5 mini-title">グループ詳細</h3></div>
+    <div class="mx-3"><h3 class="mb-3 mini-title">コミュニティ詳細</h3></div>
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
       <table class="table">
         <tr>
-          <td></td>
-          <td>
+          <td class="img" colspan="3">
             <%= image_tag @group.get_image, class: "show-img" %>
           </td>
-          <td></td>
         </tr>
         <tr>
-          <td colspan="3">グループ名：<%= @group.name %></td>
+          <td colspan="3">コミュニティ名：<%= @group.name %></td>
         </tr>
         <tr>
         </tr>
         <tr>
-          <td colspan="3">グループ紹介：<%= @group.introduction %></td>
+          <td height="80" colspan="3">コミュニティ紹介：<%= @group.introduction %></td>
         </tr>
         <tr>
-          <td>グループ作成者:</td>
-          <td>
-            <%= link_to @group.owner do %>
+          <td colspan="2">コミュニティ作成者：
+            <%= link_to @group.owner, class: "text-dark", style: "text-decoration:underline" do %>
               <%= image_tag @group.owner.get_profile_image, class: "rounded-circle icon-mini" %>
               <%= @group.owner.screen_name %>
             <% end %>
           </td>
-          <td></td>
+          <td>
+            <% if @group.is_owned_by?(current_user) %>
+            <div class="actions">
+              <%= link_to "コミュニティを編集", edit_group_path(@group), class: "btn btn-info" %>
+            </div>
+            <% end %>
+          </td>
         </tr>
       </table>
 
       <% if @group.is_owned_by?(current_user) %>
-        <%= link_to "グループを編集する", edit_group_path(@group) %>
+        <!-- コミュニティ編集はテーブルに追加 -->
       <% else %>
         <% if @group.includesUser?(current_user) %>
           <%= link_to "退会する", group_group_user_path(@group), method: :delete %>

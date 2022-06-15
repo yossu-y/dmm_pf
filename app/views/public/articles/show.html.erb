@@ -13,11 +13,13 @@
           <td class="body" colspan="3"><%= @article.body %></td>
         </tr>
         <tr>
-          <td colspan="3">
+          <td colspan="3"><i class="fa-solid fa-tag"></i>
             <% @article_tags.each do |tag| %>
-            <button type="button" class="btn btn-outline-secondary">
-              <%= link_to tag.name, tag_search_path(tag_id: tag.id), class: "text-dark" %>
-            </button>
+              <%= link_to tag_search_path(tag_id: tag.id), class: "text-dark" do %>
+                <button type="button" class="btn btn-outline-dark">
+                  <%= tag.name %>
+                </button>
+              <% end %>
             <% end %>
           </td>
         </tr>
@@ -30,8 +32,8 @@
           </td>
           <td>
             <% if @article.user == current_user %>
-              <%= link_to "編集", edit_article_path(@article) %>
-              <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"} %>
+              <%= link_to "編集", edit_article_path(@article), class: "btn btn-info" %>
+              <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
             <% end %>
           </td>
         </tr>
@@ -39,11 +41,11 @@
           <td colspan="2">
             <%= link_to @article.user do %>
               <%= image_tag @article.user.get_profile_image, class: "icon rounded-circle" %>
-              <%= @article.user.screen_name %>
+              <id class="text-dark"><%= @article.user.screen_name %></id>
             <% end %>
           </td>
-          <td width="30%">
-            <%= @article.created_at.strftime("%Y-%m-%d %H:%M") %>
+          <td width="38%">
+            <%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
           </td>
         </tr>
       </table>
@@ -53,7 +55,6 @@
       <div class="comments-form">
         <%= render "public/comments/form", article: @article, comment: @comment %>
       </div>
-
     </div>
   </div>
 </div>
