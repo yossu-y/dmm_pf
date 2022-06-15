@@ -1,11 +1,11 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-3"><h3 class="mb-4 mini-title">グループ一覧</h3></div>
+    <div class="mx-3"><h3 class="mb-4 mini-title">コミュニティ一覧</h3></div>
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
           <th>ID</th>
-          <th>グループ名</th>
+          <th>コミュニティ名</th>
           <th style="text-align: left">参加人数</th>
           <th>オーナー</th>
           <th>詳細</th>
@@ -19,7 +19,7 @@
           <td><%= group.name %></td>
           <td><%= group.users.count %></td>
           <td><%= group.owner.name %></td>
-          <td><%= link_to "詳細", admin_group_path(group) %></td>
+          <td><%= link_to "詳細", admin_group_path(@group), %></td>
         </tr>
         <% end %>
       </tbody>

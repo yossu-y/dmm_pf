@@ -13,6 +13,14 @@
             <td><%= @article.id %></td>
           </tr>
           <tr>
+            <td width="30%">投稿者（氏名）</td>
+            <td><%= @article.user.name %></td>
+          </tr>
+          <tr>
+            <td width="30%">投稿者（ニックネーム）</td>
+            <td><%= @article.user.screen_name %></td>
+          </tr>
+          <tr>
             <td width="30%">記事のタイトル</td>
             <td><%= @article.title %></td>
           </tr>
@@ -20,9 +28,14 @@
             <td width="30%">記事の内容</td>
             <td><%= @article.body %></td>
           </tr>
+          <tr>
+            <td width="30%">投稿を削除</td>
+            <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
+          </tr>
         </tbody>
       </table>
       <div class="admin-comment">
+        <h4>記事についたコメント</h4>
         <% @article.comments.each do |comment| %>
           <%= comment.user.name %>：
           <%= comment.comment %>

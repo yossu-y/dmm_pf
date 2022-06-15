@@ -68,5 +68,10 @@ class User < ApplicationRecord
       user.name = "guestuser"
     end
   end
+  
+  # 退会済みユーザーをブロック
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
 
 end
