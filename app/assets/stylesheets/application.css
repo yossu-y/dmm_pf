@@ -20,6 +20,19 @@
 
 /*共通*/
 
+/*header li {*/
+/*  margin-top: 15px*/
+/*}*/
+
+header ul {
+  margin-top: 15px;
+}
+
+header li:nth-child(5) {
+  margin-top: -12px;
+
+}
+
 .navbar-brand {
   font-size: 40px !important;
   color: black !important;
@@ -79,7 +92,7 @@ footer {
 }
 
 .mini-title {
-  margin: 0 !important;
+  margin: 10px !important;
   font-family: cursive !important;
 }
 
@@ -329,7 +342,6 @@ footer {
 }
 
 td {
-
   vertical-align: middle !important;
 }
 
@@ -388,6 +400,12 @@ td {
   text-align: center;
 }
 
+.header-icon {
+  height: 70px !important;
+  width: 70px !important;
+  margin: 1px;
+  border: 1px solid #dcdcdc;
+}
 
 /*検索ボックス*/
 
@@ -501,9 +519,7 @@ td {
 
 .comment-form {
   margin-top: 70px;
-  margin-left: 360px;
-  width: 45% !important;
-  text-align: right !important;
+  text-align: right;
 }
 
 .comment-table {
@@ -561,4 +577,13 @@ td {
   padding: 0;
 }
 
+.draft {
+  margin: 0 0 5px 0;
+  text-align: right;
+}
 
+/* admin */
+
+.admin-actions {
+  margin-top: 20px;
+}

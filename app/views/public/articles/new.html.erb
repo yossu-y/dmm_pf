@@ -1,12 +1,14 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-5"><h3 class="mb-3 mini-title">新規投稿</h3></div>
-    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
-      <%= link_to draft_path(@articles), class: "text-light" do %>
-        <button type="button" class="btn btn-outline-dark">
-          <i class="fa-solid fa-pen-ruler"></i>下書きを更新
-        </button>
-      <% end %>
+    <div class="mx-5"><h3 class="mb-2 mini-title">新規投稿</h3></div>
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-2">
+      <div class="draft">
+        <%= link_to draft_path, class: "text-light" do %>
+          <button type="button" class="btn btn-outline-dark">
+            <i class="fa-solid fa-pen-ruler"></i>下書きした記事を更新
+          </button>
+        <% end %>
+      </div>
       <%= form_with model: @article, local: true do |f| %>
         <div class="form-group">
           <%= f.label :image, "画像" %><br>

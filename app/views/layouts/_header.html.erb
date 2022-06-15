@@ -44,8 +44,7 @@
           </li>
           <li>
             <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
-            プロフィール画像
-              <%#= image_tag @user.get_profile_image, class: "icon-mini" %>
+              <%= image_tag current_user.get_profile_image, class: "header-icon rounded-circle" %>
             <% end %>
           </li>
 

@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-3"><h3 class="mb-5 mini-title">公開された記事</h3></div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+    <div class="mx-2"><h3 class="mb-4 mini-title">公開された記事</h3></div>
+    <div class="col-10 col-md-9 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
       <table class="table">
         <tr>
           <td class="img-position" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
@@ -49,10 +49,10 @@
           </td>
         </tr>
       </table>
-      <div class="comments-index">
+      <div id="comments-index">
         <%= render "public/comments/index", article: @article %>
       </div>
-      <div class="comments-form">
+      <div class="comments-form" style="text-align: right;">
         <%= render "public/comments/form", article: @article, comment: @comment %>
       </div>
     </div>
