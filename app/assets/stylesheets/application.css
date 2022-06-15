@@ -498,66 +498,67 @@ td {
 .body {
   font-size: 17px;
   /*height: 500px;*/
-
 }
 
-
-/* ボタン */
-
-input.btn-login, a.btn-login {
-  border: 2px solid #f5f5f5 !important;
-  background: #ee7b1a !important;
-  margin-top: 15px;
-  padding-top: 8px;
-  font-weight: bolder;
-  color: #fff;
-}
-
-input.btn-login:hover, a.btn-login:hover {
-  border: 2px solid #f5f5f5 !important;
-  background: #ff9500 !important;
-  color: #fff;
-  font-weight: bold;
-}
-
-
-input.guest-login, a.guest-login {
-  border: 2px solid #f5f5f5 !important;
-  background: #009bbf !important;
-  margin-top: 15px;
-  padding-top: 8px;
-  font-weight: bolder;
-  color: #fff;
-}
-
-input.guest-login:hover, a.guest-login:hover {
-  border: 2px solid #f5f5f5 !important;
-  background: #00a7db !important;
-  color: #fff;
-  font-weight: bold;
-}
-
-input.btn-follow, a.btn-follow {
-  border: 2px solid #f5f5f5 !important;
-  background: #ee7b1a !important;
-  margin-top: 1px;
-  padding-top: 6px;
-  font-weight: bolder;
-  color: #fff;
-  height: 35px;
-}
-
-input.btn-follow:hover, a.btn-follow:hover {
-  border: 2px solid #f5f5f5 !important;
-  background: #ff9500 !important;
-  color: #fff;
-  font-weight: bold;
-}
-
-.actions {
+.comment-form {
+  margin-top: 70px;
+  margin-left: 360px;
+  width: 45% !important;
   text-align: right !important;
 }
 
-.withdraw {
-  margin-top: 10px
+.comment-table {
+  margin-top: 50px !important;
+  margin-bottom: 10px !important;
 }
+
+.comment-table tr td {
+  border: none;
+  padding: 0;
+}
+
+.balloon {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.balloon .faceicon {
+  float: left;
+  margin-right: -140px;
+  width: 80px;
+}
+
+.balloon .faceicon img{
+  width: 100%;
+  height: auto;
+}
+
+.balloon .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 16px 0px 0 90px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #f5f5f5;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
