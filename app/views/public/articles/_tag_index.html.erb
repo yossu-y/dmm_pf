@@ -2,8 +2,8 @@
   <div class="row">
     <div class="mx-3"><h3 class="mt-3 mb-3 mini-title">タグ一覧</h3></div>
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
-      <% @tag_list.each do |list| %>
-        <!-- タグが0の場合は表示 -->
+      <% @tag_lists.each do |list| %>
+        <!-- タグが0の場合は非表示 -->
         <% if list.articles.count != 0 %>
           <%= link_to tag_search_path(tag_id: list.id) do %>
             <button type="button" class="btn btn-outline-dark">

@@ -44,8 +44,8 @@
               <id class="text-dark"><%= @article.user.screen_name %></id>
             <% end %>
           </td>
-          <td width="38%">
-            <%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
+          <td width="45%">
+            <%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
           </td>
         </tr>
       </table>
