@@ -1,11 +1,11 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
-      <%= form_with(model: [article, comment], local: false) do |f| %>
-        <div class="form-group comment-form">
-          <%= f.text_area :comment, placeholder: "コメントを入力", rows: "3", class: "form-control" %><br>
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5 comment-form">
+      <%= form_with model: [article, comment], local: false do |f| %>
+        <div class="form-group">
+          <%= f.text_area :comment, placeholder: "コメントを入力", rows: "4", class: "form-control" %><br>
         </div>
-        <div class="actions">
+        <div class="form-group">
           <%= f.submit "送信" %>
         </div>
       <% end %>
