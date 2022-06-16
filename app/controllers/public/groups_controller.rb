@@ -23,7 +23,7 @@ class Public::GroupsController < ApplicationController
     @group = Group.new(group_params)
     @group.owner_id = current_user.id
     if @group.save
-      redirect_to groups_path, notice: "グループを作成しました！"
+      redirect_to groups_path, notice: "コミュニティを作成しました！"
     else
       render "new"
     end
@@ -31,7 +31,7 @@ class Public::GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to groups_path, notice: "グループを更新しました！"
+      redirect_to groups_path, notice: "コミュニティを更新しました！"
     else
       render "edit"
     end
@@ -39,6 +39,11 @@ class Public::GroupsController < ApplicationController
 
   def destroy
     # 削除機能は実装未定
+  end
+
+  def room
+    @group = Group.find(params[:id])
+    @messages = Message.all.order(created_at: :desc)
   end
 
   private
