@@ -1,10 +1,10 @@
 class Public::MessagesController < ApplicationController
   before_action :authenticate_user!
 
-  def new
-    @group = Group.find(params[:group_id])
-    @message = Message.new
-  end
+  # def new
+  #   @group = Group.find(params[:group_id])
+  #   @message = Message.new
+  # end
 
   def create
     @group = Group.find(params[:group_id])
@@ -16,7 +16,6 @@ class Public::MessagesController < ApplicationController
   end
 
   def destroy
-    p params
     @message = Message.find_by(id: params[:id])
     @message.destroy
     redirect_to request.referer
@@ -25,7 +24,6 @@ class Public::MessagesController < ApplicationController
   private
 
   def message_params
-    p params
     params.require(:message).permit(:message)
   end
 
