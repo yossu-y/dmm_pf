@@ -43,7 +43,7 @@ class Public::GroupsController < ApplicationController
 
   def room
     @group = Group.find(params[:id])
-    @messages = Message.all
+    @messages = Message.all.order(created_at: :desc)
   end
 
   private

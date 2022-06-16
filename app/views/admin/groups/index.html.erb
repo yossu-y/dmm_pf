@@ -19,7 +19,7 @@
           <td><%= group.name %></td>
           <td><%= group.users.count %></td>
           <td><%= group.owner.name %></td>
-          <td><%= link_to "詳細", admin_group_path(@group),  %></td>
+          <td><%= link_to "詳細", admin_group_path(group) %></td>
         </tr>
         <% end %>
       </tbody>
