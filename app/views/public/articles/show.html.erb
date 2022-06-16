@@ -13,10 +13,11 @@
           <td class="body" colspan="3"><%= @article.body %></td>
         </tr>
         <tr>
-          <td colspan="3"><i class="fa-solid fa-tag"></i>
+          <td colspan="3"><i class="fa-solid fa-tags mark"></i>
             <% @article_tags.each do |tag| %>
               <%= link_to tag_search_path(tag_id: tag.id), class: "text-dark" do %>
                 <button type="button" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-tag"></i>
                   <%= tag.name %>
                 </button>
               <% end %>
@@ -44,12 +45,13 @@
               <id class="text-dark"><%= @article.user.screen_name %></id>
             <% end %>
           </td>
-          <td width="38%">
-            <%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
+          <td width="45%">
+            <%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
           </td>
         </tr>
       </table>
       <div id="comments-index">
+        <p>コメント一覧</p>
         <%= render "public/comments/index", article: @article %>
       </div>
       <div class="comments-form" style="text-align: right;">

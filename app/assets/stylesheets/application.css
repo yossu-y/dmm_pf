@@ -266,12 +266,9 @@ footer {
   border: solid 2px #dcdcdc !important;
   border-radius: 5px !important;
   width: 100% !important;
-  height: 40px !important;
+  height: 40px;
 }
 
-.form-body {
-  /*height: 800px !important;*/
-}
 
 .form-content-info {
   width: 100% !important;
@@ -298,7 +295,7 @@ footer {
 
 .group-card {
   margin: 3px !important;
-  width: 20% !important;
+  width: 23% !important;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
@@ -409,36 +406,6 @@ td {
 
 /*検索ボックス*/
 
-/*.search-form{*/
-/*  position: relative;*/
-/*  max-width: 300px;*/
-/*  margin-bottom: 20px;*/
-/*}*/
-/*.search-input{*/
-/*  height: 50px;*/
-/*  padding: 0 10px;*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 0;*/
-/*  border-radius: 2px;*/
-/*  outline: 0;*/
-/*  background: #eee;*/
-/*}*/
-/*.search-tag{*/
-/*  position: absolute;*/
-/*  border-radius: 2px;*/
-/*  outline: 0;*/
-/*}*/
-/*.search-btn{*/
-/*  height: 50px;*/
-/*  position: absolute;*/
-/*  left: 255px;*/
-/*  top: 0;*/
-/*  background: none;*/
-/*  color: #666;*/
-/*  border: none;*/
-/*  font-size: 20px;*/
-/*}*/
 
 
 /*タブ切り替え*/
@@ -453,8 +420,9 @@ td {
   border-left: solid 1px #CCC;
   border-bottom: solid 1px #CCC;
   font-size: 20px !important;
-
+  padding-left: 10px;
 }
+
 .tab:first-child {
   border-left: none;
 }
@@ -482,7 +450,6 @@ td {
 .tag {
   color: black !important;
 }
-
 
 /* ボタン */
 .search-btn {
@@ -581,6 +548,7 @@ td {
   margin: 0 0 5px 0;
   text-align: right;
 }
+
 
 /* admin */
 
