@@ -16,7 +16,7 @@
     </div>
     <div class="text-right" style="margin-top: -20px;">
       <% if message.user == current_user %>
-        <%= link_to "削除", group_message_path(message.group, message), method: :delete, class: "btn btn-sm btn-danger" %>
+        <%= link_to "削除", group_message_path(group, message), method: :delete, class: "btn btn-sm btn-danger" %>
       <% end %>
     </div>
   </div>
