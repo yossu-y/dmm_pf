@@ -82,6 +82,7 @@ class Public::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
+    # ページの変遷先を確認
     redirect_to articles_path, notice: "記事を削除しました！"
   end
 

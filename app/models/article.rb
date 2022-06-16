@@ -12,13 +12,13 @@ class Article < ApplicationRecord
   has_many :tags, through: :article_tags
   has_many :notifications, dependent: :destroy
 
-  validates :title, presence: true, length: {maximum: 50}, on: :publicize
-  validates :body,  presence: true, length: {maximum: 1500}, on: :publicize
+  validates :title, presence: true, on: :publicize
+  validates :body,  presence: true, on: :publicize
 
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
-    validates :title
-    validates :body
+    validates :title, length: {maximum: 50}
+    validates :body, length: {maximum: 1500}
   end
 
   def get_image
