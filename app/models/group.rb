@@ -7,7 +7,6 @@ class Group < ApplicationRecord
   has_many :users, through: :group_users
   belongs_to :message
 
-
   validates :name, presence: true
   validates :introduction, presence: true
 
