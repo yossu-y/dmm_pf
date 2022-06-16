@@ -1,11 +1,12 @@
 class Admin::ArticlesController < ApplicationController
 
   def index
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.all
   end
 
   def show
     @article = Article.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy

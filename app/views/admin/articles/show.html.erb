@@ -4,7 +4,7 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <td colspan="2">
+            <td colspan="2" style="text-align: center:">
               <%= image_tag @article.get_image, class: "my_page_img" %>
             </td>
           </tr>
@@ -13,34 +13,40 @@
             <td><%= @article.id %></td>
           </tr>
           <tr>
-            <td width="30%">投稿者（氏名）</td>
+            <td>投稿者（氏名）</td>
+            <%= link_to admin_user_path(@user) do %>
             <td><%= @article.user.name %></td>
+            <% end %>
           </tr>
           <tr>
-            <td width="30%">投稿者（ニックネーム）</td>
+            <td>投稿者（ニックネーム）</td>
             <td><%= @article.user.screen_name %></td>
           </tr>
           <tr>
-            <td width="30%">記事のタイトル</td>
+            <td>記事のタイトル</td>
             <td><%= @article.title %></td>
           </tr>
           <tr>
-            <td width="30%">記事の内容</td>
+            <td>記事の内容</td>
             <td><%= @article.body %></td>
           </tr>
           <tr>
-            <td width="30%">投稿を削除</td>
+            <td>投稿を削除</td>
             <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
           </tr>
         </tbody>
       </table>
-      <div class="admin-comment">
-        <h4>記事についたコメント</h4>
-        <% @article.comments.each do |comment| %>
-          <%= comment.user.name %>：
-          <%= comment.comment %>
-          <%= link_to "削除する", admin_article_comment_path(comment.article, comment), method: :delete, data: {confirm: "#{comment.user.name}さんのコメントを削除しますか？"} %><br>
-        <% end %>
+      <div class="container px-5 px-sm-0">
+        <div class="row">
+          <div class="admin-comment">
+            <h4>記事についたコメント</h4>
+            <% @article.comments.each do |comment| %>
+              <%= comment.user.name %>：
+              <%= comment.comment %>
+              <%= link_to "削除する", admin_article_comment_path(comment.article, comment), method: :delete, data: {confirm: "#{comment.user.name}さんのコメントを削除しますか？"}, class: "btn btn-danger" %><br>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
