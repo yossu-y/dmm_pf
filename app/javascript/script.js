@@ -22,5 +22,16 @@ $(function() {
   });
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+  const switch_btn = document.getElementById("switch_btn");
+  const search_field = document.getElementById("search_field");
 
+  switch_btn.addEventListener("click", () => {
+    if(getComputedStyle(search_field).display == "none"){
+      search_field.style.display = "block";
+    } else {
+      search_field.style.display = "none";
+    }
+  })
+})
 

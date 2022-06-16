@@ -22,6 +22,10 @@ class User < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visiter_id', dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
+  validates :screen_name, presence: true
+  validates :introduction,  length: {maximum: 1000}
+
+
   def get_profile_image
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"
   end
@@ -68,7 +72,7 @@ class User < ApplicationRecord
       user.name = "guestuser"
     end
   end
-  
+
   # 退会済みユーザーをブロック
   def active_for_authentication?
     super && (is_deleted == false)
