@@ -50,9 +50,11 @@
           </td>
         </tr>
       </table>
-      <div id="comments-index">
-        <p>コメント一覧</p>
-        <%= render "public/comments/index", article: @article %>
+      <button id="switch_btn" class=" btn btn-info">コメント一覧を表示</button>
+      <div id="search_field" style="display: none;">
+        <div id="comments-index">
+          <%= render "public/comments/index", article: @article %>
+        </div>
       </div>
       <div class="comments-form" style="text-align: right;">
         <%= render "public/comments/form", article: @article, comment: @comment %>
@@ -60,3 +62,4 @@
     </div>
   </div>
 </div>
+
