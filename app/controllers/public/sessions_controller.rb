@@ -32,7 +32,7 @@ class Public::SessionsController < Devise::SessionsController
     @user = User.find_by(email: params[:user][:email])
     return if !@user
     if @user.valid_password?(params[:user][:password]) && @user.is_deleted
-      redirect_to new_user_registration_path
+      redirect_to new_user_registration_path, notice: "退会済みのユーザーです。再度新規登録をお願いいたします。"
     end
   end
   # If you have extra params to permit, append them to the sanitizer.

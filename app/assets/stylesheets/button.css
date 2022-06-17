@@ -51,6 +51,7 @@ input.btn-follow:hover, a.btn-follow:hover {
 
 .actions {
   text-align: right !important;
+  margin-top: 30px !important;
 }
 
 .withdraw {

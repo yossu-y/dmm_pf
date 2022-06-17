@@ -105,6 +105,17 @@ footer {
   color: #fff;
 }
 
+#alert {
+  width: 95%;
+  text-align: center;
+  border-radius: 1px;
+  background-color: #dc143c;
+  margin-top: 10px;
+  color: #fff;
+}
+
+
+
 /* ログイン・新規登録 */
 .login-container{
   position: relative;
@@ -260,15 +271,12 @@ footer {
   font-size: 80px;
 }
 
-
-
 .form {
   border: solid 2px #dcdcdc !important;
   border-radius: 5px !important;
   width: 100% !important;
   height: 40px;
 }
-
 
 .form-content-info {
   width: 100% !important;
@@ -499,11 +507,11 @@ td {
   padding: 0;
 }
 
-
 .balloon {
   width: 100%;
   margin: 1.5em 0;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .balloon .faceicon {
@@ -545,12 +553,14 @@ td {
   padding: 0;
 }
 
-
 .draft {
   margin: 0 0 5px 0;
   text-align: right;
 }
 
+.form-group {
+  margin-top: 25px;
+}
 /* admin */
 
 .admin-actions {
