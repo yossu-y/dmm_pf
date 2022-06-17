@@ -92,7 +92,7 @@ class Public::ArticlesController < ApplicationController
   end
 
   def draft
-    @articles = Article.where(is_draft: true).order(update_at: :desc)
+    @articles = Article.where(is_draft: true).order(updated_at: :desc)
   end
 
   private

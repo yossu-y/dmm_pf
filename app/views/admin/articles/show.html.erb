@@ -13,6 +13,10 @@
             <td><%= @article.id %></td>
           </tr>
           <tr>
+            <td width="30%">投稿日</td>
+            <td><%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          </tr>
+          <tr>
             <td width="30%">投稿者（氏名）</td>
             <td><%= @article.user.name %></td>
           </tr>
