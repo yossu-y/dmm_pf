@@ -9,7 +9,7 @@
         </td>
         <td><%= truncate(article.title, length:25) %></td>
         <td width="13%">
-          <%= link_to article_path, class: "text-dark" do %>
+          <%= link_to article_path(article), class: "text-dark" do %>
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
         </td>

@@ -6,7 +6,7 @@
         <tr>
           <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
           <td style="text-align: left;">
-            <%= @user.screen_name %><br>
+            <div style="font-size: 25px"><%= @user.screen_name %><br></div>
             <%= link_to user_followings_path(@user), class: "text-dark" do %>
               <strong><%= @user.followings.count %></strong>フォロー&nbsp;
             <% end %>
@@ -31,7 +31,7 @@
           </td>
         </tr>
       </table>
-      
+
       <ul class="nav nav-tabs" id="tabs">
         <li class="tab tab-active">投稿一覧</li>
         <li class="tab">いいねした投稿一覧</li>
