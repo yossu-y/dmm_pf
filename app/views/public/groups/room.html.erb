@@ -2,8 +2,12 @@
   <div class="row">
     <div class="mx-2"><h3 class="mb-4 mini-title"><%= @group.name %>(<%= @group.users.count %>)のチャットルーム</h3></div>
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
-      <%= render "public/messages/form", group: @group, message: @message %>
-      <%= render "public/messages/index", group: @group %>
+      <div class="message-form">
+        <%= render "public/messages/form", group: @group, message: @message %>
+      </div>
+      <div id="messages-index">
+        <%= render "public/messages/index", group: @group %>
+      </div>
     </div>
   </div>
 </div>
