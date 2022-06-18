@@ -190,6 +190,7 @@ footer {
   padding-top: 35px;
   font-size: 40px;
   font-weight: bolder;
+  font-family: cursive !important;
 }
 
 .form-box input:focus{
