@@ -1,8 +1,8 @@
 class ContactMailer < ApplicationMailer
 
-  def send_mail(contact, user)
+  def send_mail(contact)
     @contact = contact
-    mail to: ENV['TOMAIL'], bcc: ENV["ACTION_MAILER_USER"], subject: "【お問い合わせ】" + @contact.subject_i18n
+    mail to: ENV['TOMAIL'], subject: '【お問い合わせ】' + @contact.subject_i18n
   end
 
 end

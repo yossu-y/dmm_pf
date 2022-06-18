@@ -8,8 +8,6 @@ ja:
         like_group: "コミュニティについて"
         other: "その他お問い合わせ"
 
-
-
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"
