@@ -2,10 +2,11 @@
   <div class="row">
     <div class="mx-3"><h3 class="mb-5 mini-title">投稿編集</h3></div>
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
-        <div class="img">
-          <p>投稿されている画像</p>
-          <%= image_tag @article.get_image, class: "show-img" %>
-        </div>
+      <%= render "layouts/errors", obj: @article %>
+      <div class="img">
+        <p>投稿されている画像</p>
+        <%= image_tag @article.get_image, class: "show-img" %>
+      </div>
       <%= form_with model: @article, local: true do |f| %>
         <div class="form-group">
           <%= f.label :image, "変更する画像" %><br>

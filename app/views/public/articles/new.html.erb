@@ -2,6 +2,7 @@
   <div class="row">
     <div class="mx-5"><h3 class="mb-2 mini-title">新規投稿</h3></div>
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-2">
+      <%= render "layouts/errors", obj: @article %>
       <div class="draft">
         <%= link_to draft_path, class: "text-light" do %>
           <button type="button" class="btn btn-outline-dark">
