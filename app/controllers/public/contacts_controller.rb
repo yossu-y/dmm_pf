@@ -15,27 +15,24 @@ class Public::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    @contact.user = contact_user
     if @contact.save
-      ContactMailer.send_mail(@contact).deliver_now
+      ContactMailer.send_mail(@contact, current_user).deliver_now
       render "thanks"
     else
       render "new"
     end
   end
 
-
   def thanks
     @contact = Contact.new(contact_params)
-    ContactMailer.received_email(@contact).delicer
+    # ContactMailer.received_email(@contact).delicer
     render "thanks"
   end
 
   private
 
   def contact_params
-    params..require(:contact).permit(:name, :email, :subject, :message)
+    params.require(:contact).permit(:name, :email, :subject, :message)
   end
-
 
 end

@@ -9,8 +9,8 @@
       <td><%= @contact.email %></td>
     </tr>
     <tr>
-      <td class="text-center" style="width: 30%;">メールアドレス</td>
-      <td><%= @contact.subject %></td>
+      <td class="text-center" style="width: 30%;">お問い合わせ項目</td>
+      <td><%= @contact.subject_i18n %></td>
     </tr>
     <tr>
       <td class="text-center">メッセージ</td>
@@ -20,7 +20,7 @@
   </tbody>
 </table>
 
-<%= form_with model: @contact, url: contacts_path, method: :post, local: true  do |f| %>
+<%= form_with model: @contact, method: :post, local: true  do |f| %>
   <%= f.hidden_field :name %>
   <%= f.hidden_field :email %>
   <%= f.hidden_field :subject %>
