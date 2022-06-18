@@ -1,4 +1,13 @@
 ja:
+  enums:
+    contact:
+      subject:
+        like_user: "ユーザーについて"
+        like_article: "記事について"
+        like_comment: "記事についたコメントについて"
+        like_group: "コミュニティについて"
+        other: "その他お問い合わせ"
+
   datetime:
     distance_in_words:
       half_a_minute: "30秒前後"

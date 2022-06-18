@@ -186,6 +186,7 @@ footer {
 }
 
 .site-name {
+  font-family: cursive !important;
   padding-top: 35px;
   font-size: 40px;
   font-weight: bolder;
