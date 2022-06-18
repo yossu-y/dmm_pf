@@ -1,11 +1,11 @@
 class Public::ContactsController < ApplicationController
 
   def new
-    # @contact = Contact.new
+    @contact = Contact.new
   end
 
   def confirm
-    # @contact = Contact.new(contact_params)
+    @contact = Contact.new(contact_params)
     if @contact.invalid?
       render "new"
     else
@@ -17,7 +17,7 @@ class Public::ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user = contact_user
     if @contact.save
-      # ContactMailer.send_mail(@contact).deliver_now
+      ContactMailer.send_mail(@contact).deliver_now
       render "thanks"
     else
       render "new"
@@ -27,14 +27,14 @@ class Public::ContactsController < ApplicationController
 
   def thanks
     @contact = Contact.new(contact_params)
-    # ContactMailer.received_email(@contact).delicer
+    ContactMailer.received_email(@contact).delicer
     render "thanks"
   end
 
   private
 
   def contact_params
-    params.permit(:name, :email, :subject, :message)
+    params..require(:contact).permit(:name, :email, :subject, :message)
   end
 
 

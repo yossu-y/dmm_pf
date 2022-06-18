@@ -37,7 +37,7 @@
             コミュニティ参加者：
           </td>
           <td colspan="3">
-            <!-- 表示を10個に制限 -->
+            <!-- 表示を20個に制限 -->
             <% @users.first(20).each do |user| %>
               <%= link_to user_path(user) do %>
                 <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
