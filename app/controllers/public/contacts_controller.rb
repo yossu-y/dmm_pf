@@ -1,11 +1,11 @@
 class Public::ContactsController < ApplicationController
 
   def new
-    @contact = Contact.new
+    # @contact = Contact.new
   end
 
   def confirm
-    @contact = Contact.new(contact_params)
+    # @contact = Contact.new(contact_params)
     if @contact.invalid?
       render "new"
     else

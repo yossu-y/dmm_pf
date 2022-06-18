@@ -55,7 +55,7 @@ class Article < ApplicationRecord
 
   def create_notification_like!(current_user, like_id)
     # すでに「いいね」されているか検索
-    temp = Notification.where(["visiter_id = ? and visited_id = ? and article_id = ? and action = ? ", current_user.id, user_id, id, 'like'])
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and article_id = ? and action = ? ", current_user.id, user_id, id, "like"])
     # いいねされていない場合のみ、通知レコードを作成
     if temp.blank?
       notification = current_user.active_notifications.new(
