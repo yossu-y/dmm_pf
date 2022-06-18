@@ -14,6 +14,7 @@ class Public::GroupsController < ApplicationController
   def show
     @article = Article.new
     @group = Group.find(params[:id])
+    @users = @group.users.all
   end
 
   def edit
@@ -43,7 +44,7 @@ class Public::GroupsController < ApplicationController
 
   def room
     @group = Group.find(params[:id])
-    @messages = Message.all.order(created_at: :desc)
+    @messages = @group.message.all.order(created_at: :desc)
   end
 
   private

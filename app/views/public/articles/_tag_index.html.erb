@@ -6,7 +6,7 @@
         <!-- タグが0の場合は非表示 -->
         <% if list.articles.count != 0 %>
           <%= link_to tag_search_path(tag_id: list.id) do %>
-            <button type="button" class="btn btn-outline-dark">
+            <button type="button" class="btn btn-outline-dark" style="margin-top: 10px">
               <i class="fa-solid fa-tag mark"></i>
               <%= list.name %>
               <%="(#{list.articles.count})" %>

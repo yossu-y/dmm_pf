@@ -25,7 +25,7 @@
 /*}*/
 
 header ul {
-  margin-top: 15px;
+  margin: 15px 0 0 0;
 }
 
 header li:nth-child(5) {
@@ -72,6 +72,7 @@ header li:nth-child(5) {
 
 
 body {
+  font-family: serif !important;
   position: relative;
   min-height: 100vh;
   padding-bottom: 120px;
@@ -93,7 +94,7 @@ footer {
 
 .mini-title {
   margin: 10px !important;
-  font-family: cursive !important;
+  font-size: 35px;
 }
 
 #notice {
@@ -104,6 +105,17 @@ footer {
   margin-top: 10px;
   color: #fff;
 }
+
+#alert {
+  width: 95%;
+  text-align: center;
+  border-radius: 1px;
+  background-color: #dc143c;
+  margin-top: 10px;
+  color: #fff;
+}
+
+
 
 /* ログイン・新規登録 */
 .login-container{
@@ -161,7 +173,6 @@ footer {
   border-radius: 100%;
   border: 1px solid #ee7b1a;
   background-size: cover;
-  font-family: cursive !important;
 }
 
 .form-box input{
@@ -260,15 +271,12 @@ footer {
   font-size: 80px;
 }
 
-
-
 .form {
   border: solid 2px #dcdcdc !important;
   border-radius: 5px !important;
   width: 100% !important;
   height: 40px;
 }
-
 
 .form-content-info {
   width: 100% !important;
@@ -387,9 +395,9 @@ td {
   border: 1px solid #dcdcdc;
 }
 
-.header-icon {
-  height: 10px !important;
-  width: 10px !important;
+.group-user-icon {
+  height: 40px !important;
+  width: 40px !important;
   border: 1px solid #dcdcdc;
 }
 
@@ -442,22 +450,19 @@ td {
   display: block;
 }
 /*hover時のアクション*/
-.tab:hover{
+.tab:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
 
+.tab:action {
+  position: relative;
+  top: 40px;
+}
 .tag {
   color: black !important;
 }
 
-/* ボタン */
-.search-btn {
-  border: 2px solid #CCC !important;
-  background-color: white;
-  border-radius: 5px;
-  width: 60px;
-}
 #back {
   position: fixed;
   right: 20px;
@@ -499,11 +504,11 @@ td {
   padding: 0;
 }
 
-
 .balloon {
   width: 100%;
   margin: 1.5em 0;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .balloon .faceicon {
@@ -545,12 +550,18 @@ td {
   padding: 0;
 }
 
-
 .draft {
   margin: 0 0 5px 0;
   text-align: right;
 }
 
+.form-group {
+  margin-top: 25px;
+}
+
+label {
+  font-size: 20px;
+}
 /* admin */
 
 .admin-actions {

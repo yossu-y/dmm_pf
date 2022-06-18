@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
     patch "users/withdraw" => "users#withdraw"
-    resources :users, only: [:edit, :update, :show] do
+    resources :users, only: [:edit, :update, :show, :index] do
 
       resource :relationship, only: [:create, :destroy]
       get "followings" => "relationships#followings", as: "followings"

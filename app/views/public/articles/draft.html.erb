@@ -9,9 +9,9 @@
             <%= image_tag article.get_image, class: "posting-img" %>
           </td>
           <td><%= truncate(article.title, length:25) %></td>
-          <td width="20%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
+          <td width="22%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
           <td width="12%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>
-          <td width="20%"><%= link_to "下書きを削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
+          <td width="12%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
         </tr>
         <% end %>
       </table>

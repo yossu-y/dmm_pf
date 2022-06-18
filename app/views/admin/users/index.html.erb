@@ -19,12 +19,12 @@
           <td><%= user.name %></td>
           <td><%= user.screen_name %></td>
           <td><%= user.email %></td>
-          <td><%= link_to "詳細", admin_user_path(user) %></td>
+          <td><%= link_to "詳細", admin_user_path(user), class: "btn btn-info" %></td>
           <td style="text-align: center">
             <% if user.active_for_authentication? %>
-              <b class="text-info">有効</b>
+              <b class="text-success">有効</b>
             <% else %>
-              <b class="text-muted">退会</b>
+              <b class="text-danger">退会</b>
             <% end %>
           </td>
         </tr>
