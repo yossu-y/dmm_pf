@@ -1,5 +1,4 @@
-<table>
-  <tbody>
+<table class="table" style="border: none">
     <tr>
       <td class="text-center" style="width: 30%;">お名前</td>
       <td><%= @contact.name %></td>
@@ -16,8 +15,6 @@
       <td class="text-center">メッセージ</td>
       <td style="white-space: pre-wrap;"><%= @contact.message %></td>
     </tr>
-
-  </tbody>
 </table>
 
 <%= form_with model: @contact, method: :post, local: true  do |f| %>
