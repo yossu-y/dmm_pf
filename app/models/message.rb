@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
 
   belongs_to :user
-  has_one :group
+  belongs_to :group
 
   validates :message, presence: true, length: {in: 2..150}
 

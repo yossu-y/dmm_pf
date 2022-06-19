@@ -1,2 +1,2 @@
 $("#message_message").val("")
-$("#messages-index").html("<%= j(render "public/messages/index", group: @message.group) %>")
+$("#messages-index").html("<%= j(render "public/messages/index", messages: @message.group.messages) %>")
