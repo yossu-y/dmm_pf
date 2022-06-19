@@ -19,7 +19,7 @@
           <%= render "public/messages/form", group: @group, message: @message %>
         </div>
         <div id="messages-index">
-          <%= render "public/messages/index", group: @group %>
+          <%= render "public/messages/index", messages: @group.messages %>
         </div>
       </div>
   </div>

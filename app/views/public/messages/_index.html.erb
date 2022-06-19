@@ -1,4 +1,4 @@
-<% @messages.each do |message| %>
+<% messages.each do |message| %>
   <div class="balloon">
     <div class="faceicon">
       <%= link_to user_path(message.user) do %>
@@ -16,7 +16,7 @@
     </div>
     <div class="text-right" style="margin: -20px 5px 5px 0;">
       <% if message.user == current_user %>
-        <%= link_to "削除", group_message_path(group, message), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+        <%= link_to "削除", group_message_path(message.group, message), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
       <% end %>
     </div>
   </div>
