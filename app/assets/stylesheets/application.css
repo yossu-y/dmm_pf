@@ -20,17 +20,12 @@
 
 /*共通*/
 
-/*header li {*/
-/*  margin-top: 15px*/
-/*}*/
-
 header ul {
   margin: 15px 0 0 0;
 }
 
 header li:nth-child(5) {
   margin-top: -12px;
-
 }
 
 .navbar-brand {
@@ -69,7 +64,6 @@ header li:nth-child(5) {
   font-size: 18px;
   background-color: transparent !important;
 }
-
 
 body {
   font-family: serif !important;
@@ -114,8 +108,6 @@ footer {
   margin-top: 10px;
   color: #fff;
 }
-
-
 
 /* ログイン・新規登録 */
 .login-container{
@@ -269,8 +261,7 @@ footer {
 /* トップ画面 */
 
 .top-title {
-  font-family: cursive !important;
-  font-size: 80px;
+  font-size: 40px;
 }
 
 .form {

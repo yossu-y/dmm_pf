@@ -9,7 +9,7 @@
   <div class="row">
     <div class="mx-2"><h3 class="mb-3 mini-title">コミュニティ一覧</h3></div>
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5 list">
-      <% @groups.each do |group| %>
+      <% groups.each do |group| %>
         <div class="group-card">
           <div class="card-img">
             <%= link_to group_path(group.id) do %>

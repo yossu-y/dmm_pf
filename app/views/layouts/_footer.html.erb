@@ -1,28 +1,11 @@
 <div class="container">
-  <div class="row d-flex justify-content-center">
-    <ul>
-      <li class="list-inline-item">
-        <%= link_to do %>
-          <i class="fab fa-instagram-square fa-2x social-btn"></i>
-        <% end %>
-      </li>
-      <li class="list-inline-item">
-        <%= link_to do %>
-          <i class="fab fa-facebook-square fa-2x social-btn"></i>
-        <% end %>
-      </li>
-      <li class="list-inline-item">
-        <%= link_to do %>
-          <i class="fab fa-twitter-square fa-2x social-btn"></i>
-        <% end %>
-      </li>
-    </ul>
+  <div class="row d-flex justify-content-center" style="margin-top: 10px">
+    <%= link_to new_contact_path do %>
+      <i class="fa-solid fa-paper-plane"></i>お問い合わせ
+    <% end %>
   </div>
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center" style="margin-top: 10px">
     <p>© 2022 Leniect</p>
-  </div>
-  <div>
-    <%= link_to "お問い合わせ", new_contact_path %>
   </div>
 </div>
 

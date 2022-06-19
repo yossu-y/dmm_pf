@@ -18,7 +18,7 @@ class Article < ApplicationRecord
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
     validates :title, length: {maximum: 50}
-    validates :body, length: {maximum: 1500}
+    validates :body, length: {in: 2..1500}
   end
 
   def get_image
@@ -37,7 +37,9 @@ class Article < ApplicationRecord
       @article = Article.all
     end
   end
-
+  
+  # タグ機能
+  
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - sent_tags

@@ -28,10 +28,11 @@ Rails.application.routes.draw do
       get "followers" => "relationships#followers", as: "followers"
     end
 
+    get "groups/:id/group_users" => "groups#group_users", as: "group_users"
     get "groups/:id/room" => "groups#room", as: "room"
     resources :groups, only: [:index, :new, :show, :edit, :create, :update, :destroy] do
       resources :messages, only:[:create, :destroy]
-      resource :group_user, onyl: [:create, :destroy]
+      resource :group_user, onyl: [:create, :destroy, :index]
     end
 
     resources :notifications, only: [:index]

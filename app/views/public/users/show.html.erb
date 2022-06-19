@@ -40,13 +40,13 @@
       <!--タブで選択された要素部分-->
       <div class="tabbox-contents">
         <div class="tabbox box-show">
-          <%= render "public/users/article_index", user: @user %>
+          <%= render "public/users/article_index", articles: @articles %>
         </div>
         <div class="tabbox">
-          <%= render "public/users/like", user: @user %>
+          <%= render "public/users/like", like_articles: @like_articles %>
         </div>
         <div class="tabbox">
-          <%= render "public/groups/add_group", user: @user %>
+          <%= render "public/groups/add_group", groups: @groups %>
         </div>
       </div>
     </div>

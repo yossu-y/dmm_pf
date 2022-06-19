@@ -21,13 +21,13 @@
         </tr>
         <tr>
           <td style="border: none;"></td>
-          <td height="30px" style="border: none; margin-top: 40px">
+          <td class="text-left" height="30px" style="border: none; margin-top: 40px">
             <%= form_with model: @contact, method: :post, local: true  do |f| %>
               <%= f.hidden_field :name %>
               <%= f.hidden_field :email %>
               <%= f.hidden_field :subject %>
               <%= f.hidden_field :message %>
-              <%= f.submit "送信", class: "btn btn-info" %>
+              <%= f.submit "内容を確認して送信", class: "push-btn", style: "width: 200px" %>
             <% end %>
           </td>
         </tr>
