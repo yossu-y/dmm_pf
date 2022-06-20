@@ -5,7 +5,7 @@
       <table class="table ">
         <tr>
           <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
-          <td style="text-align: left;">
+          <td height="120px" style="text-align: left;">
             <div style="font-size: 25px"><%= @user.screen_name %><br></div>
             <%= link_to user_followings_path(@user), class: "text-dark" do %>
               <strong><%= @user.followings.count %></strong>フォロー&nbsp;
