@@ -29,7 +29,7 @@ class Public::ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
-    tag_list = params[:article][:tag_name].split("、")
+    tag_list = params[:article][:tag_name].split("、").uniq
     if params[:post]
       if @article.save(context: :publicize)
         @article.save_tag(tag_list)
@@ -49,7 +49,7 @@ class Public::ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    tag_list = params[:article][:tag_name].split("、")
+    tag_list = params[:article][:tag_name].split("、").uniq
     # 下書きを公開
     if params[:publicize_draft]
       #@article.attributes = article_params

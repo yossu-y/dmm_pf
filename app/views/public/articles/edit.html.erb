@@ -4,7 +4,7 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
       <%= render "layouts/errors", obj: @article %>
       <div class="img">
-        <p>投稿されている画像</p>
+        <p>投稿中の画像</p>
         <%= image_tag @article.get_image, class: "show-img" %>
       </div>
       <%= form_with model: @article, local: true do |f| %>

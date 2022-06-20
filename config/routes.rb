@@ -65,12 +65,17 @@ Rails.application.routes.draw do
       resources :comments, only: [:destroy]
     end
 
-    resources :groups, only: [:index, :show, :destroy]
+    get "groups/:id/room" => "groups#room", as: "room"
+    resources :groups, only: [:index, :show, :destroy] do
+      resources :messages, only: [:destroy]
+    end
 
     resources :contacts, only: [:index, :show]
 
-  end
+    get "searches/search" => "searches#search"
 
+
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

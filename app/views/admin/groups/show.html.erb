@@ -32,6 +32,10 @@
             <td>コミュニティを削除</td>
             <td><%= link_to "削除", admin_group_path, method: :delete, data: {confirm: "コミュニティを削除しますか？"}, class: "btn btn-danger" %></td>
           </tr>
+          <tr>
+            <td>チャットルームへ</td>
+            <td><%= link_to "チャット", admin_room_path %></td>
+          </tr>
         </tbody>
       </table>
     </div>

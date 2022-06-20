@@ -1,7 +1,7 @@
 <% if @range == "User" %>
-    <%= render "public/users/index", users: @users %>
+  <%= render "public/users/index", users: @users %>
 <% elsif @range == "Article" %>
-    <%= render "public/articles/index", articles: @articles %>
-<% else %>
-  タグを表示
+  <%= render "public/articles/index", articles: @articles %>
+<% else @range == "Group" %>
+  <%= render "public/groups/index", groups: @groups %>
 <% end %>

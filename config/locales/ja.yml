@@ -27,6 +27,12 @@ ja:
           name: "お名前"
           email: "メールアドレス"
           message: "お問い合わせ内容"
+        user:
+          name: "氏名"
+          screen_name: "ニックネーム"
+          email: "メールアドレス"
+        tag:
+          name: "タグ"
 
   date:
     abbr_day_names:

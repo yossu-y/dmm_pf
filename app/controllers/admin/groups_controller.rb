@@ -8,6 +8,12 @@ class Admin::GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
 
+  def room
+    @group = Group.find(params[:id])
+    @messages = @group.messages.all.order(created_at: :desc)
+    @users = @group.users.all
+  end
+
   def destroy
     @group = Group.find(params[:id])
     if @group.destroy
