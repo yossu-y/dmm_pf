@@ -13,11 +13,13 @@
         <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "password-form" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（確認用）", class: "password-form" %>
         <%= f.submit "新規登録", class: "btn-login" %>
-
       <% end %>
+    </div>
+    <div class="devise-link">
+      <%= render "public/shared/links" %>
     </div>
   </div>
 </div>
 
-<%= render "public/shared/links" %>
+
 

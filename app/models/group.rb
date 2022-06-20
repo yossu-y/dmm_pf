@@ -5,9 +5,10 @@ class Group < ApplicationRecord
   belongs_to :owner, class_name: "User"
   has_many :group_users, dependent: :destroy
   has_many :users, through: :group_users
+  has_many :messages, dependent: :destroy
 
-  validates :name, presence: true
-  validates :introduction, presence: true
+  validates :name, presence: true, length: {maximum: 50}
+  validates :introduction, presence: true, length: {in: 2..1000}
 
   def is_owned_by?(user)
     owner.id == user.id
@@ -18,7 +19,7 @@ class Group < ApplicationRecord
   end
 
   def get_image
-    (image.attached?) ? image : "no_image.jpg"
+    (image.attached?)? image: "no_image.jpeg"
   end
 
 end

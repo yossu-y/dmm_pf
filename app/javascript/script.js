@@ -17,10 +17,16 @@ $(function() {
   $('#back a').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
-    }, 1100);
+    }, 1000);
     event.preventDefault();
   });
 });
 
+//aboutページ（クリックして開くメニュー）
 
+$(document).ready(function() {
+  $('.menu h3').on('click', function() {
+    $(this).next().toggleClass('hidden');
+  });
+});
 

@@ -20,17 +20,12 @@
 
 /*共通*/
 
-/*header li {*/
-/*  margin-top: 15px*/
-/*}*/
-
 header ul {
-  margin-top: 15px;
+  margin: 15px 0 0 0;
 }
 
 header li:nth-child(5) {
   margin-top: -12px;
-
 }
 
 .navbar-brand {
@@ -70,8 +65,8 @@ header li:nth-child(5) {
   background-color: transparent !important;
 }
 
-
 body {
+  font-family: serif !important;
   position: relative;
   min-height: 100vh;
   padding-bottom: 120px;
@@ -93,7 +88,7 @@ footer {
 
 .mini-title {
   margin: 10px !important;
-  font-family: cursive !important;
+  font-size: 35px;
 }
 
 #notice {
@@ -101,6 +96,15 @@ footer {
   text-align: center;
   border-radius: 1px;
   background-color: #ee7b1a;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#alert {
+  width: 95%;
+  text-align: center;
+  border-radius: 1px;
+  background-color: #dc143c;
   margin-top: 10px;
   color: #fff;
 }
@@ -161,7 +165,6 @@ footer {
   border-radius: 100%;
   border: 1px solid #ee7b1a;
   background-size: cover;
-  font-family: cursive !important;
 }
 
 .form-box input{
@@ -175,9 +178,11 @@ footer {
 }
 
 .site-name {
+  font-family: cursive !important;
   padding-top: 35px;
   font-size: 40px;
   font-weight: bolder;
+  font-family: cursive !important;
 }
 
 .form-box input:focus{
@@ -256,21 +261,14 @@ footer {
 /* トップ画面 */
 
 .top-title {
-  font-family: cursive !important;
-  font-size: 80px;
+  font-size: 40px;
 }
-
-
 
 .form {
   border: solid 2px #dcdcdc !important;
   border-radius: 5px !important;
   width: 100% !important;
-  height: 40px !important;
-}
-
-.form-body {
-  /*height: 800px !important;*/
+  height: 40px;
 }
 
 .form-content-info {
@@ -298,7 +296,7 @@ footer {
 
 .group-card {
   margin: 3px !important;
-  width: 20% !important;
+  width: 23% !important;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
@@ -390,9 +388,9 @@ td {
   border: 1px solid #dcdcdc;
 }
 
-.header-icon {
-  height: 10px !important;
-  width: 10px !important;
+.group-user-icon {
+  height: 40px !important;
+  width: 40px !important;
   border: 1px solid #dcdcdc;
 }
 
@@ -409,36 +407,6 @@ td {
 
 /*検索ボックス*/
 
-/*.search-form{*/
-/*  position: relative;*/
-/*  max-width: 300px;*/
-/*  margin-bottom: 20px;*/
-/*}*/
-/*.search-input{*/
-/*  height: 50px;*/
-/*  padding: 0 10px;*/
-/*  position: absolute;*/
-/*  left: 0;*/
-/*  top: 0;*/
-/*  border-radius: 2px;*/
-/*  outline: 0;*/
-/*  background: #eee;*/
-/*}*/
-/*.search-tag{*/
-/*  position: absolute;*/
-/*  border-radius: 2px;*/
-/*  outline: 0;*/
-/*}*/
-/*.search-btn{*/
-/*  height: 50px;*/
-/*  position: absolute;*/
-/*  left: 255px;*/
-/*  top: 0;*/
-/*  background: none;*/
-/*  color: #666;*/
-/*  border: none;*/
-/*  font-size: 20px;*/
-/*}*/
 
 
 /*タブ切り替え*/
@@ -453,8 +421,9 @@ td {
   border-left: solid 1px #CCC;
   border-bottom: solid 1px #CCC;
   font-size: 20px !important;
-
+  padding-left: 10px;
 }
+
 .tab:first-child {
   border-left: none;
 }
@@ -474,23 +443,19 @@ td {
   display: block;
 }
 /*hover時のアクション*/
-.tab:hover{
+.tab:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
 
+.tab:action {
+  position: relative;
+  top: 40px;
+}
 .tag {
   color: black !important;
 }
 
-
-/* ボタン */
-.search-btn {
-  border: 2px solid #CCC !important;
-  background-color: white;
-  border-radius: 5px;
-  width: 60px;
-}
 #back {
   position: fixed;
   right: 20px;
@@ -536,6 +501,7 @@ td {
   width: 100%;
   margin: 1.5em 0;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .balloon .faceicon {
@@ -581,6 +547,39 @@ td {
   margin: 0 0 5px 0;
   text-align: right;
 }
+
+.form-group {
+  margin-top: 25px;
+}
+
+label {
+  font-size: 20px;
+}
+
+/* aboutページの開閉メニュー */
+.menu h3 {
+  margin: 0 0 1em 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5e78c1;
+}
+
+.menu h3:hover {
+  color: #b04188;
+  text-decoration: underline;
+}
+
+.menu ul {
+  margin: 0 0 1em 0;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+
 
 /* admin */
 

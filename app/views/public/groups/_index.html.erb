@@ -12,16 +12,16 @@
       <% groups.each do |group| %>
         <div class="group-card">
           <div class="card-img">
-            <%= link_to group, class: "group_#{group.id}" do %>
+            <%= link_to group_path(group.id) do %>
               <%= image_tag group.get_image, class: "card-img" %>
             <% end %>
           </div>
           <div class="card-body">
             <div class="card-title">
-              <%= group.name %>
+              <%= truncate(group.name, length:15) %>
             </div>
             <div class="card-text">
-              <%= group.users.count %>人が参加中
+              <strong><%= group.users.count %></strong>人が参加中
             </div>
           </div>
         </div>

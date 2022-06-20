@@ -1,0 +1,29 @@
+<div class="container px-4 px-sm-0">
+  <div class="row">
+    <div class="mx-2"><h3 class="mb-4 mini-title">お問い合わせフォーム</h3></div>
+    <div class="col-10 col-md-9 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+      <%= render "layouts/errors", obj: @contact %>
+      <%= form_with model: @contact, url: contacts_confirm_path, method: :post, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "お名前＊" %>
+          <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス＊" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :subject, "項目＊" %><br>
+          <%= f.select :subject, Contact.subjects_i18n.invert, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :message, "お問い合わせ内容＊" %>
+          <%= f.text_area :message, class: "form-control", rows: 20 %>
+        </div>
+        <div class="actions">
+          <%= f.submit "入力内容確認", class: "push-btn", style: "width: 150px" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

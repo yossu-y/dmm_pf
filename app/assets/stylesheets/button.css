@@ -3,7 +3,7 @@ input.btn-login, a.btn-login {
   border: 2px solid #f5f5f5 !important;
   background: #ee7b1a !important;
   margin-top: 15px;
-  padding-top: 8px;
+  padding-top: 8px !important;
   font-weight: bolder;
   color: #fff;
 }
@@ -49,10 +49,47 @@ input.btn-follow:hover, a.btn-follow:hover {
   font-weight: bold;
 }
 
+
+/* 検索ボタン、コメント、メッセージの送信ボタン */
+
+input.push-btn, a.push-btn {
+  border: 2px solid #d3d3d3 !important;
+  box-shadow: 0px 2px #a9a9a9;
+  background-color: #fff;
+  border-radius: 5px;
+  font-weight: bolder;
+  color: black;
+  width: 60px;
+  height: 35px;
+}
+
+input.push-btn:hover, a.push-btn:hover {
+  border: 2px solid #d3d3d3 !important;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+input:hover, a.form-control:hover, a.btn:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+input:active, a:active {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+}
+
 .actions {
   text-align: right !important;
+  margin-top: 30px !important;
 }
 
 .withdraw {
   margin-top: 10px
+}
+
+.devise-link {
+  margin-top: 10px;
+  /*text-align: left;*/
 }

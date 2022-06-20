@@ -8,7 +8,7 @@
           <th>コミュニティ名</th>
           <th style="text-align: left">参加人数</th>
           <th>オーナー</th>
-          <th style="text-align: center;">作成日</th>
+          <th>作成日</th>
           <th>詳細</th>
         </tr>
       </thead>
@@ -20,7 +20,7 @@
           <td><%= group.users.count %></td>
           <td><%= group.owner.name %></td>
           <td><%= group.created_at.strftime("%Y年%m月%d日") %></td>
-          <td><%= link_to "詳細", admin_group_path(group)  %></td>
+          <td><%= link_to "詳細", admin_group_path(group), class: "btn btn-info" %></td>
         </tr>
         <% end %>
       </tbody>

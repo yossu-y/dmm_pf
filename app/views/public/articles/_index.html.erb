@@ -2,7 +2,7 @@
   <div class="row">
     <div class="mx-3"><h3 class="mt-3 mb-3 mini-title">記事一覧</h3></div>
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5 list">
-      <% @articles.each do |article| %>
+      <% articles.each do |article| %>
         <div class="card">
           <div class="card-img">
             <%= link_to article_path(article.id) do %>
@@ -11,11 +11,11 @@
           </div>
           <div class="card-body">
             <div class="card-title">
-              <%= article.title %>
+              <%= truncate(article.title, length:16) %>
             </div>
             <div class="card-icon">
-              <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
-              <%= link_to article.user do %>
+              <%= link_to article.user, class: "text-dark" do %>
+                <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
                 <%= article.user.screen_name %>
               <% end %>
             </div>

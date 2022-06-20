@@ -1,0 +1,27 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-5">
+      <h3 class="mb-3 mini-title">
+        <%= link_to group_users_path, class: "text-dark" do %>
+          <%= @group.name %>(<%= @group.users.count %>)のチャットルーム
+        <% end %>
+      </h3>
+    </div>
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+      <div class="group-user" style="margin: 5px 0 0 25px">
+        <% @users.first(20).each do |user| %>
+          <%= link_to user_path(user) do %>
+            <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+        <div class="message-form">
+          <%= render "public/messages/form", group: @group, message: @message %>
+        </div>
+        <div id="messages-index">
+          <%= render "public/messages/index", messages: @group.messages %>
+        </div>
+      </div>
+  </div>
+</div>

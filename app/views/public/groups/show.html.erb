@@ -4,45 +4,60 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
       <table class="table">
         <tr>
-          <td class="img" colspan="3">
+          <td class="img" colspan="4">
             <%= image_tag @group.get_image, class: "show-img" %>
           </td>
         </tr>
         <tr>
-          <td colspan="3">コミュニティ名：<%= @group.name %></td>
+          <td width="30%">コミュニティ名：</td>
+          <td colspan="3"><%= @group.name %></td>
         </tr>
         <tr>
+          <td width="30%">コミュニティ紹介：</td>
+          <td height="80" colspan="3"><%= @group.introduction %></td>
         </tr>
         <tr>
-          <td height="80" colspan="3">コミュニティ紹介：<%= @group.introduction %></td>
-        </tr>
-        <tr>
-          <td colspan="2">コミュニティ作成者：
+          <td width="30%">コミュニティ作成者：</td>
+          <td colspan="2">
             <%= link_to @group.owner, class: "text-dark", style: "text-decoration:underline" do %>
               <%= image_tag @group.owner.get_profile_image, class: "rounded-circle icon-mini" %>
               <%= @group.owner.screen_name %>
             <% end %>
           </td>
-          <td>
+          <td width="15%">
             <% if @group.is_owned_by?(current_user) %>
             <div class="actions">
-              <%= link_to "コミュニティを編集", edit_group_path(@group), class: "btn btn-info" %>
+              <%= link_to "編集", edit_group_path(@group), class: "btn btn-info" %>
             </div>
             <% end %>
           </td>
         </tr>
+        <tr>
+          <td width="30%">
+            コミュニティ参加者：
+          </td>
+          <td colspan="3">
+            <!-- 表示を20個に制限 -->
+            <% @users.first(20).each do |user| %>
+              <%= link_to user_path(user) do %>
+                <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
       </table>
-
-      <% if @group.is_owned_by?(current_user) %>
-        <!-- コミュニティ編集はテーブルに追加 -->
-      <% else %>
-        <% if @group.includesUser?(current_user) %>
-          <%= link_to "退会する", group_group_user_path(@group), method: :delete %>
-          <p>チャット画面</p>
+      <div style="text-align: right">
+        <% if @group.is_owned_by?(current_user) %>
+          <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-success" %>
         <% else %>
-          <%= link_to "参加する", group_group_user_path(@group), method: :post %>
+          <% if @group.includesUser?(current_user) %>
+            <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-success" %>
+            <%= link_to "退会する", group_group_user_path(@group), method: :delete, data: {confirm: "退会してよろしいですか？"}, class: "btn btn-danger" %>
+          <% else %>
+            <%= link_to "参加する", group_group_user_path(@group), method: :post, data: {confirm: "グループに参加しますか？"}, class: "btn btn-info" %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

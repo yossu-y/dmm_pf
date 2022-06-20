@@ -2,10 +2,11 @@
   <div class="row">
     <div class="mx-5"><h3 class="mb-2 mini-title">新規投稿</h3></div>
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-2">
+      <%= render "layouts/errors", obj: @article %>
       <div class="draft">
         <%= link_to draft_path, class: "text-light" do %>
           <button type="button" class="btn btn-outline-dark">
-            <i class="fa-solid fa-pen-ruler"></i>下書きした記事を更新
+            <i class="fa-solid fa-pen-ruler"></i>下書きを更新
           </button>
         <% end %>
       </div>
@@ -16,23 +17,21 @@
         </div>
         <div class="form-group">
           <%= f.label :title, "タイトル" %><br>
-          <%= f.text_field :title, class: "form" %>
+          <%= f.text_field :title, class: "form form-control" %>
         </div>
         <div class="form-group">
           <%= f.label :body, "記事の内容" %>
           <%= f.rich_text_area :body, class: "form-body" %>
         </div>
         <div class="form-group">
-          <%= f.label "Tag (、を入力することで複数タグが付きます。)" %><br>
-          <%= f.text_field :tag_name, class: "form" %>
+          <%= f.label "タグ (、を入れると複数タグが付きます)" %><br>
+          <%= f.text_field :tag_name, class: "form form-control" %>
         </div>
         <div class="actions">
           <%= f.submit "下書きに保存", :name => "draft", class: "btn btn-light" %>
           <%= f.submit "投稿する", :name => "post", class: "btn btn-info" %>
         </div>
       <% end %>
-
-
     </div>
   </div>
 </div>

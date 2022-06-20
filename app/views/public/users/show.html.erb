@@ -5,8 +5,8 @@
       <table class="table ">
         <tr>
           <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
-          <td style="text-align: left;">
-            <%= @user.screen_name %><br>
+          <td height="120px" style="text-align: left;">
+            <div style="font-size: 25px"><%= @user.screen_name %><br></div>
             <%= link_to user_followings_path(@user), class: "text-dark" do %>
               <strong><%= @user.followings.count %></strong>フォロー&nbsp;
             <% end %>
@@ -31,7 +31,7 @@
           </td>
         </tr>
       </table>
-      
+
       <ul class="nav nav-tabs" id="tabs">
         <li class="tab tab-active">投稿一覧</li>
         <li class="tab">いいねした投稿一覧</li>
@@ -40,13 +40,13 @@
       <!--タブで選択された要素部分-->
       <div class="tabbox-contents">
         <div class="tabbox box-show">
-          <%= render "public/users/article_index", user: @user %>
+          <%= render "public/users/article_index", articles: @articles %>
         </div>
         <div class="tabbox">
-          <%= render "public/users/like", user: @user %>
+          <%= render "public/users/like", like_articles: @like_articles %>
         </div>
         <div class="tabbox">
-          <%= render "public/groups/add_group", user: @user %>
+          <%= render "public/groups/add_group", groups: @groups %>
         </div>
       </div>
     </div>

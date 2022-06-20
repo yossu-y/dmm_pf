@@ -2,17 +2,13 @@
   <div class="row">
     <div class="mx-3"><h3 class="mb-4 mini-title">参加中のコミュニティ</h3></div>
     <table class="table table-hover table-inverse">
-      <% @groups.each do |group| %>
-      <tr>
+      <% groups.each do |group| %>
+      <tr style="cursor: pointer" onclick="window.location.href='<%= group_path(group) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
         <td>
           <%= image_tag group.get_image, class: "posting-img" %>
         </td>
         <td><%= group.name %></td>
-        <td>
-          <%= link_to group_path, class: "text-dark" do %>
-            <button type="button" class="btn btn-outline-dark">詳細</button>
-          <% end %>
-        </td>
+        <td width="15%"><strong><%= group.users.count %></strong>人が参加</td>
       </tr>
       <% end %>
     </table>
