@@ -1,0 +1,35 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <h3 class="title">問い合わせ詳細</h3>
+      <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
+        <tbody>
+          <tr>
+            <td width="30%">問い合わせID</td>
+            <td><%= @contact.id %></td>
+          </tr>
+          <tr>
+            <td width="30%">問い合わせ日</td>
+            <td><%= @contact.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          </tr>
+          <tr>
+            <td width="30%">投稿者（氏名）</td>
+            <td><%= @contact.name %></td>
+          </tr>
+          <tr>
+            <td>投稿者（ニックネーム）</td>
+            <td><%= @contact.name %></td>
+          </tr>
+          <tr>
+            <td>お問い合わせ</td>
+            <td><%= @contact.subject %></td>
+          </tr>
+          <tr>
+            <td width="30%" style="vertical-align: top">記事の内容</td>
+            <td><%= @contact.message %></td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+</div>
+

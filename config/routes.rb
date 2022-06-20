@@ -67,6 +67,8 @@ Rails.application.routes.draw do
 
     resources :groups, only: [:index, :show, :destroy]
 
+    resources :contacts, only: [:index, :show]
+
   end
 
 

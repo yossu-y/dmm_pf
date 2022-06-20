@@ -65,10 +65,16 @@
             <% end %>
           </li>
           <li>
+            <%= link_to admin_contacts_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">問い合わせ一覧</button>
+            <% end %>
+          </li>
+          <li style="margin-top: 1px">
             <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">Log out</button>
             <% end %>
           </li>
+
         <% else %>
           <li>
             <%= link_to root_path, class: "nav-link text-dark" do %>

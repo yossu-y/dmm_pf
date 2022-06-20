@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row d-flex justify-content-center" style="margin-top: 10px">
-    <%= link_to new_contact_path do %>
-      <i class="fa-solid fa-paper-plane"></i>お問い合わせ
+    <% if user_signed_in? %>
+      <%= link_to new_contact_path do %>
+        <i class="fa-solid fa-paper-plane"></i>お問い合わせ
+      <% end %>
     <% end %>
   </div>
   <div class="row d-flex justify-content-center" style="margin-top: 10px">
