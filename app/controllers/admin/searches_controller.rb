@@ -1,13 +1,13 @@
-class Public::SearchesController < ApplicationController
+class Admin::SearchesController < ApplicationController
 
   def search
-    @range = params[:range]
+    @keyword = params[:range]
 
-    if @range == "User"
+    if @keyword == "User"
       @users = User.search(params[:search], params[:keyword])
-    elsif @range == "Article"
+    elsif @keyword == "Article"
       @articles = Article.search(params[:search], params[:keyword])
-    else @range = "Group"
+    else @keyword = "Group"
       @groups = Group.search(params[:search], params[:keyword])
     end
   end

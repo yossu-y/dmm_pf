@@ -2,6 +2,6 @@
   <%= render "public/users/index", users: @users %>
 <% elsif @range == "Article" %>
   <%= render "public/articles/index", articles: @articles %>
-<% else @range == "Tag" %>
-  <%= render "public/articles/tag_index", tag_lists: @tag_lists %>
+<% else @range == "Group" %>
+  <%= render "public/groups/index", groups: @groups %>
 <% end %>
