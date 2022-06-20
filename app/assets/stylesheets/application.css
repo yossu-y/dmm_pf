@@ -14,8 +14,6 @@
  *= require_self
  */
 
-
-
 @import "skippr";
 
 /*共通*/
@@ -290,7 +288,7 @@ footer {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
-  flex-basis: 200px;
+  flex-basis: 190px;
   z-index: 10 !important;
 }
 
@@ -312,9 +310,10 @@ footer {
 }
 
 .card-body {
-  padding: 0px;
+  padding: 5px 0 10px 20px !important;
   margin: 0 !important;
 }
+
 .card-title {
   font-size: 20px;
   margin-bottom: 20px;
@@ -324,12 +323,13 @@ footer {
 .card-item {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 5px;
-  padding-left: 15px;
+  padding-top: 10px;
+  padding-left: 5px;
 }
+
 .card-text {
   text-align: right !important;
-  padding-bottom: 3px;
+  padding: 5px 10px 10px 0 !important;
 }
 
 /*テーブルのレイアウト*/
@@ -352,8 +352,8 @@ td {
 }
 
 .icon-mini {
-  height: 60px !important;
-  width: 60px !important;
+  height: 55px !important;
+  width: 55px !important;
   margin: 1px;
   border: 1px solid #dcdcdc;
 }

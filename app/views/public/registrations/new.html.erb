@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render "layouts/errors", obj: @user %>
 	<div class="login-container">
     <div id="output"></div>
     <div class="avatar">
@@ -6,7 +7,7 @@
     </div>
     <div class="form-box">
       <%= form_with model: @user, url: registration_path(resource_name) do |f| %>
-        <%= render "public/shared/error_messages", resource: resource %>
+        <%#= render "public/shared/error_messages", resource: resource %>
         <%= f.text_field :name, placeholder: "氏名", autofocus: true, class: "name-form" %>
         <%= f.text_field :screen_name, placeholder: "ニックネーム", class: "name-form" %>
         <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "email-form" %>

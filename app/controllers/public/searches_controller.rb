@@ -8,7 +8,7 @@ class Public::SearchesController < ApplicationController
     elsif @range == "Article"
       @articles = Article.search(params[:search], params[:keyword])
     else @range = "Tag"
-      @tags = Tag.search(params[:search], params[:keyword])
+      @tag_lists = Tag.search(params[:search], params[:keyword])
     end
   end
 
