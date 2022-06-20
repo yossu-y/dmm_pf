@@ -30,8 +30,10 @@ class Public::ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、").uniq
+    # ActiveRecord::Base.transaction do
+    flash[:alert] = "タグが10文字以上のものは削除しました" if tag_list.any? { |tag| tag.length >= 10 }
     if params[:post]
-      if @article.save(context: :publicize)
+      if @article.save!(context: :publicize)
         @article.save_tag(tag_list)
         redirect_to articles_path, notice: "記事を投稿しました！"
       else
@@ -45,6 +47,15 @@ class Public::ArticlesController < ApplicationController
         render "new"
       end
     end
+    # end
+  # rescue => e
+      # pp @article
+      # pp e.message
+      # pp @article.errors
+      # @article.errors.add('タグ', e.message )
+
+      # render "new"
+
   end
 
   def update

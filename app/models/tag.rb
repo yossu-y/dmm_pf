@@ -4,6 +4,6 @@ class Tag < ApplicationRecord
   has_many :articles, through: :article_tags
 
   # タグの文字数制限をつけたい
-  # validates :name, uniqueness: true, length: {maximum: 10}
+  # validates :name, length: {maximum: 10}
 
 end
