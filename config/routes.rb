@@ -67,6 +67,8 @@ Rails.application.routes.draw do
 
     resources :groups, only: [:index, :show, :destroy]
 
+    get "searches/search" => "searches#search"
+
   end
 
 

@@ -61,7 +61,7 @@
           </li>
           <li>
             <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
-              <button type="button" class="btn btn-outline-dark">グループ一覧</button>
+              <button type="button" class="btn btn-outline-dark">コミュニティ一覧</button>
             <% end %>
           </li>
           <li>
@@ -69,6 +69,9 @@
               <button type="button" class="btn btn-outline-dark">Log out</button>
             <% end %>
           </li>
+            <div class="admin_search" style="margin: 5px">
+              <%= render "admin/searches/form" %>
+            </div>
         <% else %>
           <li>
             <%= link_to root_path, class: "nav-link text-dark" do %>
