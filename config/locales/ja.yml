@@ -31,6 +31,8 @@ ja:
           name: "氏名"
           screen_name: "ニックネーム"
           email: "メールアドレス"
+        tag:
+          name: "タグ"
 
   date:
     abbr_day_names:
