@@ -101,10 +101,8 @@ footer {
 #alert {
   width: 95%;
   text-align: center;
-  border-radius: 1px;
-  background-color: #dc143c;
   margin-top: 10px;
-  color: #fff;
+  color: #dc143c;
 }
 
 /* ログイン・新規登録 */
@@ -558,7 +556,7 @@ label {
 /* aboutページの開閉メニュー */
 .menu h3 {
   margin: 0 0 1em 0;
-  font-size: 16px;
+  font-size: 19px;
   cursor: pointer;
   color: #5e78c1;
 }
@@ -570,7 +568,6 @@ label {
 
 .menu ul {
   margin: 0 0 1em 0;
-  list-style-type: none;
   font-size: 14px;
 }
 

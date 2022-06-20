@@ -51,7 +51,9 @@ class Article < ApplicationRecord
 
     new_tags.each do |new|
       new_article_tag = Tag.find_or_create_by(name: new)
-      self.tags << new_article_tag
+      if new_article_tag.save
+        self.tags << new_article_tag
+      end
     end
   end
 
