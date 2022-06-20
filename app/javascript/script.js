@@ -17,23 +17,16 @@ $(function() {
   $('#back a').on('click',function(event){
     $('body, html').animate({
       scrollTop:0
-    }, 1100);
+    }, 1000);
     event.preventDefault();
   });
 });
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   const switch_btn = document.getElementById("switch_btn");
-//   const search_field = document.getElementById("search_field");
+//aboutページ（クリックして開くメニュー）
 
-//   switch_btn.addEventListener("click", () => {
-//     if(getComputedStyle(search_field).display == "none"){
-//       search_field.style.display = "block";
-//     } else {
-//       search_field.style.display = "none";
-//     }
-//   })
-// })
-
-
+$(document).ready(function() {
+  $('.menu h3').on('click', function() {
+    $(this).next().toggleClass('hidden');
+  });
+});
 

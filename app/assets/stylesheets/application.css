@@ -555,6 +555,32 @@ td {
 label {
   font-size: 20px;
 }
+
+/* aboutページの開閉メニュー */
+.menu h3 {
+  margin: 0 0 1em 0;
+  font-size: 16px;
+  cursor: pointer;
+  color: #5e78c1;
+}
+
+.menu h3:hover {
+  color: #b04188;
+  text-decoration: underline;
+}
+
+.menu ul {
+  margin: 0 0 1em 0;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
 /* admin */
 
 .admin-actions {

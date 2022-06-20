@@ -22,7 +22,7 @@ class Article < ApplicationRecord
   end
 
   def get_image
-    (image.attached?)? image: "no_image.jpg"
+    (image.attached?)? image: "no_image.jpeg"
   end
 
 
@@ -37,9 +37,9 @@ class Article < ApplicationRecord
       @article = Article.all
     end
   end
-  
+
   # タグ機能
-  
+
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
