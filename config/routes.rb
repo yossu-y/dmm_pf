@@ -67,7 +67,7 @@ Rails.application.routes.draw do
 
     resources :groups, only: [:index, :show, :destroy]
 
-    get "admin/searches/search" => "searches#search"
+    get "searches/search" => "searches#search"
 
   end
 
