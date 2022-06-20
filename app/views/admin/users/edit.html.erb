@@ -11,22 +11,18 @@
           <%= f.label :name, "氏名", class: "col-3" %>
           <%= f.text_field :name, class: "form-control col-6" %>
         </div>
-
         <div class="form-group row">
           <%= f.label :screen_name, "ニックネーム", class: "col-3" %>
           <%= f.text_field :screen_name, class: "form-control col-6" %>
         </div>
-
         <div class="form-group row">
           <%= f.label :email, "メールアドレス", class: "col-3" %>
           <%= f.email_field :email, class: "form-control col-6" %>
         </div>
-
         <div class="form-group row">
           <%= f.label :introduction, "自己紹介", class: "col-3" %>
           <%= f.text_area :introduction, class: "form-control col-6", rows: "15" %>
         </div>
-
         <div class="form-gropu row">
           <%= f.label :is_deleted, '会員ステータス', class: "col-3" %>
           <div class="custom-control custom-radio">
@@ -36,7 +32,6 @@
             <%= f.label :is_active, "退会", class:"text-muted" %>
           </div>
         </div>
-
         <div class="admin-actions">
           <%= f.submit "変更を保存", class: "btn btn-warning col-2 offset-3" %>
           <%= link_to "キャンセル", admin_user_path(@user), class: "btn btn-secondary col-2" %>

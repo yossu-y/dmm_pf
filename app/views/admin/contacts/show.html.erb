@@ -12,16 +12,16 @@
             <td><%= @contact.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
           </tr>
           <tr>
-            <td width="30%">問い合わせ者</td>
+            <td width="30%">問い合わせ名</td>
             <td><%= @contact.name %></td>
           </tr>
           <tr>
-            <td>問い合わせ（）</td>
-            <td><%= @contact.name %></td>
+            <td>問い合わせ（ユーザー）</td>
+            <td><%#= @contact.user.name %></td>
           </tr>
           <tr>
             <td>お問い合わせ項目</td>
-            <td><%= @contact.subject %></td>
+            <td><%= @contact.subject_i18n %></td>
           </tr>
           <tr>
             <td width="30%" style="vertical-align: top">記事の内容</td>

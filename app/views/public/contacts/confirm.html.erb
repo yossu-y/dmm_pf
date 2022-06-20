@@ -22,7 +22,8 @@
         <tr>
           <td style="border: none;"></td>
           <td class="text-left" height="30px" style="border: none; margin-top: 40px">
-            <%= form_with model: @contact, method: :post, local: true  do |f| %>
+            <%= form_with model: @contact, method: :post, local: true do |f| %>
+              <%= f.hidden_field :user_id %>
               <%= f.hidden_field :name %>
               <%= f.hidden_field :email %>
               <%= f.hidden_field :subject %>
