@@ -70,7 +70,10 @@ Rails.application.routes.draw do
       resources :messages, only: [:destroy]
     end
 
+    resources :contacts, only: [:index, :show]
+
     get "searches/search" => "searches#search"
+
 
   end
 

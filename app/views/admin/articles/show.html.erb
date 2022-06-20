@@ -4,7 +4,7 @@
       <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
         <tbody>
           <tr>
-            <td colspan="2">
+            <td colspan="2" style="text-align: center:">
               <%= image_tag @article.get_image, class: "my_page_img" %>
             </td>
           </tr>
@@ -19,13 +19,14 @@
           <tr>
             <td width="30%">投稿者（氏名）</td>
             <td><%= @article.user.name %></td>
+            <% end %>
           </tr>
           <tr>
-            <td width="30%">投稿者（ニックネーム）</td>
+            <td>投稿者（ニックネーム）</td>
             <td><%= @article.user.screen_name %></td>
           </tr>
           <tr>
-            <td width="30%">記事のタイトル</td>
+            <td>記事のタイトル</td>
             <td><%= @article.title %></td>
           </tr>
           <tr>
@@ -33,7 +34,7 @@
             <td><%= @article.body %></td>
           </tr>
           <tr>
-            <td width="30%">投稿を削除</td>
+            <td>投稿を削除</td>
             <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
           </tr>
         </tbody>
