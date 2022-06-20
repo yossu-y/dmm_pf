@@ -1,7 +1,7 @@
 class Public::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :ensure_guest_user, only: [:edit]
+
 
   def index
     @articles = Article.where(is_draft: false).order(updated_at: :desc)
@@ -31,7 +31,7 @@ class Public::ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、").uniq
     # ActiveRecord::Base.transaction do
-    flash[:alert] = "タグが10文字以上のものは削除しました" if tag_list.any? { |tag| tag.length >= 10 }
+    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 10 }
     if params[:post]
       if @article.save!(context: :publicize)
         @article.save_tag(tag_list)
@@ -118,13 +118,6 @@ class Public::ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @user = @article.user
     redirect_to(articles_path) unless @user == current_user
-  end
-
-  def ensure_guest_user
-    @user = User.find(params[:id])
-    if @user.screen_name == "guestuser"
-      redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
-    end
   end
 
 end
