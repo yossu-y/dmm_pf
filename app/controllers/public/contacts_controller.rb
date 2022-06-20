@@ -15,6 +15,7 @@ class Public::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.user_id = current_user.id
     if @contact.save
       # ContactMailer.send_mail(@contact).deliver_now
       redirect_to contacts_thanks_path

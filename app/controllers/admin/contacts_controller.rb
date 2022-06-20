@@ -5,8 +5,8 @@ class Admin::ContactsController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
     @contact = Contact.find(params[:id])
+    @user = User.find(@contact.user_id)
   end
 
 end
