@@ -1,7 +1,7 @@
-<% if @range == "User" %>
+<% if @range == "ユーザー" %>
   <%= render "public/users/index", users: @users %>
-<% elsif @range == "Article" %>
+<% elsif @range == "投稿" %>
   <%= render "public/articles/index", articles: @articles %>
-<% else @range == "Group" %>
+<% else @range == "コミュニティ" %>
   <%= render "public/groups/index", groups: @groups %>
 <% end %>
