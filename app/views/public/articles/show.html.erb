@@ -50,10 +50,9 @@
           </td>
         </tr>
       </table>
-
-        <div id="comments-index">
-          <%= render "public/comments/index", article: @article %>
-        </div>
+      <div id="comments-index">
+        <%= render "public/comments/index", article: @article %>
+      </div>
       <div class="comments-form" style="text-align: right;">
         <%= render "public/comments/form", article: @article, comment: @comment %>
       </div>

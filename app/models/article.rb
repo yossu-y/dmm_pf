@@ -25,7 +25,6 @@ class Article < ApplicationRecord
     (image.attached?)? image: "no_image.jpeg"
   end
 
-
   def liked_by?(user)
     likes.exists?(user_id: user.id)
   end
