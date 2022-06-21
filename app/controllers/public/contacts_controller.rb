@@ -25,6 +25,12 @@ class Public::ContactsController < ApplicationController
     end
   end
 
+  # confirmで内容に間違いがあった場合に投稿フォームに戻る
+  def back
+    @contact = Contact.new(contact_params)
+    render "new"
+  end
+
   def thanks
   end
 

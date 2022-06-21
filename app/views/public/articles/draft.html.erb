@@ -2,19 +2,23 @@
   <div class="row">
     <div class="mx-5"><h3 class="mb-3 mini-title">下書き一覧</h3></div>
     <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
-      <table class="table table-hover table-inverse">
-        <% @articles.each do |article| %>
-        <tr>
-          <td width="10%">
-            <%= image_tag article.get_image, class: "posting-img" %>
-          </td>
-          <td><%= truncate(article.title, length:25) %></td>
-          <td width="22%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
-          <td width="12%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>
-          <td width="12%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
-        </tr>
-        <% end %>
-      </table>
+      <% if @articles.present? %>
+        <table class="table table-hover table-inverse">
+          <% @articles.each do |article| %>
+          <tr>
+            <td width="10%">
+              <%= image_tag article.get_image, class: "posting-img" %>
+            </td>
+            <td><%= truncate(article.title, length:25) %></td>
+            <td width="22%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
+            <td width="12%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>
+            <td width="12%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
+          </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <h4 class="text-center" style="margin-top: 30px">下書きした投稿がありません</h4>
+      <% end %>
     </div>
   </div>
 </div>

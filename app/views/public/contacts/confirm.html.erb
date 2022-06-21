@@ -20,7 +20,16 @@
           <td style="white-space: pre-wrap; border: none;"><%= @contact.message %></td>
         </tr>
         <tr>
-          <td style="border: none;"></td>
+          <td style="border: none;">
+            <%= form_with model: @contact, url: contacts_back_path, method: :post, local: true do |f| %>
+              <%= f.hidden_field :user_id %>
+              <%= f.hidden_field :name %>
+              <%= f.hidden_field :email %>
+              <%= f.hidden_field :subject %>
+              <%= f.hidden_field :message %>
+              <%= f.submit "入力確認に戻る", class: "btn btn-warning", style: "width: 150px" %>
+            <% end %>
+          </td>
           <td class="text-left" height="30px" style="border: none; margin-top: 40px">
             <%= form_with model: @contact, method: :post, local: true do |f| %>
               <%= f.hidden_field :user_id %>
