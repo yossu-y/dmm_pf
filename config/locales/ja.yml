@@ -7,7 +7,10 @@ ja:
         like_comment: "記事についたコメントについて"
         like_group: "コミュニティについて"
         other: "その他お問い合わせ"
-    article:
+      progress_status:
+        unsupported: "未対応"
+        support: "対応中"
+        already_supported: "対応済"
 
   activerecord:
       errors:
