@@ -3,11 +3,11 @@ class Public::SearchesController < ApplicationController
   def search
     @range = params[:range]
 
-    if @range == "User"
+    if @range == "ユーザー"
       @users = User.search(params[:search], params[:keyword])
-    elsif @range == "Article"
+    elsif @range == "投稿"
       @articles = Article.search(params[:search], params[:keyword])
-    else @range = "Group"
+    else @range = "コミュニティ"
       @groups = Group.search(params[:search], params[:keyword])
     end
   end
