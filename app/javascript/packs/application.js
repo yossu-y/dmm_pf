@@ -23,3 +23,7 @@ ActiveStorage.start()
 
 require("trix")
 require("@rails/actiontext")
+
+// jQueryを全体に読み込ませる
+window.$ = jQuery;
+
