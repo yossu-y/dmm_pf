@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="mx-2"><h3 class="mb-4 mini-title">公開された記事</h3></div>
     <div class="col-10 col-md-9 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+      <div class="mx-2"><h3 class="mb-4 mini-title">公開された記事</h3></div>
       <table class="table">
         <tr>
           <td class="img-position" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
@@ -16,7 +16,7 @@
           <td colspan="3"><i class="fa-solid fa-tags mark"></i>
             <% @article_tags.each do |tag| %>
               <%= link_to tag_search_path(tag_id: tag.id), class: "text-dark" do %>
-                <button type="button" class="btn btn-outline-dark">
+                <button type="button" class="btn btn-outline-dark" style="margin: 2px 0 2px 0">
                   <i class="fa-solid fa-tag"></i>
                   <%= tag.name %>
                 </button>

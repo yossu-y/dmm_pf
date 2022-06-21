@@ -2,7 +2,6 @@ class Public::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def index
     @articles = Article.where(is_draft: false).order(updated_at: :desc)
     # タグの多い順に並べ替えたい
@@ -31,7 +30,7 @@ class Public::ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、").uniq
     # ActiveRecord::Base.transaction do
-    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 10 }
+    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     if params[:post]
       if @article.save!(context: :publicize)
         @article.save_tag(tag_list)
@@ -61,6 +60,7 @@ class Public::ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     tag_list = params[:article][:tag_name].split("、").uniq
+    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     # 下書きを公開
     if params[:publicize_draft]
       #@article.attributes = article_params

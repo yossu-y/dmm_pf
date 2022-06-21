@@ -4,6 +4,6 @@ class Tag < ApplicationRecord
   has_many :articles, through: :article_tags
 
   # タグの文字数制限
-  validates :name, length: {maximum: 10}
+  validates :name, length: {maximum: 20}
 
 end
