@@ -9,7 +9,7 @@ class Group < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 50}
   validates :introduction, presence: true, length: {in: 2..1000}
-  
+
   def self.search(search, keyword)
     if search != ""
       @group = Group.where(["name LIKE(?)", "%#{keyword}%"])
