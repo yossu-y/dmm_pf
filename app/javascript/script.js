@@ -13,20 +13,22 @@ $(document).on('turbolinks:load', function() {
 });
 
 // トップの戻るボタン
-$(function() {
-  $('#back a').on('click',function(event){
-    $('body, html').animate({
-      scrollTop:0
-    }, 1000);
-    event.preventDefault();
+document.addEventListener("turbolinks:load", function() {
+  $(function() {
+    $('#back a').on('click',function(event){
+      $('body, html').animate({
+        scrollTop:0
+      }, 1000);
+      event.preventDefault();
+    });
   });
-});
+})
 
 //aboutページ（クリックして開くメニュー）
-
-$(document).ready(function() {
-  $('.menu h3').on('click', function() {
-    $(this).next().toggleClass('hidden');
+document.addEventListener("turbolinks:load", function() {
+  $(document).ready(function() {
+    $('.menu h3').on('click', function() {
+      $(this).next().toggleClass('hidden');
+    });
   });
-});
-
+})
