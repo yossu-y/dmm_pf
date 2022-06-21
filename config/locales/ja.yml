@@ -9,7 +9,7 @@ ja:
         other: "その他お問い合わせ"
       progress_status:
         unsupported: "未対応"
-        supported: "対応中"
+        support: "対応中"
         already_supported: "対応済"
 
   activerecord:

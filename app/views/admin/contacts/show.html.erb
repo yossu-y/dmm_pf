@@ -19,7 +19,7 @@
             <td></td>
           </tr>
           <tr>
-            <td>問い合わせ（ユーザー）</td>
+            <td>問い合わせ（ユーザー名）</td>
             <td><%= @contact.user.screen_name %></td>
             <td></td>
           </tr>
@@ -36,8 +36,8 @@
           <tr>
             <td width="30%" style="vertical-align: top">進捗</td>
             <td colspan="2">
-              <% form_with model: @contact, url: admin_contacts_path(@contact.id), method: :patch, local: true do |f| %>
-                <%= f.select :progress_status, Contact.progress_statuses_i18n.invert %>
+              <%= form_with model: @contact, url: admin_contact_path(@contact), method: :patch, local: true do |f| %>
+                <%= f.select :progress_status, Contact.progress_statuses_i18n.invert, class: "form-control" %>
                 <%= f.submit "更新する" %>
               <% end %>
             </td>
