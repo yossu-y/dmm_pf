@@ -27,6 +27,13 @@
             <td width="30%" style="vertical-align: top">問い合わせ内容</td>
             <td><%= @contact.message %></td>
           </tr>
+          <tr>
+            <td width="30%" style="vertical-align: top">問い合わせ内容</td>
+            <td>
+              <% form_with model: @contact>
+              <%= @contact. %>
+            </td>
+          </tr>
         </tbody>
       </table>
 

@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_040741) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "progress_status"
   end
 
   create_table "group_users", force: :cascade do |t|

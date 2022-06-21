@@ -8,6 +8,7 @@
           <th>問い合わせユーザー</th>
           <th>件名</th>
           <th>問い合わせ日</th>
+          <th>進捗</th>
           <th>詳細</th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <td><%= contact.name %></td>
           <td><%= contact.subject %></td>
           <td><%= contact.created_at.strftime("%Y年%m月%d日") %></td>
+          <td></td>
           <td><%= link_to "詳細", admin_contact_path(contact), class: "btn btn-info" %></td>
         </tr>
         <% end %>
