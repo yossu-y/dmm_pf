@@ -1,2 +1,42 @@
-<h1>Admin::Users#edit</h1>
-<p>Find me in app/views/admin/users/edit.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="mx-3"><h3 class="mb-4 mini-title"><%= @user.name %>さんの情報編集</h3></div>
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+      <%= form_with model: @user, url: admin_user_path(@user), method: :patch do |f| %>
+        <div class="form-group row">
+          <label class="col-3">会員ID</label>
+          <label class="col-3"><%= @user.id %></label>
+        </div>
+        <div class="form-group row">
+          <%= f.label :name, "氏名", class: "col-3" %>
+          <%= f.text_field :name, class: "form-control col-6" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :screen_name, "ニックネーム", class: "col-3" %>
+          <%= f.text_field :screen_name, class: "form-control col-6" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :email, "メールアドレス", class: "col-3" %>
+          <%= f.email_field :email, class: "form-control col-6" %>
+        </div>
+        <div class="form-group row">
+          <%= f.label :introduction, "自己紹介", class: "col-3" %>
+          <%= f.text_area :introduction, class: "form-control col-6", rows: "15" %>
+        </div>
+        <div class="form-gropu row">
+          <%= f.label :is_deleted, "会員ステータス", class: "col-3" %>
+          <div class="custom-control custom-radio">
+            <%= f.radio_button :is_deleted, false %>
+            <%= f.label :is_active, "有効", class:"mr-3 text-muted" %>
+            <%= f.radio_button :is_deleted, true %>
+            <%= f.label :is_active, "退会", class:"text-muted" %>
+          </div>
+        </div>
+        <div class="admin-actions">
+          <%= f.submit "変更を保存", class: "btn btn-warning col-2 offset-3" %>
+          <%= link_to "キャンセル", admin_user_path(@user), class: "btn btn-secondary col-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_11_053251) do
+ActiveRecord::Schema.define(version: 2022_06_21_110211) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2022_06_11_053251) do
   create_table "articles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
-    t.boolean "is_draft"
+    t.boolean "is_draft", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -83,6 +83,17 @@ ActiveRecord::Schema.define(version: 2022_06_11_053251) do
     t.text "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.integer "subject", default: 0, null: false
+    t.text "message", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "progress_status", default: 0
   end
 
   create_table "group_users", force: :cascade do |t|
@@ -103,6 +114,14 @@ ActiveRecord::Schema.define(version: 2022_06_11_053251) do
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.text "message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

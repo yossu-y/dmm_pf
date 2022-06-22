@@ -1,0 +1,8 @@
+<div style="margin-right: 20px">
+  <%= form_with url: admin_searches_search_path, local: true, method: :get, class: "search-form" do |f| %>
+    <%= f.text_field :keyword, placeholder: " 検索ワードを入力", class: "search-input", size: 30, style: "padding: 5px; margin: 3px" %>
+    <%= f.select :range, options_for_select([["User"], ["Article"], ["Group"]]), class: "search-tag", size: "20×20" %>
+    <%= f.submit "検索", class: "push-btn" %>
+  <% end %>
+</div>
+

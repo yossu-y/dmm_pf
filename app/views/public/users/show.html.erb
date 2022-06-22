@@ -1,2 +1,55 @@
-<h1>Public::Users#show</h1>
-<p>Find me in app/views/public/users/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+      <div class="mx-3"><h3 class="mb-2 mini-title">マイページ</h3></div>
+      <table class="table ">
+        <tr>
+          <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
+          <td height="120px" style="text-align: left;">
+            <div style="font-size: 25px"><%= @user.screen_name %><br></div>
+            <%= link_to user_followings_path(@user), class: "text-dark" do %>
+              <strong><%= @user.followings.count %></strong>フォロー&nbsp;
+            <% end %>
+            <%= link_to user_followers_path(@user), class: "text-dark" do %>
+              <strong><%= @user.followers.count %></strong>フォロワー
+            <% end %>
+          </td>
+          <td width="22%">
+            <% if @user.screen_name != "guest" %>
+              <p><%= render "public/relationships/btn", user: @user %></p>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= @user.introduction %></td>
+          <td>
+            <% if @user == current_user %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block" do %>
+                <i class="fas fa-sign-out-alt"></i>ログアウト
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+
+      <ul class="nav nav-tabs" id="tabs">
+        <li class="tab tab-active">投稿一覧</li>
+        <li class="tab">いいねした投稿一覧</li>
+        <li class="tab">参加コミュニティ一覧</li>
+      </ul>
+      <!--タブで選択された要素部分-->
+      <div class="tabbox-contents">
+        <div class="tabbox box-show">
+          <%= render "public/users/article_index", articles: @articles %>
+        </div>
+        <div class="tabbox">
+          <%= render "public/users/like", like_articles: @like_articles %>
+        </div>
+        <div class="tabbox">
+          <%= render "public/groups/add_group", groups: @groups %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

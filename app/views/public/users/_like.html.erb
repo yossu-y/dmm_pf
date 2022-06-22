@@ -1,0 +1,26 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <table class="table table-hover table-inverse" style="margin-top: 15px">
+      <% like_articles.each do |article| %>
+      <tr>
+        <td>
+          <%= image_tag article.get_image, class: "posting-img" %>
+        </td>
+        <td><%= truncate(article.title, length:25) %></td>
+        <td width="13%">
+          <%= link_to article_path(article), class: "text-dark" do %>
+            <button type="button" class="btn btn-outline-dark">詳細</button>
+          <% end %>
+        </td>
+        <td width="10%" id="like_buttons_<%= article.id %>">
+          <%= render "public/likes/btn", article: article %>
+        </td>
+        <td width="10%" class="comments-counter">
+          <%= render "public/comments/counter", article: article %>
+        </td>
+        <td width="20%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

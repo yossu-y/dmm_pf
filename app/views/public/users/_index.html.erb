@@ -1,2 +1,27 @@
-<h1>Public::Users#index</h1>
-<p>Find me in app/views/public/users/index.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+      <table class="table table-hover table-inverse" style="border: 1px solid black; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th colspan="4"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% users.each do |user| %>
+            <tr style="cursor: pointer" onclick="window.location.href='<%= user_path(user) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
+              <td width="15%">
+                <%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %>
+              </td>
+              <td width="15%">
+                <%= user.screen_name %>
+              </td>
+              <td><%= truncate(user.introduction, length:25) %></td>
+              <td width="25%"><%= render "public/relationships/btn", user: user %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

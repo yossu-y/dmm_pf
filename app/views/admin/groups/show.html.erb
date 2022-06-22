@@ -1,2 +1,44 @@
-<h1>Admin::Groups#show</h1>
-<p>Find me in app/views/admin/groups/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <h3 class="title">コミュニティ詳細</h3>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td colspan="2" style="text-align: center;">
+              <%= image_tag @group.get_image, class: "my_page_img" %>
+            </td>
+          </tr>
+          <tr>
+            <td>投稿ID</td>
+            <td><%= @group.id %></td>
+          </tr>
+          <tr>
+            <td>コミュニティ名</td>
+            <td><%= @group.name %></td>
+          </tr>
+          <tr>
+            <td>コミュニティ説明</td>
+            <td><%= @group.introduction %></td>
+          </tr>
+          <tr>
+            <td>参加人数</td>
+            <td><%= @group.users.count %></td>
+          </tr>
+          <tr>
+            <td>コミュニティオーナー</td>
+            <td><%= @group.owner.name %></td>
+          </tr>
+          <tr>
+            <td>コミュニティを削除</td>
+            <td><%= link_to "削除", admin_group_path, method: :delete, data: {confirm: "コミュニティを削除しますか？"}, class: "btn btn-danger" %></td>
+          </tr>
+          <tr>
+            <td>チャットルームへ</td>
+            <td><%= link_to "チャット", admin_room_path %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

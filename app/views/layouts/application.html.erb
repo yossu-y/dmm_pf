@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DmmPf</title>
+    <title>Leniect</title>
+    <%= favicon_link_tag("favicon.ico") %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
 
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/a9c3784845.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render "layouts/header" %>
+    </header>
+    <main>
+      <div class= "row d-flex justify-content-center">
+        <p id="notice" style="margin: 0"><%= notice %></p>
+        <p id="alert" style="margin: 0"><%= alert %></p>
+      </div>
+      <span id="back"><a href= "#">
+        <%= image_tag asset_path("top-back.jpeg"), class: "back-img"%></a>
+      </span>
+        <%= yield %>
+    </main>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
+
 </html>

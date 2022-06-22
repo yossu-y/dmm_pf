@@ -1,29 +1,26 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "publics/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container">
+  <%= render "layouts/errors", obj: @user %>
+	<div class="login-container">
+    <div id="output"></div>
+    <div class="avatar">
+      <h3 class="site-name">Leniect</h3>
+    </div>
+    <div class="form-box">
+      <%= form_with model: @user, url: registration_path(resource_name) do |f| %>
+        <%#= render "public/shared/error_messages", resource: resource %>
+        <%= f.text_field :name, placeholder: "氏名", autofocus: true, class: "name-form" %>
+        <%= f.text_field :screen_name, placeholder: "ニックネーム", class: "name-form" %>
+        <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "email-form" %>
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "password-form" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード（確認用）", class: "password-form" %>
+        <%= f.submit "新規登録", class: "btn-login" %>
+      <% end %>
+    </div>
+    <div class="devise-link">
+      <%= render "public/shared/links" %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "publics/shared/links" %>

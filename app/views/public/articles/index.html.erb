@@ -1,2 +1,17 @@
-<h1>Public::Articles#index</h1>
-<p>Find me in app/views/public/articles/index.html.erb</p>
+<ul class="nav nav-tabs" id="tabs">
+  <li class="tab tab-active"><i class="fa-solid fa-book-open"></i> 記事一覧
+  <li class="tab"><i class="fa-solid fa-people-group"></i> コミュニティ一覧
+  <li class="tab"><i class="fa-solid fa-tags"></i> タグ一覧
+</ul>
+<!--タブで選択された要素部分-->
+<div class="tabbox-contents">
+  <div class="tabbox box-show">
+    <%= render "public/articles/index", articles: @articles %>
+  </div>
+  <div class="tabbox">
+    <%= render "public/groups/index", groups: @groups %>
+  </div>
+  <div class="tabbox">
+    <%= render "public/articles/tag_index", tag_lists: @tag_lists  %>
+  </div>
+</div>

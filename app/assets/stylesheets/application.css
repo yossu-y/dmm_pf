@@ -13,3 +13,573 @@
  *= require_tree .
  *= require_self
  */
+
+@import "skippr";
+
+/*共通*/
+
+header ul {
+  margin: 15px 0 0 0;
+}
+
+header li:nth-child(5) {
+  margin-top: -12px;
+}
+
+.navbar-brand {
+  font-size: 40px !important;
+  color: black !important;
+  font-family: cursive !important;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.navbar-toggler {
+  border: 1px solid #CCC !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-color: #CCC !important;
+}
+
+.search {
+  margin-top: 1px !important;
+  list-style: none;
+  text-align: right;
+  border-top: solid 1px #000000;
+  padding-top: 25px !important;
+}
+
+.n-circle {
+  position: absolute;
+  padding-left: 0.7rem;
+  padding-bottom: 0.5rem;
+  color: #efa04c;
+  font-size: 13px !important;
+}
+
+.mark {
+  font-size: 18px;
+  background-color: transparent !important;
+}
+
+body {
+  font-family: serif !important;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+  word-break: break-all !important;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  bottom: 0;
+  padding-top: 8px;
+  letter-spacing: 2px;
+  color: black;
+  border-top: solid 1px #000000;
+  font-family: cursive !important;
+}
+
+.mini-title {
+  margin: 10px !important;
+  font-size: 35px;
+}
+
+#notice {
+  width: 95%;
+  text-align: center;
+  border-radius: 1px;
+  background-color: #ee7b1a;
+  margin-top: 10px;
+  color: #fff;
+}
+
+#alert {
+  width: 95%;
+  text-align: center;
+  margin-top: 10px;
+  color: #dc143c;
+}
+
+/* ログイン・新規登録 */
+.login-container{
+  position: relative;
+  width: 310px;
+  margin: 80px auto;
+  padding: 20px 40px 40px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+#output{
+  position: absolute;
+  width: 300px;
+  top: -75px;
+  left: 0;
+  color: #fff;
+}
+
+#output.alert-success{
+  background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+  background: rgb(228, 105, 105);
+}
+
+.login-container::before,.login-container::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 3.5px;left: 0;
+  background: #fff;
+  z-index: -1;
+  -webkit-transform: rotateZ(4deg);
+  -moz-transform: rotateZ(4deg);
+  -ms-transform: rotateZ(4deg);
+  border: 1px solid #ccc;
+}
+
+.login-container::after{
+  top: 5px;
+  z-index: -2;
+  -webkit-transform: rotateZ(-2deg);
+  -moz-transform: rotateZ(-2deg);
+  -ms-transform: rotateZ(-2deg);
+}
+
+.avatar{
+  width: 130px;
+  height: 130px;
+  margin: 10px auto 30px;
+  border-radius: 100%;
+  border: 1px solid #ee7b1a;
+  background-size: cover;
+}
+
+.form-box input{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  height:40px;
+  border: 1px solid #ccc;;
+  background: #fafafa;
+  transition:0.2s ease-in-out;
+}
+
+.site-name {
+  font-family: cursive !important;
+  padding-top: 35px;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: cursive !important;
+}
+
+.form-box input:focus{
+  outline: 0;
+  background: #eee;
+}
+
+.name-form {
+  border-radius: 3px;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+
+.email-form {
+  border-radius: 3px;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+
+.password-form {
+  border-radius: 3px;
+  border-top: 0;
+  margin-top: 5px;
+}
+
+.form-box button.login{
+  margin-top:15px;
+  padding: 10px 20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+/*-----------------------------------------------------------*/
+
+/* トップ画面 */
+
+.top-title {
+  font-size: 60px;
+  font-family: cursive !important;
+  margin-top: 60px;
+}
+
+.form {
+  border: solid 2px #dcdcdc !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+  height: 40px;
+}
+
+.form-content-info {
+  width: 100% !important;
+  height: 400px !important;
+  border: solid 2px #dcdcdc !important;
+  border-radius: 5px !important;
+}
+
+/*cardのレイアウト*/
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 3px !important;
+  width: 20% !important;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  flex-basis: 190px;
+  z-index: 10 !important;
+}
+
+.group-card {
+  margin: 3px !important;
+  width: 23% !important;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  flex-basis: 180px;
+  z-index: 10 !important;
+}
+
+.card-img {
+  padding: 1px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #dcdcdc;
+}
+
+.card-body {
+  padding: 5px 0 10px 20px !important;
+  margin: 0 !important;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.card-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.card-text {
+  text-align: right !important;
+  padding: 5px 10px 10px 0 !important;
+}
+
+/*テーブルのレイアウト*/
+
+.table {
+  border-color: #dcdcdc !important;
+  margin-top: 0px;
+}
+
+td {
+  vertical-align: middle !important;
+}
+
+
+/*画像サイズ*/
+.icon {
+  height: 100px !important;
+  width: 100px !important;
+  border: 1px solid #dcdcdc;
+}
+
+.icon-mini {
+  height: 55px !important;
+  width: 55px !important;
+  margin: 1px;
+  border: 1px solid #dcdcdc;
+}
+
+.my_page_img {
+  height: 260px !important;
+  width: 260px !important;
+  border: 1px solid #dcdcdc;
+}
+
+.img-position {
+  text-align: center;
+}
+
+.show-img {
+  height: 300px !important;
+  width: 450px !important;
+  border: 1px solid #dcdcdc;
+}
+
+.article-img {
+  height: 80px !important;
+  width: 80px !important;
+  margin-top: 3px;
+  border-radius: 5px;
+  border: 1px solid #dcdcdc;
+}
+
+.posting-img {
+  width: 60px !important;
+  height: 60px !important;
+  border: 1px solid #dcdcdc;
+}
+
+.group-user-icon {
+  height: 40px !important;
+  width: 40px !important;
+  border: 1px solid #dcdcdc;
+}
+
+.img {
+  text-align: center;
+}
+
+.header-icon {
+  height: 70px !important;
+  width: 70px !important;
+  margin: 1px;
+  border: 1px solid #dcdcdc;
+}
+
+/*検索ボックス*/
+
+
+/*タブ切り替え*/
+.nav-tabs {
+  margin-top: 65px;
+}
+
+.tab {
+  width: 33% !important;
+  padding: 10px;
+  cursor: pointer;
+  border-left: solid 1px #CCC;
+  border-bottom: solid 1px #CCC;
+  font-size: 20px !important;
+  padding-left: 10px;
+}
+
+.tab:first-child {
+  border-left: none;
+}
+/*タブがactiveのときのデザイン*/
+.tab-active {
+  color: #FFF;
+  background: #ee7b1a;
+  transition: all 0.2s ease-in-out;
+}
+/*タブの中身、最初は非表示*/
+.tabbox {
+  display: none;
+  padding: 15px;
+}
+/*box-showクラスのものだけ表示*/
+.box-show {
+  display: block;
+}
+/*hover時のアクション*/
+.tab:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.tab:action {
+  position: relative;
+  top: 40px;
+}
+.tag {
+  color: black !important;
+}
+
+#back {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.back-img {
+  width: 55px;
+  hover: none;
+  border-style: none !important;
+  background-color: transparent !important;
+}
+
+
+/* articles/show */
+.title {
+  font-size: 30px;
+  padding-left: 30px;
+  font-weight: 500;
+}
+
+.body {
+  font-size: 17px;
+  /*height: 500px;*/
+}
+
+.comment-form {
+  margin-top: 70px;
+  text-align: right;
+}
+
+.comment-table {
+  margin-top: 50px !important;
+  margin-bottom: 10px !important;
+}
+
+.comment-table tr td {
+  border: none;
+  padding: 0;
+}
+
+.balloon {
+  width: 100%;
+  margin: 1.5em 0;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.balloon .faceicon {
+  float: left;
+  margin-right: -140px;
+  width: 80px;
+}
+
+.balloon .faceicon img{
+  width: 100%;
+  height: auto;
+}
+
+.balloon .chatting {
+  width: 100%;
+}
+
+.says {
+  display: inline-block;
+  position: relative;
+  margin: 16px 0px 0 90px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #f5f5f5;
+}
+
+.says p {
+  margin: 0;
+  padding: 0;
+}
+
+.draft {
+  margin: 0 0 5px 0;
+  text-align: right;
+}
+
+.form-group {
+  margin-top: 25px;
+}
+
+label {
+  font-size: 20px;
+}
+
+/* aboutページの開閉メニュー */
+.menu h3 {
+  margin: 0 0 1em 0;
+  font-size: 19px;
+  cursor: pointer;
+  color: #5e78c1;
+}
+
+.menu h3:hover {
+  color: #b04188;
+  text-decoration: underline;
+}
+
+.menu ul {
+  margin: 0 0 1em 0;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* admin */
+
+.admin-actions {
+  margin-top: 20px;
+}

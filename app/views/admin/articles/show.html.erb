@@ -1,2 +1,70 @@
-<h1>Admin::Articles#show</h1>
-<p>Find me in app/views/admin/articles/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <h3 class="title">投稿詳細</h3>
+      <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
+        <tbody>
+          <tr>
+            <td colspan="2" style="text-align: center:">
+              <%= image_tag @article.get_image, class: "my_page_img" %>
+            </td>
+          </tr>
+          <tr>
+            <td width="30%">投稿ID</td>
+            <td><%= @article.id %></td>
+          </tr>
+          <tr>
+            <td width="30%">投稿日</td>
+            <td><%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+          </tr>
+          <tr>
+            <td width="30%">投稿者（氏名）</td>
+            <td><%= @article.user.name %></td>
+            <% end %>
+          </tr>
+          <tr>
+            <td>投稿者（ニックネーム）</td>
+            <td><%= @article.user.screen_name %></td>
+          </tr>
+          <tr>
+            <td>記事のタイトル</td>
+            <td><%= @article.title %></td>
+          </tr>
+          <tr>
+            <td width="30%" style="vertical-align: top">記事の内容</td>
+            <td><%= @article.body %></td>
+          </tr>
+          <tr>
+            <td>投稿を削除</td>
+            <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="admin-comment">
+        <h4>記事についたコメント</h4>
+        <% @article.comments.each do |comment| %>
+          <div class="balloon">
+            <div class="faceicon">
+              <%= link_to user_path(comment.user) do %>
+                <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %>
+                <div class="text-dark">&nbsp;<%= comment.user.screen_name %></div>
+              <% end %>
+            </div>
+            <div class="chatting">
+              <div class="says">
+                <p><%= comment.comment %></p>
+              </div>
+            </div>
+            <div class="comment-date" style="margin: 10px 0 0 5px">
+              <%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+            </div>
+            <div class="text-right" style="margin: -15px 5px 5px 0;">
+              <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+

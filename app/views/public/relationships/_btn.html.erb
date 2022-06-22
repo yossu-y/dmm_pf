@@ -1,0 +1,17 @@
+<% if user.email != "guest@example.com" %>
+  <% if current_user != user %>
+    <% if current_user.following?(user) %>
+      <%= link_to user_relationship_path(user.id), class: "btn btn-follow btn-sm btn-block", method: :delete do %>
+        <i class="fa-solid fa-user-check"></i>フォロー中
+      <% end %>
+    <% else %>
+      <%= link_to user_relationship_path(user.id), class: "btn btn-follow btn-sm btn-block", method: :post do %>
+        <i class="fas fa-user-plus"></i>フォロー
+      <% end %>
+    <% end %>
+    <% else %>
+      <%= link_to edit_user_path(user), class: "btn btn-outline-dark btn-block edit_user_#{user.id}" do %>
+        <i class="fas fa-user-cog"></i> 編集
+      <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,35 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5 list">
+      <div class="mx-3"><h3 class="mt-3 mb-3 mini-title">”<%= @tag.name %>” の投稿一覧</h3></div>
+      <% @tag_articles.each do |article| %>
+        <div class="card">
+          <div class="card-img">
+            <%= link_to article_path(article.id) do %>
+              <%= image_tag article.get_image, class: "card-img" %>
+            <% end %>
+          </div>
+          <div class="card-body">
+            <div class="card-title">
+              <%= truncate(article.title, length:16) %>
+            </div>
+            <div class="card-icon">
+              <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
+              <%= link_to article.user, class: "text-dark" do %>
+                <%= article.user.screen_name %>
+              <% end %>
+            </div>
+            <div class="card-item">
+              <span id="like_buttons_<%= article.id %>">
+                <%= render "public/likes/btn", article: article %>&nbsp;
+              </span>
+              <div class="comments-counter">
+                <%= render "public/comments/counter", article: article %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

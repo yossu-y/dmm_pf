@@ -1,0 +1,119 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <!-- ログインしていない状態はトップページにログインしている状態は記事一覧へ -->
+      <% if user_signed_in? %>
+        <a class="navbar-brand" href="/articles"><strong>Leniect</strong></a>
+      <% else %>
+        <a class="navbar-brand" href="/"><strong>Leniect</strong></a>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to about_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-chalkboard mark"></i> about
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to notifications_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <% if unchecked_notifications.any? %>
+                <i class="fa-solid fa-circle n-circle"></i>
+                  <i class="fa-solid fa-bell mark" size="5px"></i>
+                   通知
+                <% else %>
+                  <i class="fa-solid fa-bell mark"></i> 通知
+                <% end %>
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to articles_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-book-open mark"></i> 一覧
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_article_path, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">
+                <i class="fa-solid fa-pen mark"></i> 投稿
+              </button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to user_path(current_user.id), class: "nav-link text-dark" do %>
+              <%= image_tag current_user.get_profile_image, class: "header-icon rounded-circle" %>
+            <% end %>
+          </li>
+
+        <% elsif admin_signed_in? %>
+          <li>
+            <%= link_to admin_articles_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">投稿一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_users_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">会員一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">コミュニティ一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_contacts_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">問い合わせ一覧</button>
+            <% end %>
+          </li>
+          <li style="margin-top: 1px">
+            <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
+              <button type="button" class="btn btn-outline-dark">Log out</button>
+            <% end %>
+          </li>
+            <div class="admin_search" style="margin: 5px">
+              <%= render "admin/searches/form" %>
+            </div>
+        <% else %>
+          <li>
+            <%= link_to root_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">Home</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to about_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">About</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_registration_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">新規登録</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_user_session_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">ログイン</button>
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+<% if user_signed_in? %>
+  <div class="search" style="margin: 5px">
+    <%= render "public/searches/form" %>
+  </div>
+<% end %>
+

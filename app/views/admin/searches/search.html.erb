@@ -1,0 +1,7 @@
+<% if @keyword == "User" %>
+  <%= render "admin/users/index", users: @users %>
+<% elsif @keyword == "Article" %>
+  <%= render "admin/articles/index", articles: @articles %>
+<% else @keyword == "Group" %>
+  <%= render "admin/groups/index", groups: @groups %>
+<% end %>

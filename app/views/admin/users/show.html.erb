@@ -1,2 +1,49 @@
-<h1>Admin::Users#show</h1>
-<p>Find me in app/views/admin/users/show.html.erb</p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <h3 class="title"><%= @user.name %>さんの登録情報</h3>
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %>
+            </td>
+          </tr>
+          <tr>
+            <td>会員ID</td>
+            <td><%= @user.id %></td>
+          </tr>
+          <tr>
+            <td>氏名</td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <td>ニックネーム</td>
+            <td><%= @user.screen_name %></td>
+          </tr>
+          <tr>
+            <td>自己紹介</td>
+            <td><%= @user.introduction %></td>
+          </tr>
+          <tr>
+            <td>メールアドレス</td>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <td>会員ステータス</td>
+            <td>
+              <% if @user.active_for_authentication? %>
+                <b class="text-success">有効</b>
+              <% else %>
+                <b class="text-danger">退会</b>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="edit">
+        <%= link_to "編集する", edit_admin_user_path(@user), class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
+</div>
+
