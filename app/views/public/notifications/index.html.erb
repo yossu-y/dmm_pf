@@ -1,9 +1,15 @@
-<!-- 自分の投稿へのいいね、コメントは表示しない -->
-<% notifications = @notifications.where.not(visiter_id: current_user.id) %>
-  <% if @notifications.exists? %>
-    <% @notifications.each do |notification| %>
-      <%= render "public/notifications/notification", notification: notification %>
-    <% end %>
-  <% else %>
-    <h4 class="text-center" style="margin-top: 30px">通知はありません</h4>
-<% end %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+      <!-- 自分で自分にしたいいね、コメントは表示しない -->
+      <% notifications = @notifications.where.not(visiter_id: current_user.id) %>
+        <% if @notifications.exists? %>
+          <% @notifications.each do |notification| %>
+            <%= render "public/notifications/notification", notification: notification %>
+          <% end %>
+        <% else %>
+          <h4 class="text-center" style="margin-top: 30px">通知はありません</h4>
+      <% end %>
+    </div>
+  </div>
+</div>
