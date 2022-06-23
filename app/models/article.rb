@@ -18,7 +18,7 @@ class Article < ApplicationRecord
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
     validates :title, length: {maximum: 50}
-    validates :body, length: {in: 2..1500}
+    validates :body, length: {in: 2..1000}
   end
 
   def get_image

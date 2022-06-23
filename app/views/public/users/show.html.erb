@@ -1,10 +1,10 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
-      <div class="mx-3"><h3 class="mb-2 mini-title">マイページ</h3></div>
-      <table class="table ">
+    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+      <div class="mx-4 mb-5"><h3 class="mini-title">マイページ</h3></div>
+      <table class="table">
         <tr>
-          <td rowspan="2" width="10%"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
+          <td rowspan="2" width="10%" valign="top"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
           <td height="120px" style="text-align: left;">
             <div style="font-size: 25px"><%= @user.screen_name %><br></div>
             <%= link_to user_followings_path(@user), class: "text-dark" do %>
