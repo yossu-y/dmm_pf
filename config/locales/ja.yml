@@ -25,7 +25,7 @@ ja:
           body: "記事の内容"
         group:
           name: "コミュニティ名"
-          introduction: "コミュニティ概要"
+          introduction: "コミュニティ紹介"
         contact:
           name: "お名前"
           email: "メールアドレス"

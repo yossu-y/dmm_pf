@@ -5,6 +5,10 @@
 
 /*共通*/
 
+header nav {
+  // background-color: #e49e61 !important;
+}
+
 header ul {
   margin: 15px 0 0 0;
 }
@@ -638,6 +642,11 @@ input.push-btn, a.push-btn {
   height: 35px;
 }
 
+.btn {
+  // background-color: #ee7b1a;
+  // color: #ffffff !important;
+}
+
 input.push-btn:hover, a.push-btn:hover {
   border: 2px solid #d3d3d3 !important;
   background-color: #f5f5f5;
@@ -672,4 +681,30 @@ input:active, a:active {
 .devise-link {
   margin-top: 10px;
   /*text-align: left;*/
+}
+
+@media screen and (max-width: 768px) {
+  .my_page_img {
+    height: 200px !important;
+    width: 200px !important;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .mini-title {
+    font-size: 30px;
+  }
+  .my_page_img {
+    height: 150px !important;
+    width: 150px !important;
+  }
+
+  .search-input {
+    width: 200px;
+  }
+
 }
