@@ -17,6 +17,10 @@ class Public::UsersController < ApplicationController
     @like_articles = Article.find(@likes.pluck(:article_id))
     # 参加中のグループ一覧
     @groups = @user.groups.all.order(created_at: :desc)
+    # フォロー中から退会ユーザーを非表示にする
+    @followings = @user.followings.where(is_deleted: false)
+    # フォロワーから退会ユーザーを非表示にする
+    @followers = @user.followers.where(is_deleted: false)
   end
 
   def edit

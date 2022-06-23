@@ -14,7 +14,8 @@ class Public::GroupsController < ApplicationController
   def show
     @article = Article.new
     @group = Group.find(params[:id])
-    @users = @group.users.all
+    # 退会ユーザーを表示しない
+    @group_users = @group.users.where(is_deleted: false)
   end
 
   def edit
@@ -39,18 +40,19 @@ class Public::GroupsController < ApplicationController
   end
 
   def destroy
-    # 削除機能は実装未定
+    # 削除機能は管理者のみ実装
   end
 
   def room
     @group = Group.find(params[:id])
     @messages = @group.messages.all.order(created_at: :desc)
-    @users = @group.users.where(is_deleted: false)
+    # 退会ユーザーは表示しない
+    @group_users = @group.users.where(is_deleted: false)
   end
 
   def group_users
     @group = Group.find(params[:id])
-    @users = @group.users.where(is_deleted: false)
+    @group_users = @group.users.where(is_deleted: false)
   end
 
   private

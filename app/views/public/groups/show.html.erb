@@ -34,11 +34,11 @@
         </tr>
         <tr>
           <td width="30%">
-            参加者(<%= @group.users.count %>人)：
+            参加者(<%= @group_users.count %>人)：
           </td>
           <td colspan="3">
             <!-- 表示を20個に制限 -->
-            <% @users.first(20).each do |user| %>
+            <% @group_users.first(20).each do |user| %>
               <%= link_to user_path(user) do %>
                 <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
               <% end %>
