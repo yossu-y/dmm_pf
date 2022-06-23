@@ -4,8 +4,7 @@ class Public::UsersController < ApplicationController
   before_action :ensure_guest_user, only: [:edit]
 
   def index
-    @users = User.all
-    @user = User.find(params[:id])
+    @users = User.where(is_deleted: false)
   end
 
   def show
