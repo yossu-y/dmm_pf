@@ -1,7 +1,7 @@
 <div class="container px-3 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-auto px-0 my-5">
-      <div class="mx-5"><h3 class="mb-3 mini-title">下書き一覧</h3></div>
+    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
+      <div class="mx-5 mb-5"><h3 class="mini-title">下書き一覧</h3></div>
       <% if @articles.present? %>
         <table class="table table-hover table-inverse">
           <% @articles.each do |article| %>
@@ -12,7 +12,7 @@
             <td><%= truncate(article.title, length:25) %></td>
             <td width="15%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>
             <td width="15%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
-            <td width="20%"><%= "#{time_ago_in_words(article.updated_at)}前に保存" %></td>
+            <td width="15%"><%= "#{time_ago_in_words(article.updated_at)}" %></td>
           </tr>
           <% end %>
         </table>

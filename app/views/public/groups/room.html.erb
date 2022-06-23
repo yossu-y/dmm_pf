@@ -1,15 +1,15 @@
-<div class="container px-4">
+<div class="container px-2">
   <div class="row">
     <div class="col-11 col-md-11 col-sm-11 mx-auto px-0 my-5">
-      <div class="mx-4">
+      <div class="mx-1">
         <h3 class="mb-3 mini-title">
           <%= link_to group_users_path, class: "text-dark" do %>
-            <%= @group.name %>(<%= @group.users.count %>)のチャットルーム
+            <%= @group.name %>(<%= @group_users.count %>)のチャットルーム
           <% end %>
         </h3>
       </div>
       <div class="group-user" style="margin: 5px 0 0 15px">
-        <% @users.first(20).each do |user| %>
+        <% @group_users.first(20).each do |user| %>
           <%= link_to user_path(user) do %>
             <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
           <% end %>

@@ -3,10 +3,10 @@
     <div class="col-11 col-md-11 col-sm-11 mx-auto px-0 my-3">
       <div class="mx-2 mb-3">
         <h3 class="mini-title">
-          ”<%= @group.name %>”(<%= @group.users.count %>)のメンバー
+          ”<%= @group.name %>”(<%= @group_users.count %>)のメンバー
         </h3>
       </div>
-      <% if @group.users.count >= 1 %>
+      <% if @group_users.count >= 1 %>
         <table class="table table-hover table-inverse" style="border: 1px solid black; border-collapse: collapse;">
           <thead>
             <tr>
@@ -14,7 +14,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @users.each do |user| %>
+            <% @group_users.each do |user| %>
               <tr style="cursor: pointer" onclick="window.location.href='<%= user_path(user) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
                 <td width="15%">
                   <%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %>

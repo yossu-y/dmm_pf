@@ -1,6 +1,6 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-3 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
       <!-- 自分で自分にしたいいね、コメントは表示しない -->
       <% notifications = @notifications.where.not(visiter_id: current_user.id) %>
         <% if @notifications.exists? %>
