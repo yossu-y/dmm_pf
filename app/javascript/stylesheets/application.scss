@@ -297,13 +297,13 @@ footer {
 }
 
 .card-body {
-  padding: 5px 0 10px 20px !important;
+  padding: 5px 10px 10px 10px !important;
   margin: 0 !important;
 }
 
 .card-title {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #333;
 }
 
@@ -356,8 +356,8 @@ td {
 }
 
 .show-img {
-  height: 300px !important;
-  width: 450px !important;
+  height: 350px !important;
+  width: 350px !important;
   border: 1px solid #dcdcdc;
 }
 
@@ -465,7 +465,6 @@ td {
 
 .body {
   font-size: 17px;
-  /*height: 500px;*/
 }
 
 .comment-form {
@@ -645,6 +644,11 @@ input.push-btn:hover, a.push-btn:hover {
 }
 
 input:hover, a.form-control:hover, a.btn:hover {
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+.card:hover, .group-card:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }

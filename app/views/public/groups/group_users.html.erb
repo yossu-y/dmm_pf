@@ -1,9 +1,9 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-3">
-      <div class="mx-2">
-        <h3 class="mb-5 mini-title">
-          <%= @group.name %>(<%= @group.users.count %>)のメンバー
+    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-3">
+      <div class="mx-2 mb-5">
+        <h3 class="mini-title">
+          ”<%= @group.name %>”(<%= @group.users.count %>)のメンバー
         </h3>
       </div>
       <% if @group.users.count >= 1 %>

@@ -1,17 +1,23 @@
-<ul class="nav nav-tabs" id="tabs">
-  <li class="tab tab-active"><i class="fa-solid fa-book-open"></i> 記事一覧
-  <li class="tab"><i class="fa-solid fa-people-group"></i> コミュニティ一覧
-  <li class="tab"><i class="fa-solid fa-tags"></i> タグ一覧
-</ul>
-<!--タブで選択された要素部分-->
-<div class="tabbox-contents">
-  <div class="tabbox box-show">
-    <%= render "public/articles/index", articles: @articles %>
-  </div>
-  <div class="tabbox">
-    <%= render "public/groups/index", groups: @groups %>
-  </div>
-  <div class="tabbox">
-    <%= render "public/articles/tag_index", tag_lists: @tag_lists  %>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-2">
+      <ul class="nav nav-tabs" id="tabs">
+        <li class="tab tab-active"><i class="fa-solid fa-book-open"></i> 記事一覧
+        <li class="tab"><i class="fa-solid fa-people-group"></i> コミュニティ一覧
+        <li class="tab"><i class="fa-solid fa-tags"></i> タグ一覧
+      </ul>
+      <!--タブで選択された要素部分-->
+      <div class="tabbox-contents">
+        <div class="tabbox box-show">
+          <%= render "public/articles/index", articles: @articles %>
+        </div>
+        <div class="tabbox">
+          <%= render "public/groups/index", groups: @groups %>
+        </div>
+        <div class="tabbox">
+          <%= render "public/articles/tag_index", tag_lists: @tag_lists  %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

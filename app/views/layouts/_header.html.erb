@@ -56,6 +56,16 @@
 
         <% elsif admin_signed_in? %>
           <li>
+            <%= link_to admin_contacts_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">問い合わせ一覧</button>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
+              <button type="button" class="btn btn-outline-dark">コミュニティ一覧</button>
+            <% end %>
+          </li>
+          <li>
             <%= link_to admin_articles_path, class: "nav-link text-dark" do %>
               <button type="button" class="btn btn-outline-dark">投稿一覧</button>
             <% end %>
@@ -65,24 +75,11 @@
               <button type="button" class="btn btn-outline-dark">会員一覧</button>
             <% end %>
           </li>
-          <li>
-            <%= link_to admin_groups_path, class: "nav-link text-dark" do %>
-              <button type="button" class="btn btn-outline-dark">コミュニティ一覧</button>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to admin_contacts_path, class: "nav-link text-dark" do %>
-              <button type="button" class="btn btn-outline-dark">問い合わせ一覧</button>
-            <% end %>
-          </li>
           <li style="margin-top: 1px">
             <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link text-light" do %>
               <button type="button" class="btn btn-outline-dark">Log out</button>
             <% end %>
           </li>
-            <div class="admin_search" style="margin: 5px">
-              <%= render "admin/searches/form" %>
-            </div>
         <% else %>
           <li>
             <%= link_to root_path, class: "nav-link text-dark" do %>
@@ -111,9 +108,19 @@
   </nav>
 
 </header>
+
+
+<!-- ユーザーログイン時に表示される検索窓 -->
 <% if user_signed_in? %>
   <div class="search" style="margin: 5px">
     <%= render "public/searches/form" %>
   </div>
+<!-- 管理者ログイン時に表示される検索窓 -->
+<% elsif admin_signed_in? %>
+  <div class="search" style="margin: 5px">
+    <%= render "admin/searches/form" %>
+  </div>
+<!-- ログインしていない状態だと表示されない -->
+<% else %>
 <% end %>
 
