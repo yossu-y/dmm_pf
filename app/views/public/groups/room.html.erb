@@ -1,13 +1,13 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-4">
   <div class="row">
-    <div class="mx-5">
-      <h3 class="mb-3 mini-title">
-        <%= link_to group_users_path, class: "text-dark" do %>
-          <%= @group.name %>(<%= @group.users.count %>)のチャットルーム
-        <% end %>
-      </h3>
-    </div>
-    <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+    <div class="col-11 col-md-11 col-sm-11 mx-auto px-0 my-5">
+      <div class="mx-4">
+        <h3 class="mb-3 mini-title">
+          <%= link_to group_users_path, class: "text-dark" do %>
+            <%= @group.name %>(<%= @group.users.count %>)のチャットルーム
+          <% end %>
+        </h3>
+      </div>
       <div class="group-user" style="margin: 5px 0 0 15px">
         <% @users.first(20).each do |user| %>
           <%= link_to user_path(user) do %>
@@ -15,13 +15,12 @@
           <% end %>
         <% end %>
       </div>
-      <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
-        <div class="message-form">
-          <%= render "public/messages/form", group: @group, message: @message %>
-        </div>
-        <div id="messages-index">
-          <%= render "public/messages/index", messages: @group.messages %>
-        </div>
+      <div class="message-form">
+        <%= render "public/messages/form", group: @group, message: @message %>
       </div>
+      <div id="messages-index">
+        <%= render "public/messages/index", messages: @group.messages %>
+      </div>
+    </div>
   </div>
 </div>
