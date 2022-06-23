@@ -1,6 +1,6 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-2">
   <div class="row">
-    <div class="col-10 col-md-10 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-10 col-md-10 col-sm-11 mx-2 mx-auto px-0 my-5">
       <!-- 退会済みのユーザーの場合はマイページを表示しない -->
       <% if @user.is_deleted? %>
         <h4 class="text-center" style="margin-top: 30px">※退会済みのユーザーです。</h4>
@@ -38,7 +38,7 @@
 
         <ul class="nav nav-tabs" id="tabs">
           <li class="tab tab-active">投稿一覧</li>
-          <li class="tab">いいねした投稿一覧</li>
+          <li class="tab">いいね一覧</li>
           <li class="tab">参加コミュニティ一覧</li>
         </ul>
         <!--タブで選択された要素部分-->
