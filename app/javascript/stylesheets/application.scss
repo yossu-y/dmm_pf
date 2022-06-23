@@ -19,7 +19,6 @@ header li:nth-child(5) {
   font-family: cursive !important;
   margin-top: 5px;
   margin-left: 20px;
-
 }
 
 .navbar-toggler {
@@ -58,7 +57,6 @@ body {
   padding-bottom: 120px;
   box-sizing: border-box;
   word-break: break-all !important;
-  background-color: #fffffc;
 }
 
 footer {
@@ -299,7 +297,7 @@ footer {
 }
 
 .card-body {
-  padding: 5px 0 10px 20px !important;
+  padding: 5px 10px 10px 10px !important;
   margin: 0 !important;
 }
 
@@ -329,7 +327,7 @@ footer {
 }
 
 td {
-  vertical-align: middle !important;
+  vertical-align: middle;
 }
 
 

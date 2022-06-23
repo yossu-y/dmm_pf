@@ -33,6 +33,7 @@ ja:
         user:
           name: "氏名"
           screen_name: "ニックネーム"
+          introduction: "自己紹介"
           email: "メールアドレス"
         tag:
           name: "タグ"
