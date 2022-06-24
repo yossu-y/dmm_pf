@@ -1,7 +1,7 @@
-<% if @keyword == "User" %>
+<% if @keyword == "ユーザー" %>
   <%= render "admin/users/index", users: @users %>
-<% elsif @keyword == "Article" %>
+<% elsif @keyword == "投稿" %>
   <%= render "admin/articles/index", articles: @articles %>
-<% else @keyword == "Group" %>
+<% else @keyword == "コミュニティ" %>
   <%= render "admin/groups/index", groups: @groups %>
 <% end %>
