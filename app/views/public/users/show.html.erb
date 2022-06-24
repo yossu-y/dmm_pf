@@ -9,7 +9,7 @@
         <table class="table">
           <tr>
             <td rowspan="2" width="10%" valign="top"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
-            <td height="120px" style="text-align: left;">
+            <td class="follow-count" height="120px" style="text-align: left;">
                 <div style="font-size: 25px"><%= @user.screen_name %><br></div>
                 <%= link_to user_followings_path(@user), class: "text-dark" do %>
                   <strong><%= @followings.count %></strong>フォロー&nbsp;
@@ -18,7 +18,7 @@
                   <strong><%= @followers.count %></strong>フォロワー
                 <% end %>
             </td>
-            <td width="22%">
+            <td class="follow-button" width="20%">
               <% if @user.screen_name != "guest" %>
                 <p><%= render "public/relationships/btn", user: @user %></p>
               <% end %>

@@ -683,19 +683,40 @@ input:active, a:active {
   /*text-align: left;*/
 }
 
+
 @media screen and (max-width: 768px) {
   .my_page_img {
-    height: 200px !important;
-    width: 200px !important;
+    height: 150px !important;
+    width: 150px !important;
   }
-
   .search-input {
     width: 200px;
   }
-
   .show-img {
     height: 300px !important;
     width: 300px !important;
+  }
+  .tab {
+    font-size: 15px !important;
+    text-align: center;
+  }
+  td {
+    padding-left: 0 !important;
+    padding-right: 1 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .follow-button {
+    width: 30%;
+  }
+  .date {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .follow-count {
+    font-size: 13px;
   }
 }
 
@@ -704,8 +725,8 @@ input:active, a:active {
     font-size: 30px;
   }
   .my_page_img {
-    height: 150px !important;
-    width: 150px !important;
+    height: 120px !important;
+    width: 120px !important;
   }
 
   .search-input {
@@ -722,8 +743,5 @@ input:active, a:active {
     width: 65px !important;
   }
 
-  td {
-    padding: 0;
-  }
 
 }

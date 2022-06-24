@@ -12,13 +12,13 @@
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
         </td>
-        <td width="11%" id="like_buttons_<%= article.id %>">
+        <td width="15%" id="like_buttons_<%= article.id %>">
           <%= render "public/likes/btn", article: article %>
         </td>
         <td width="11%" class="comments-counter">
           <%= render "public/comments/counter", article: article %>
         </td>
-        <td width="20%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
+        <td width="17%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
       </tr>
       <% end %>
     </table>
