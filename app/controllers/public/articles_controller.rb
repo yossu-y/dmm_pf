@@ -30,7 +30,7 @@ class Public::ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、").uniq
     # ActiveRecord::Base.transaction do
-    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
+    flash[:alert] = "※20文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     if params[:post]
       if @article.save(context: :publicize)
         @article.save_tag(tag_list)
@@ -94,8 +94,7 @@ class Public::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    # ページの変遷先を確認
-    redirect_to articles_path, notice: "記事を削除しました！"
+    redirect_to user_path(current_user), notice: "記事を削除しました！"
   end
 
   def tag_search

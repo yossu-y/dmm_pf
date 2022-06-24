@@ -15,12 +15,12 @@ class Article < ApplicationRecord
   # リッチテキストはバリテーション不可
 
   validates :title, presence: true, on: :publicize
-  # validates :body,  presence: true, on: :publicize
+  validates :body,  presence: true, on: :publicize
 
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
     validates :title, length: { maximum: 50 }
-    # validates :body, length: { minimum: 10 }
+    validates :body, length: { minimum: 10 }
   end
 
   def get_image
