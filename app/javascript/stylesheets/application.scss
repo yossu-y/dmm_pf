@@ -26,7 +26,7 @@ header li:nth-child(5) {
 }
 
 .navbar-toggler {
-  border: 1px solid #CCC !important;
+  border: 2px solid #CCC !important;
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -692,6 +692,11 @@ input:active, a:active {
   .search-input {
     width: 200px;
   }
+
+  .show-img {
+    height: 300px !important;
+    width: 300px !important;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -705,6 +710,20 @@ input:active, a:active {
 
   .search-input {
     width: 200px;
+  }
+
+  .show-img {
+    height: 250px !important;
+    width: 250px !important;
+  }
+
+  .icon {
+    height: 65px !important;
+    width: 65px !important;
+  }
+
+  td {
+    padding: 0;
   }
 
 }
