@@ -2,16 +2,16 @@
   <div class="row">
     <div class="col-10 col-md-9 col-sm-9 mx-auto px-0 my-2">
       <div class="mx-2 mb-5"><h3 class="mini-title">公開された記事</h3></div>
-      
+
       <table class="table">
         <tr>
-          <td class="img-position" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
+          <td class="text-center" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
         </tr>
         <tr>
-          <td class="title" colspan="3" style="padding-left: 30px"><%= @article.title %></td>
+          <td class="article-title" colspan="3" style="padding-left: 30px"><%= @article.title %></td>
         </tr>
         <tr>
-          <td class="body" colspan="3" style="padding-left: 35px"><%= @article.body %></td>
+          <td class="article-body" colspan="3" style="padding-left: 35px"><%= @article.body %></td>
         </tr>
         <tr>
           <td colspan="3" style="padding-left: 30px"><i class="fa-solid fa-tags mark"></i>
@@ -28,6 +28,7 @@
         <tr>
           <td style="padding-left: 35px" id="like_buttons_<%= @article.id %>">
             <%= render "public/likes/btn", article: @article %>
+            <%= link_to "いいね", like_users_path %>
           </td>
           <td class="comments-counter">
             <%= render "public/comments/counter", article: @article %>
@@ -51,14 +52,14 @@
           </td>
         </tr>
       </table>
-      
+
       <div id="comments-index">
         <%= render "public/comments/index", article: @article %>
       </div>
       <div class="comments-form" style="text-align: right;">
         <%= render "public/comments/form", article: @article, comment: @comment %>
       </div>
-      
+
     </div>
   </div>
 </div>

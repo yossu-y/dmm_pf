@@ -35,7 +35,9 @@ class Public::UsersController < ApplicationController
     end
   end
 
-  
+  def like_users
+    @users = User.where(is_deleted: false)
+  end
 
   def unsubscribe
     @user = current_user

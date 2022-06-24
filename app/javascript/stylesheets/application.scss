@@ -384,10 +384,6 @@ td {
   border: 1px solid #dcdcdc;
 }
 
-.img-position {
-  text-align: center;
-}
-
 .show-img {
   height: 350px !important;
   width: 350px !important;
@@ -482,13 +478,12 @@ td {
 // -------------------------------------------------------
 
 
-.title {
+.article-title {
   font-size: 30px;
-  padding-left: 30px;
   font-weight: 500;
 }
 
-.body {
+.article-body {
   font-size: 17px;
 }
 
