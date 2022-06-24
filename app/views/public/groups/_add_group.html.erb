@@ -7,7 +7,7 @@
           <%= image_tag group.get_image, class: "posting-img" %>
         </td>
         <td><%= group.name %></td>
-        <td width="20%"><strong><%= group.users.count %></strong>人が参加中</td>
+        <td class="date" width="20%"><strong><%= group.users.count %></strong>人が参加中</td>
       </tr>
       <% end %>
     </table>

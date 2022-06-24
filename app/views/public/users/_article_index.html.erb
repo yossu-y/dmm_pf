@@ -7,18 +7,18 @@
           <%= image_tag article.get_image, class: "posting-img" %>
         </td>
         <td><%= truncate(article.title, length:25) %></td>
-        <td width="13%">
+        <td width="12%">
           <%= link_to article_path(article), class: "text-dark" do %>
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
         </td>
-        <td width="15%" id="like_buttons_<%= article.id %>">
+        <td class="like_button" width="11%" id="like_buttons_<%= article.id %>">
           <%= render "public/likes/btn", article: article %>
         </td>
         <td width="11%" class="comments-counter">
           <%= render "public/comments/counter", article: article %>
         </td>
-        <td class="date" width="17%"><%= article.created_at.strftime("%Y年%m月%d日") %></td>
+        <td class="date" width="23%"><%= article.created_at.strftime("%Y年%m月%d日") %></td>
       </tr>
       <% end %>
     </table>

@@ -12,13 +12,15 @@ class Article < ApplicationRecord
   has_many :tags, through: :article_tags
   has_many :notifications, dependent: :destroy
 
+  # リッチテキストはバリテーション不可
+
   validates :title, presence: true, on: :publicize
-  validates :body,  presence: true, on: :publicize
+  # validates :body,  presence: true, on: :publicize
 
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
-    validates :title, length: {maximum: 50}
-    validates :body, length: {in: 2..1000}
+    validates :title, length: { maximum: 50 }
+    # validates :body, length: { minimum: 10 }
   end
 
   def get_image

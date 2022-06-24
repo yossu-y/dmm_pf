@@ -683,6 +683,22 @@ input:active, a:active {
   /*text-align: left;*/
 }
 
+@media screen and (max-width: 1024px) {
+  .my_page_img {
+    height: 200px !important;
+    width: 200px !important;
+  }
+
+  .follow-count {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+  .logout {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 
 @media screen and (max-width: 768px) {
   .my_page_img {
@@ -709,6 +725,9 @@ input:active, a:active {
   .follow-button {
     width: 30%;
   }
+  .like_button {
+    width: 14%;
+  }
   .date {
     display: none;
   }
@@ -727,6 +746,7 @@ input:active, a:active {
   .my_page_img {
     height: 120px !important;
     width: 120px !important;
+    margin-right: 6px !important;
   }
 
   .search-input {
@@ -741,6 +761,12 @@ input:active, a:active {
   .icon {
     height: 65px !important;
     width: 65px !important;
+  }
+  td {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
 

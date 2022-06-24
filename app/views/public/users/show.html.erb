@@ -1,6 +1,6 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
       <!-- 退会済みのユーザーの場合はマイページを表示しない -->
       <% if @user.is_deleted? %>
         <h4 class="text-center" style="margin-top: 30px">※退会済みのユーザーです。</h4>
@@ -28,7 +28,7 @@
             <td><%= @user.introduction %></td>
             <td>
               <% if @user == current_user %>
-                <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block" do %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block logout" do %>
                   <i class="fas fa-sign-out-alt"></i>ログアウト
                 <% end %>
               <% end %>

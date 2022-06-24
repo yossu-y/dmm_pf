@@ -32,7 +32,7 @@ class Public::ArticlesController < ApplicationController
     # ActiveRecord::Base.transaction do
     flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     if params[:post]
-      if @article.save!(context: :publicize)
+      if @article.save(context: :publicize)
         @article.save_tag(tag_list)
         redirect_to articles_path, notice: "記事を投稿しました！"
       else
@@ -54,7 +54,6 @@ class Public::ArticlesController < ApplicationController
       # @article.errors.add('タグ', e.message )
 
       # render "new"
-
   end
 
   def update
