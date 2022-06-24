@@ -1,7 +1,7 @@
-<div class="container px-4 px-sm-0">
+<div class="container px-2">
   <div class="row">
-    <div class="col-10 col-md-10 col-sm-10 mx-auto px-0 my-5">
-      <div class="mx-3"><h3 class="mb-3 mini-title">コミュニティ詳細</h3></div>
+    <div class="col-10 col-md-9 col-sm-9 mx-auto px-0 my-5">
+      <div class="mx-3 mb-5"><h3 class="mini-title">コミュニティ詳細</h3></div>
       <table class="table">
         <tr>
           <td class="img" colspan="4">
@@ -34,11 +34,11 @@
         </tr>
         <tr>
           <td width="30%">
-            参加者(<%= @group.users.count %>人)：
+            参加者(<%= @group_users.count %>人)：
           </td>
           <td colspan="3">
             <!-- 表示を20個に制限 -->
-            <% @users.first(20).each do |user| %>
+            <% @group_users.first(20).each do |user| %>
               <%= link_to user_path(user) do %>
                 <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
               <% end %>

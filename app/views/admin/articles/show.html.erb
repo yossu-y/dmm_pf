@@ -5,7 +5,7 @@
         <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
           <tbody>
             <tr>
-              <td colspan="2" style="text-align: center:">
+              <td colspan="2" style="text-align: center">
                 <%= image_tag @article.get_image, class: "my_page_img" %>
               </td>
             </tr>
@@ -20,7 +20,6 @@
             <tr>
               <td width="30%">投稿者（氏名）</td>
               <td><%= @article.user.name %></td>
-              <% end %>
             </tr>
             <tr>
               <td>投稿者（ニックネーム）</td>
@@ -33,6 +32,14 @@
             <tr>
               <td width="30%" style="vertical-align: top">記事の内容</td>
               <td><%= @article.body %></td>
+            </tr>
+            <tr>
+              <td>記事についたタグ</td>
+              <td>
+                <% @article_tags.each do |tag| %>
+                  <%= tag.name %>,
+                <% end %>
+              </td>
             </tr>
             <tr>
               <td>投稿を削除</td>

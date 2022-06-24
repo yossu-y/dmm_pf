@@ -6,6 +6,7 @@ class Public::ContactsController < ApplicationController
 
   def confirm
     @contact = Contact.new(contact_params)
+    @contact.user_id = current_user.id
     if @contact.invalid?
       render "new"
     else

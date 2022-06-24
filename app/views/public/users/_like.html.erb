@@ -1,24 +1,23 @@
-<div class="container px-2">
+<div class="container px-1">
   <div class="row">
     <table class="table table-hover table-inverse" style="margin-top: 15px">
       <% like_articles.each do |article| %>
       <tr>
-        <td>
+        <td width="15%">
           <%= image_tag article.get_image, class: "posting-img" %>
         </td>
-        <td><%= truncate(article.title, length:25) %></td>
-        <td width="13%">
+        <td width="50%"><%= truncate(article.title, length:25) %></td>
+        <td width="12%">
           <%= link_to article_path(article), class: "text-dark" do %>
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
         </td>
-        <td width="10%" id="like_buttons_<%= article.id %>">
-          <%= render "public/likes/btn", article: article %>
+        <td class="text-center" width="23%">
+          <%= link_to article.user do %>
+            <%= image_tag article.user.get_profile_image, class: "icon-mini rounded-circle text-center" %><br>
+          <% end %>
+          <%= "#{time_ago_in_words(article.updated_at)}前" %>
         </td>
-        <td width="10%" class="comments-counter">
-          <%= render "public/comments/counter", article: article %>
-        </td>
-        <td width="20%"><%= article.updated_at.strftime("%Y年%m月%d日") %></td>
       </tr>
       <% end %>
     </table>

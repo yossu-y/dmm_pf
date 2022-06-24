@@ -1,6 +1,6 @@
-<div class="container px-2">
+<div class="container px-0">
   <div class="row">
-    <div class="col-10 col-md-10 col-sm-11 mx-2 mx-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
       <!-- 退会済みのユーザーの場合はマイページを表示しない -->
       <% if @user.is_deleted? %>
         <h4 class="text-center" style="margin-top: 30px">※退会済みのユーザーです。</h4>
@@ -9,16 +9,16 @@
         <table class="table">
           <tr>
             <td rowspan="2" width="10%" valign="top"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
-            <td height="120px" style="text-align: left;">
+            <td class="follow-count" height="120px" style="text-align: left;">
                 <div style="font-size: 25px"><%= @user.screen_name %><br></div>
                 <%= link_to user_followings_path(@user), class: "text-dark" do %>
-                  <strong><%= @user.followings.count %></strong>フォロー&nbsp;
+                  <strong><%= @followings.count %></strong>フォロー&nbsp;
                 <% end %>
                 <%= link_to user_followers_path(@user), class: "text-dark" do %>
-                  <strong><%= @user.followers.count %></strong>フォロワー
+                  <strong><%= @followers.count %></strong>フォロワー
                 <% end %>
             </td>
-            <td width="22%">
+            <td class="follow-button" width="20%">
               <% if @user.screen_name != "guest" %>
                 <p><%= render "public/relationships/btn", user: @user %></p>
               <% end %>
@@ -28,7 +28,7 @@
             <td><%= @user.introduction %></td>
             <td>
               <% if @user == current_user %>
-                <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block" do %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block logout" do %>
                   <i class="fas fa-sign-out-alt"></i>ログアウト
                 <% end %>
               <% end %>

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
     get "searches/search" => "searches#search", as: "search"
 
+    get "contacts/confirm" => "contacts#confirm_error"
     post "contacts/confirm" => "contacts#confirm"
     get "contacts/thanks" => "contacts#thanks"
     post "contacts/back" => "contacts#back"
@@ -68,7 +69,7 @@ Rails.application.routes.draw do
 
     get "groups/:id/room" => "groups#room", as: "room"
     resources :groups, only: [:index, :show, :destroy] do
-      resources :messages, only: [:destroy]
+      resources :messages, only: [:create, :destroy]
     end
 
     resources :contacts, only: [:index, :show, :update]
