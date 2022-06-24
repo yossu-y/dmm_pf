@@ -69,7 +69,7 @@ Rails.application.routes.draw do
 
     get "groups/:id/room" => "groups#room", as: "room"
     resources :groups, only: [:index, :show, :destroy] do
-      resources :messages, only: [:destroy]
+      resources :messages, only: [:create, :destroy]
     end
 
     resources :contacts, only: [:index, :show, :update]
