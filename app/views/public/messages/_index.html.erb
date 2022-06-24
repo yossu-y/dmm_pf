@@ -1,5 +1,7 @@
 <% messages.each do |message| %>
+
   <div class="balloon">
+
     <div class="faceicon">
       <%= link_to user_path(message.user) do %>
         <%= image_tag message.user.get_profile_image, class: "icon-mini rounded-circle" %>
@@ -19,5 +21,7 @@
         <%= link_to "削除", group_message_path(message.group, message), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
       <% end %>
     </div>
+
   </div>
+
 <% end %>

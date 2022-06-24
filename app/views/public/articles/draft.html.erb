@@ -10,6 +10,7 @@
               <%= image_tag article.get_image, class: "posting-img" %>
             </td>
             <td>
+              <!-- 15文字まで表示させる -->
               <strong><%= truncate(article.title, length:15) %></strong>
             </td>
             <td width="15%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>

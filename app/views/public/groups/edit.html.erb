@@ -3,6 +3,7 @@
     <div class="col-10 col-md-10 col-sm-10 mx-auto px-0 my-5">
       <div class="mx-3"><h3 class="mb-3 mini-title">コミュニティ編集</h3></div>
       <%= render "layouts/errors", obj: @group %>
+
       <%= form_with model: @group, local: true do |f| %>
         <div class="form-group">
           <%= f.label :コミュニティ画像 %><br>
@@ -21,6 +22,7 @@
           <%= f.submit :コミュニテイを更新, class: "btn btn-info" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

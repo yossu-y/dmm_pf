@@ -271,6 +271,8 @@ footer {
 .list {
   display: flex;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
@@ -279,7 +281,7 @@ footer {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px #ccc;
-  flex-basis: 190px;
+  flex-basis: 180px;
   z-index: 10 !important;
 }
 
@@ -291,6 +293,7 @@ footer {
   box-shadow: 0 2px 5px #ccc;
   flex-basis: 180px;
   z-index: 10 !important;
+  padding-bottom: 5px;
 }
 
 .card-img {
@@ -427,6 +430,8 @@ td {
 .tabbox {
   display: none;
   padding: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 /*box-showクラスのものだけ表示*/
 .box-show {
@@ -552,7 +557,6 @@ label {
   cursor: pointer;
   color: #5e78c1;
 }
-
 .menu h3:hover {
   color: #b04188;
   text-decoration: underline;
@@ -567,13 +571,11 @@ label {
   display: none;
 }
 
-
 /* admin */
 
 .admin-actions {
   margin-top: 20px;
 }
-
 
 // ボタン
 
@@ -683,6 +685,9 @@ input:active, a:active {
   /*text-align: left;*/
 }
 
+
+
+
 @media screen and (max-width: 1024px) {
   .my_page_img {
     height: 200px !important;
@@ -698,7 +703,6 @@ input:active, a:active {
     margin-right: 0 !important;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .my_page_img {

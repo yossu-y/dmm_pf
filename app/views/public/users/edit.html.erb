@@ -3,34 +3,31 @@
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-auto px-0 my-5">
       <div class="mx-3"><h3 class="mb-5 mini-title">プロフィール編集</h3></div>
       <%= render "layouts/errors", obj: @user %>
-      <%= form_with model: @user, local: true do |f| %>
 
+      <%= form_with model: @user, local: true do |f| %>
         <div class="img-position">
           <%= f.label :登録中の画像 %><br>
           <%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %>
         </div>
-
         <div class="form-group">
           <%= f.label :変更する画像 %><br>
           <%= f.file_field :profile_image, accept: "image/*" %>
         </div>
-
         <div class="form-group">
           <%= f.label :screen_name, "ニックネーム" %><br>
           <%= f.text_field :screen_name, class: "form form-control" %>
         </div>
-
         <div class="form-group">
           <%= f.label :introduction, "自己紹介" %><br>
           <%= f.text_area :introduction, class: "form-content-info form-control" %>
         </div>
-
         <div class="actions">
           <%= link_to "退会", unsubscribe_path, class: "btn btn-danger" %>
           <%= link_to "キャンセル", user_path(current_user), class: "btn btn-light back" %>
           <%= f.submit "変更する", class: "btn btn-info" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>
