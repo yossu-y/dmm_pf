@@ -1,6 +1,6 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-3">
   <div class="row">
-    <div class="col-10 col-md-9 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+    <div class="col-6 col-md-9 col-sm-10 mx-auto px-0 my-2">
       <div class="mx-2 mb-5"><h3 class="mini-title">公開された記事</h3></div>
       <table class="table">
         <tr>
@@ -10,7 +10,7 @@
           <td class="title" colspan="3" style="padding-left: 30px"><%= @article.title %></td>
         </tr>
         <tr>
-          <td class="body" colspan="3" style="padding-left: 30px"><%= @article.body %></td>
+          <td class="body" colspan="3" style="padding-left: 35px"><%= @article.body %></td>
         </tr>
         <tr>
           <td colspan="3" style="padding-left: 30px"><i class="fa-solid fa-tags mark"></i>
@@ -25,7 +25,7 @@
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 50px" id="like_buttons_<%= @article.id %>">
+          <td style="padding-left: 35px" id="like_buttons_<%= @article.id %>">
             <%= render "public/likes/btn", article: @article %>
           </td>
           <td class="comments-counter">
