@@ -8,7 +8,7 @@
           <%= image_tag article.get_image, class: "posting-img" %>
         </td>
         <td><%= truncate(article.title, length:25) %></td>
-        <td width="12%">
+        <td width="13%">
           <%= link_to article_path(article), class: "text-dark" do %>
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
