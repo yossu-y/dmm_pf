@@ -4,7 +4,7 @@
       <div class="mx-5"><h3 class="mb-2 mini-title">新規投稿</h3></div>
       <%= render "layouts/errors", obj: @article %>
       <div class="draft">
-        <%= link_to draft_path, class: "text-light" do %>
+        <%= link_to draft_path(current_user.id), class: "text-light" do %>
           <button type="button" class="btn btn-outline-dark">
             <i class="fa-solid fa-pen-ruler"></i>下書きを更新
           </button>
