@@ -41,7 +41,7 @@ class Public::ArticlesController < ApplicationController
       end
     else
       if @article.update(is_draft: true)
-        redirect_to draft_path, notice: "下書きに保存しました！"
+        redirect_to draft_path(current_user.id), notice: "下書きに保存しました！"
       else
         render "new"
       end
@@ -84,7 +84,7 @@ class Public::ArticlesController < ApplicationController
     else
       if @article.update(article_params)
         @article.save_tag(tag_list)
-        redirect_to draft_path, notice: "下書きを更新しました"
+        redirect_to draft_path(current_user.id), notice: "下書きを更新しました"
       else
         render "edit"
       end
@@ -102,7 +102,10 @@ class Public::ArticlesController < ApplicationController
     @tag_articles = @tag.articles.all
   end
 
-  
+  def draft
+    @user = User.find(params[:id])
+    @articles = @user.articles.where(is_draft: true).order(updated_at: :desc)
+  end
 
   private
 
