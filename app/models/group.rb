@@ -8,7 +8,7 @@ class Group < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 50}
-  validates :introduction, presence: true, length: {in: 2..1000}
+  validates :introduction, presence: true, length: {in: 10..800}
 
   def self.search(search, keyword)
     if search != ""
