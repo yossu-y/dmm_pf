@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
       <h3 class="title">投稿詳細</h3>
+
         <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
           <tbody>
             <tr>
@@ -43,10 +44,13 @@
             </tr>
             <tr>
               <td>投稿を削除</td>
-              <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
+              <td>
+                <%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %>
+              </td>
             </tr>
           </tbody>
         </table>
+
         <div class="admin-comment">
           <h4>記事についたコメント</h4>
           <% @article.comments.each do |comment| %>
@@ -71,7 +75,7 @@
             </div>
           <% end %>
         </div>
+
     </div>
   </div>
 </div>
-

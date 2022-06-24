@@ -1,6 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
+
       <div class="text-center">
         <h4><strong>本当に退会しますか？</stroug></h4>
         <p>
@@ -13,6 +14,7 @@
         <%= link_to "退会しない", edit_user_path, class: "btn btn-info" %>&emsp;
         <%= link_to "退会する", users_withdraw_path, method: :patch, class: "btn btn-danger", data: {confirm: "本当に退会しますか？"} %>
       </div>
+
     </div>
   </div>
 </div>

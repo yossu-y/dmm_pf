@@ -1,31 +1,33 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
-      <div class="mx-3"><h3 class="mb-4 mini-title">問い合わせ一覧</h3></div>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>問い合わせユーザー</th>
-              <th>件名</th>
-              <th>問い合わせ日</th>
-              <th>進捗</th>
-              <th>詳細</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @contacts.each do |contact| %>
-            <tr>
-              <td><%= contact.id %></td>
-              <td><%= contact.name %></td>
-              <td><%= contact.subject_i18n %></td>
-              <td><%= contact.created_at.strftime("%Y年%m月%d日") %></td>
-              <td><%= contact.progress_status_i18n %></td>
-              <td><%= link_to "詳細", admin_contact_path(contact), class: "btn btn-info" %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+    <div class="mx-3"><h3 class="mb-4 mini-title">問い合わせ一覧</h3></div>
+
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>問い合わせユーザー</th>
+            <th>件名</th>
+            <th>問い合わせ日</th>
+            <th>進捗</th>
+            <th>詳細</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @contacts.each do |contact| %>
+          <tr>
+            <td><%= contact.id %></td>
+            <td><%= contact.name %></td>
+            <td><%= contact.subject_i18n %></td>
+            <td><%= contact.created_at.strftime("%Y年%m月%d日") %></td>
+            <td><%= contact.progress_status_i18n %></td>
+            <td><%= link_to "詳細", admin_contact_path(contact), class: "btn btn-info" %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </div>

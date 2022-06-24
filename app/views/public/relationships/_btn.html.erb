@@ -1,4 +1,6 @@
+<!-- ゲストユーザーには表示しない -->
 <% if user.email != "guest@example.com" %>
+  <!-- ログインユーザーのマイページには編集ボタンを表示して、他ユーザーはフォローボタンを表示 -->
   <% if current_user != user %>
     <% if current_user.following?(user) %>
       <%= link_to user_relationship_path(user.id), class: "btn btn-follow btn-sm btn-block", method: :delete do %>
@@ -9,9 +11,10 @@
         <i class="fas fa-user-plus"></i>フォロー
       <% end %>
     <% end %>
-    <% else %>
+  <% else %>
       <%= link_to edit_user_path(user), class: "btn btn-outline-dark btn-block edit_user_#{user.id}" do %>
         <i class="fas fa-user-cog"></i> 編集
       <% end %>
   <% end %>
+
 <% end %>

@@ -1,5 +1,6 @@
 <div class="container px-1">
   <div class="row">
+
     <table class="table table-hover table-inverse" style="margin-top: 15px">
       <% groups.each do |group| %>
       <tr style="cursor: pointer" onclick="window.location.href='<%= group_path(group) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
@@ -11,5 +12,6 @@
       </tr>
       <% end %>
     </table>
+
   </div>
 </div>

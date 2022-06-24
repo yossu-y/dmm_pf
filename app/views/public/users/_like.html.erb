@@ -1,7 +1,8 @@
 <div class="container px-1">
   <div class="row">
+
     <table class="table table-hover table-inverse" style="margin-top: 15px">
-      <% like_articles.each do |article| %>
+    <% like_articles.each do |article| %>
       <tr>
         <td width="15%">
           <%= image_tag article.get_image, class: "posting-img" %>
@@ -19,7 +20,8 @@
           <%= "#{time_ago_in_words(article.updated_at)}前" %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
     </table>
+
   </div>
 </div>

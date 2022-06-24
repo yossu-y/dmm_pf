@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-10 col-md-9 col-sm-9 mx-auto px-0 my-5">
       <div class="mx-3 mb-5"><h3 class="mini-title">コミュニティ詳細</h3></div>
+
       <table class="table">
         <tr>
           <td class="img" colspan="4">
@@ -26,9 +27,9 @@
           </td>
           <td width="19%">
             <% if @group.is_owned_by?(current_user) %>
-            <div class="actions">
-              <%= link_to "編集", edit_group_path(@group), class: "btn btn-info" %>
-            </div>
+              <div class="actions">
+                <%= link_to "編集", edit_group_path(@group), class: "btn btn-info" %>
+              </div>
             <% end %>
           </td>
         </tr>
@@ -46,6 +47,7 @@
           </td>
         </tr>
       </table>
+
       <div style="text-align: right">
         <% if @group.is_owned_by?(current_user) %>
           <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-success" %>
@@ -58,6 +60,7 @@
           <% end %>
         <% end %>
       </div>
+
     </div>
   </div>
 </div>
