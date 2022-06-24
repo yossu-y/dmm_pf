@@ -3,6 +3,7 @@
     <div class="col-10 col-md-9 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
       <div class="mx-2"><h3 class="mb-4 mini-title">お問い合わせフォーム</h3></div>
       <%= render "layouts/errors", obj: @contact %>
+
       <%= form_with model: @contact, url: contacts_confirm_path, method: :post, local: true do |f| %>
         <div class="form-group">
           <%= f.label :name, "お名前＊" %>
@@ -24,6 +25,7 @@
           <%= f.submit "入力内容確認", class: "push-btn", style: "width: 150px" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

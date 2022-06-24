@@ -1,46 +1,48 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
-      <h3 class="title">コミュニティ詳細</h3>
-        <table class="table table-borderless">
-          <tbody>
-            <tr>
-              <td colspan="2" style="text-align: center;">
-                <%= image_tag @group.get_image, class: "my_page_img" %>
-              </td>
-            </tr>
-            <tr>
-              <td>投稿ID</td>
-              <td><%= @group.id %></td>
-            </tr>
-            <tr>
-              <td>コミュニティ名</td>
-              <td><%= @group.name %></td>
-            </tr>
-            <tr>
-              <td>コミュニティ説明</td>
-              <td><%= @group.introduction %></td>
-            </tr>
-            <tr>
-              <td>参加人数</td>
-              <td><%= @group.users.count %></td>
-            </tr>
-            <tr>
-              <td>コミュニティオーナー</td>
-              <td><%= @group.owner.name %></td>
-            </tr>
-            <tr>
-              <td>コミュニティを削除</td>
-              <td><%= link_to "削除", admin_group_path, method: :delete, data: {confirm: "コミュニティを削除しますか？"}, class: "btn btn-danger" %></td>
-            </tr>
-            <tr>
-              <td>チャットルームへ</td>
-              <td>
-                <%= link_to "チャットへ", admin_room_path, class: "btn btn-info" %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="mx-3"><h3 class="mb-4 mini-title">コミュニティ詳細</h3></div>
+
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <td colspan="2" style="text-align: center;">
+              <%= image_tag @group.get_image, class: "my_page_img" %>
+            </td>
+          </tr>
+          <tr>
+            <td>投稿ID</td>
+            <td><%= @group.id %></td>
+          </tr>
+          <tr>
+            <td>コミュニティ名</td>
+            <td><%= @group.name %></td>
+          </tr>
+          <tr>
+            <td>コミュニティ説明</td>
+            <td><%= @group.introduction %></td>
+          </tr>
+          <tr>
+            <td>参加人数</td>
+            <td><%= @group.users.count %></td>
+          </tr>
+          <tr>
+            <td>コミュニティオーナー</td>
+            <td><%= @group.owner.name %></td>
+          </tr>
+          <tr>
+            <td>コミュニティを削除</td>
+            <td><%= link_to "削除", admin_group_path, method: :delete, data: {confirm: "コミュニティを削除しますか？"}, class: "btn btn-danger" %></td>
+          </tr>
+          <tr>
+            <td>チャットルームへ</td>
+            <td>
+              <%= link_to "チャットへ", admin_room_path, class: "btn btn-info" %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </div>

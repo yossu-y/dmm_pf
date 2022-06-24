@@ -107,8 +107,6 @@ class Public::ArticlesController < ApplicationController
     @articles = @user.articles.where(is_draft: true).order(updated_at: :desc)
   end
 
-
-
   private
 
   def article_params

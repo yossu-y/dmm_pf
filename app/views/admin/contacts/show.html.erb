@@ -1,50 +1,52 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
-      <h3 class="title">問い合わせ詳細</h3>
-        <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
-          <tbody>
-            <tr>
-              <td width="30%">問い合わせID</td>
-              <td><%= @contact.id %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td width="30%">問い合わせ日</td>
-              <td><%= @contact.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td width="30%">問い合わせ者</td>
-              <td><%= @contact.name %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>問い合わせ（ユーザー名）</td>
-              <td><%= @contact.user.screen_name %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>お問い合わせ項目</td>
-              <td><%= @contact.subject_i18n %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td width="30%" style="vertical-align: top">問い合わせ内容</td>
-              <td><%= @contact.message %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td width="30%" style="vertical-align: top">進捗</td>
-              <td colspan="2">
-                <%= form_with model: @contact, url: admin_contact_path(@contact), method: :patch, local: true do |f| %>
-                  <%= f.select :progress_status, Contact.progress_statuses_i18n.invert, class: "form-control" %>
-                  <%= f.submit "更新する" %>
-                <% end %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="mx-3"><h3 class="mb-4 mini-title">問い合わせ詳細</h3></div>
+    
+      <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
+        <tbody>
+          <tr>
+            <td width="30%">問い合わせID</td>
+            <td><%= @contact.id %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="30%">問い合わせ日</td>
+            <td><%= @contact.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="30%">問い合わせ者</td>
+            <td><%= @contact.name %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>問い合わせ（ユーザー名）</td>
+            <td><%= @contact.user.screen_name %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>お問い合わせ項目</td>
+            <td><%= @contact.subject_i18n %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="30%" style="vertical-align: top">問い合わせ内容</td>
+            <td><%= @contact.message %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td width="30%" style="vertical-align: top">進捗</td>
+            <td colspan="2">
+              <%= form_with model: @contact, url: admin_contact_path(@contact), method: :patch, local: true do |f| %>
+                <%= f.select :progress_status, Contact.progress_statuses_i18n.invert, class: "form-control" %>
+                <%= f.submit "更新する" %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
   </div>
 </div>
