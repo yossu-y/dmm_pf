@@ -15,8 +15,8 @@
               <%= image_tag user.get_profile_image, class: "rounded-circle icon-mini" %>
             </td>
             <td width="20%"><%= user.screen_name %></td>
-            <td><%= truncate(user.introduction, length:25) %></td>
-            <td width="30%"><%= render "public/relationships/btn", user: user %></td>
+            <td class="introduction"><%= truncate(user.introduction, length:25) %></td>
+            <td width="25%"><%= render "public/relationships/btn", user: user %></td>
           </tr>
         <% end %>
         </tbody>

@@ -52,7 +52,7 @@ class Public::GroupsController < ApplicationController
 
   def group_users
     @group = Group.find(params[:id])
-    @group_users = @group.users.where(is_deleted: false)
+    @users = @group.users.where(is_deleted: false)
   end
 
   private

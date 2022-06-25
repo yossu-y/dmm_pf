@@ -36,8 +36,10 @@ class Public::UsersController < ApplicationController
   end
 
   def like_users
-
-    @users = User.where(is_deleted: false)
+    @article = Article.find(params[:id])
+    @likes = @article.likes.all
+    # pluckでuser_idのみ取得
+    @users = User.find(@likes.pluck(:user_id))
   end
 
   def unsubscribe
