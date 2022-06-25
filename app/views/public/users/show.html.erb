@@ -26,7 +26,7 @@
             </td>
           </tr>
           <tr>
-            <td><%= @user.introduction %></td>
+            <td style="white-space: pre-wrap"><%= @user.introduction %></td>
             <td>
               <% if @user == current_user %>
                 <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-outline-dark btn-block logout" do %>

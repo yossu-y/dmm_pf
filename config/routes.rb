@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resource :like, only: [:create, :destroy]
     end
 
+    get "article/:id/like_users" => "users#like_users", as: "like_users"
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
     patch "users/withdraw" => "users#withdraw"
     resources :users, only: [:edit, :update, :show, :index] do

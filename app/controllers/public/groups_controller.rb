@@ -45,14 +45,14 @@ class Public::GroupsController < ApplicationController
 
   def room
     @group = Group.find(params[:id])
-    @messages = @group.messages.all.order(created_at: :desc)
+    @messages = @group.messages.all
     # 退会ユーザーは表示しない
     @group_users = @group.users.where(is_deleted: false)
   end
 
   def group_users
     @group = Group.find(params[:id])
-    @group_users = @group.users.where(is_deleted: false)
+    @users = @group.users.where(is_deleted: false)
   end
 
   private

@@ -11,7 +11,7 @@
       </div>
 
       <%= link_to group_path(@group) do %>
-        <i class="fa-solid fa-angle-left"></i>ルームを出る
+        <i class="fa-solid fa-angle-left"></i> ルームを出る
       <% end %>
 
       <div class="group-user" style="margin: 5px 0 0 15px">
@@ -21,11 +21,11 @@
           <% end %>
         <% end %>
       </div>
-      <div class="message-form">
-        <%= render "public/messages/form", group: @group, message: @message %>
-      </div>
       <div id="messages-index">
         <%= render "public/messages/index", messages: @group.messages %>
+      </div>
+      <div class="message-form">
+        <%= render "public/messages/form", group: @group, message: @message %>
       </div>
 
     </div>

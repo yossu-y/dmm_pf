@@ -5,7 +5,7 @@
       <%= render "layouts/errors", obj: @user %>
 
       <%= form_with model: @user, local: true do |f| %>
-        <div class="img-position">
+        <div class="text-center">
           <%= f.label :登録中の画像 %><br>
           <%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %>
         </div>

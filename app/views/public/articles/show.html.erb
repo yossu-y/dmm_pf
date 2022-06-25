@@ -1,20 +1,24 @@
 <div class="container px-2">
   <div class="row">
-    <div class="col-10 col-md-9 col-sm-9 mx-auto px-0 my-2">
+    <div class="col-10 col-md-10 col-sm-9 mx-auto px-0 my-2">
       <div class="mx-2 mb-5"><h3 class="mini-title">公開された記事</h3></div>
-      
+
       <table class="table">
         <tr>
-          <td class="img-position" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
+          <td class="text-center" colspan="4"><%= image_tag @article.get_image, class: "show-img" %></td>
         </tr>
         <tr>
-          <td class="title" colspan="3" style="padding-left: 30px"><%= @article.title %></td>
+          <td class="article-title" colspan="4" style="padding-left: 30px">
+            <%= @article.title %>
+          </td>
         </tr>
         <tr>
-          <td class="body" colspan="3" style="padding-left: 35px"><%= @article.body %></td>
+          <td class="article-body" colspan="4" style="padding-left: 35px; white-space: pre-wrap;">
+            <%= @article.body %>
+          </td>
         </tr>
         <tr>
-          <td colspan="3" style="padding-left: 30px"><i class="fa-solid fa-tags mark"></i>
+          <td colspan="4" style="padding-left: 30px"><i class="fa-solid fa-tags mark"></i>
             <% @article_tags.each do |tag| %>
               <%= link_to tag_search_path(tag_id: tag.id), class: "text-dark" do %>
                 <button type="button" class="btn btn-outline-dark" style="margin: 2px 0 2px 0">
@@ -26,16 +30,17 @@
           </td>
         </tr>
         <tr>
-          <td style="padding-left: 35px" id="like_buttons_<%= @article.id %>">
+          <td width="16%" style="padding-left: 30px" id="like_buttons_<%= @article.id %>">
             <%= render "public/likes/btn", article: @article %>
           </td>
-          <td class="comments-counter">
+          <td width="40%"><%= link_to "いいねしたユーザー", like_users_path %></td>
+          <td width="13%" class="comments-counter">
             <%= render "public/comments/counter", article: @article %>
           </td>
           <td>
             <% if @article.user == current_user %>
-              <%= link_to "編集", edit_article_path(@article), class: "btn btn-info" %>
-              <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger" %>
+              <%= link_to "編集", edit_article_path(@article), class: "btn btn-info btn-sm" %>
+              <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
             <% end %>
           </td>
         </tr>
@@ -46,19 +51,19 @@
               <id class="text-dark"><%= @article.user.screen_name %></id>
             <% end %>
           </td>
-          <td width="45%">
+          <td colspan="2" width="45%">
             <%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %>投稿
           </td>
         </tr>
       </table>
-      
+
       <div id="comments-index">
         <%= render "public/comments/index", article: @article %>
       </div>
       <div class="comments-form" style="text-align: right;">
         <%= render "public/comments/form", article: @article, comment: @comment %>
       </div>
-      
+
     </div>
   </div>
 </div>
