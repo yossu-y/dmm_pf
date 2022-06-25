@@ -36,6 +36,7 @@ class Public::UsersController < ApplicationController
   end
 
   def like_users
+
     @users = User.where(is_deleted: false)
   end
 
@@ -48,11 +49,6 @@ class Public::UsersController < ApplicationController
     @user.update(is_deleted: true)
     reset_session
     redirect_to root_path, notice: "退会処理が完了しました。"
-  end
-
-  def draft
-    @user = User.find(params)
-    @articles = @user.articles.where(is_draft: true).order(updated_at: :desc)
   end
 
   private

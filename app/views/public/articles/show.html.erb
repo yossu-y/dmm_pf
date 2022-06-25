@@ -8,10 +8,14 @@
           <td class="text-center" colspan="3"><%= image_tag @article.get_image, class: "show-img" %></td>
         </tr>
         <tr>
-          <td class="article-title" colspan="3" style="padding-left: 30px"><%= @article.title %></td>
+          <td class="article-title" colspan="3" style="padding-left: 30px">
+            <%= @article.title %>
+          </td>
         </tr>
         <tr>
-          <td class="article-body" colspan="3" style="padding-left: 35px"><%= @article.body %></td>
+          <td class="article-body" colspan="3" style="padding-left: 35px; white-space: pre-wrap;">
+            <%= @article.body %>
+          </td>
         </tr>
         <tr>
           <td colspan="3" style="padding-left: 30px"><i class="fa-solid fa-tags mark"></i>
