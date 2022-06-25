@@ -15,7 +15,7 @@
             <div class="card-icon">
               <%= link_to article.user, class: "text-dark" do %>
                 <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
-                <%= article.user.screen_name %>
+                <%= truncate(article.user.screen_name, length:7) %>
               <% end %>
             </div>
             <div class="card-item">
