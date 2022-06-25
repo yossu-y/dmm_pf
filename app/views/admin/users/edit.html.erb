@@ -1,6 +1,6 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-3">
   <div class="row">
-    <div class="col-12 col-md-12 col-sm-12 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
     <div class="mx-3"><h3 class="mb-4 mini-title">”<%= @user.name %>”さんの情報編集</h3></div>
 
       <%= form_with model: @user, url: admin_user_path(@user), method: :patch do |f| %>
