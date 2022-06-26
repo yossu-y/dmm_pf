@@ -1,7 +1,11 @@
 class Contact < ApplicationRecord
-
+  
+  # リレーション
+  
   belongs_to :user
 
+  # バリテーション
+  
   validates :name, presence: true
   validates :email, presence: true
   validates :message, presence: true, length: {in: 2..500}
