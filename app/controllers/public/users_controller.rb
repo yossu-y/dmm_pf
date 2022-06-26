@@ -17,6 +17,8 @@ class Public::UsersController < ApplicationController
     @like_articles = Article.find(@likes.pluck(:article_id))
     # 参加中のグループ一覧
     @groups = @user.groups.all.order(created_at: :desc)
+    # オーナーのグループ一覧
+    @owner_groups = Group.where(owner_id: current_user.id)
     # フォロー中ユーザーから退会ユーザーを非表示にする
     @followings = @user.followings.where(is_deleted: false)
     # フォロワーユーザーから退会ユーザーを非表示にする
