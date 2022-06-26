@@ -17,7 +17,9 @@
           <%= link_to article.user do %>
             <%= image_tag article.user.get_profile_image, class: "icon-mini rounded-circle text-center" %><br>
           <% end %>
-          <%= "#{time_ago_in_words(article.created_at)}前" %>
+          <!-- likeを指定していいねした時間を表示させる -->
+          <% like = Like.find_by(user_id: current_user.id, article_id: article.id) %>
+          <%= "#{time_ago_in_words(like.created_at)}前" %>
         </td>
       </tr>
     <% end %>

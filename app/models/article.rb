@@ -11,9 +11,8 @@ class Article < ApplicationRecord
   has_many :article_tags, dependent: :destroy
   has_many :tags, through: :article_tags
   has_many :notifications, dependent: :destroy
-
-  # リッチテキストはバリテーション不可
-
+  
+  # バリテーション
   validates :title, presence: true, on: :publicize
   validates :body,  presence: true, on: :publicize
 
@@ -26,7 +25,7 @@ class Article < ApplicationRecord
   def get_image
     (image.attached?)? image: "no_image.jpg"
   end
-
+  
   def liked_by?(user)
     likes.exists?(user_id: user.id)
   end
@@ -45,11 +44,13 @@ class Article < ApplicationRecord
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
-
+    
+    # 古いタグを消す
     old_tags.each do |old|
       self.tags.delete Tag.find_by(name: old)
     end
-
+    
+    # 新しいタグを
     new_tags.each do |new|
       new_article_tag = Tag.find_or_create_by(name: new)
       if new_article_tag.save
@@ -57,7 +58,9 @@ class Article < ApplicationRecord
       end
     end
   end
-
+  
+  # 通知機能
+    
   def create_notification_like!(current_user, like_id)
     # すでに「いいね」されているか検索
     temp = Notification.where(["visiter_id = ? and visited_id = ? and article_id = ? and action = ? ", current_user.id, user_id, id, "like"])

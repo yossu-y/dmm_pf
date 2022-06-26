@@ -4,7 +4,6 @@ class Public::ArticlesController < ApplicationController
 
   def index
     @articles = Article.where(is_draft: false).order(updated_at: :desc)
-    # タグの多い順に並べ替えたい
     @tag_lists = Tag.all
     @groups = Group.all.order(updated_at: :desc)
   end
@@ -30,7 +29,9 @@ class Public::ArticlesController < ApplicationController
     @article = current_user.articles.new(article_params)
     tag_list = params[:article][:tag_name].split("、").uniq
     # ActiveRecord::Base.transaction do
+    # タグの文字が20以上は削除する
     flash[:alert] = "※20文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
+    # 投稿するを押した時
     if params[:post]
       if @article.save(context: :publicize)
         @article.save_tag(tag_list)
@@ -40,6 +41,7 @@ class Public::ArticlesController < ApplicationController
         render "new"
       end
     else
+      # 下書きに保存を押した時
       if @article.update(is_draft: true)
         redirect_to draft_path(current_user.id), notice: "下書きに保存しました！"
       else
@@ -59,7 +61,7 @@ class Public::ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     tag_list = params[:article][:tag_name].split("、").uniq
-    flash[:alert] = "※10文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
+    flash[:alert] = "※20文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     # 下書きを公開
     if params[:publicize_draft]
       #@article.attributes = article_params
@@ -80,11 +82,11 @@ class Public::ArticlesController < ApplicationController
         @article.is_draft = true
         render "edit"
       end
-    # 下書きを更新
+    # 下書きを更新（非公開のまま）
     else
       if @article.update(article_params)
         @article.save_tag(tag_list)
-        redirect_to draft_path(current_user.id), notice: "下書きを更新しました"
+        redirect_to draft_path(current_user.id), notice: "下書きを更新しました！"
       else
         render "edit"
       end
