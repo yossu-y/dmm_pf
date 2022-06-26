@@ -12,7 +12,7 @@ class Admin::ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      redirect_to admin_articles_path
+      redirect_to admin_articles_path, notice: "投稿を削除しました。"
     end
   end
 

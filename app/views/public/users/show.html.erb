@@ -38,11 +38,11 @@
         </table>
 
         <ul class="nav nav-tabs" id="tabs">
-          <li class="tab tab-active">投稿一覧（<%= @articles.count %>）</li>
-          <li class="tab">コミュニティ一覧（<%= @groups.count + @owner_groups.count %>）</li>
+          <li class="tab tab-active">投稿一覧</li>
+          <li class="tab">コミュニティ一覧</li>
         <!-- いいねした記事は他ユーザーに表示しない -->
         <% if current_user == @user %>
-          <li class="tab">いいね一覧（<%= @like_articles.count %>）</li>
+          <li class="tab">いいね一覧</li>
         <% end %>
         </ul>
         <!--タブで選択された要素部分-->

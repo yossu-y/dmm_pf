@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td width="30%">コミュニティ紹介：</td>
-          <td height="80" colspan="3" style="white-space: pre-wrap;">
+          <td height="80" colspan="3" style="white-space: pre-line;">
             <%= @group.introduction %>
           </td>
         </tr>
@@ -27,10 +27,10 @@
               <%= @group.owner.screen_name %>
             <% end %>
           </td>
-          <td width="19%">
+          <td width="14%">
             <% if @group.is_owned_by?(current_user) %>
               <div class="actions">
-                <%= link_to "編集", edit_group_path(@group), class: "btn btn-info" %>
+                <%= link_to "編集", edit_group_path(@group), class: "btn btn-info btn-sm" %>
               </div>
             <% end %>
           </td>

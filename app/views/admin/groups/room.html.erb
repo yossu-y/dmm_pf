@@ -1,7 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
-      
+
       <h3><%= @group.name %>のチャットルーム</h3>
       <p>参加者</p>
       <div class="group-user" style="margin: 5px 0 0 15px">
@@ -11,30 +11,35 @@
           <% end %>
         <% end %>
       </div>
-      
+
       <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
         <div id="messages-index">
           <% @messages.each do |message| %>
             <div class="balloon">
+
               <div class="faceicon">
-                <%= image_tag message.user.get_profile_image, class: "icon-mini rounded-circle" %>
-                <div class="text-dark">&nbsp;<%= message.user.screen_name %></div>
+                <%= link_to admin_user_path(message.user) do %>
+                  <%= image_tag message.user.get_profile_image, class: "icon-mini rounded-circle" %>
+                  <div class="text-dark">&nbsp;<%= truncate(message.user.screen_name, length:10) %></div>
+                <% end %>
               </div>
               <div class="chatting">
                 <div class="says">
                   <p><%= message.message %></p>
                 </div>
               </div>
-              <div class="comment-date" style="margin: 10px 0 0 5px">
-                <%= message.created_at.strftime("%Y年%m月%d日 %H:%M") %>
-              </div>
               <div class="text-right" style="margin: -20px 5px 5px 0;">
                 <%= link_to "削除", admin_group_message_path(message.group, message), method: :delete, remote: true, data: {confirm: "メッセージを削除しますか？"}, class: "btn btn-sm btn-danger" %>
+                <div class="comment-date" style="margin: 10px 0 0 5px">
+                  <%= message.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+                </div>
+              </div>
+
             </div>
           <% end %>
         </div>
       </div>
-      
+
     </div>
   </div>
 </div>

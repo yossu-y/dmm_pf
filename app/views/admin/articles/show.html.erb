@@ -31,7 +31,7 @@
               <td><%= @article.title %></td>
             </tr>
             <tr>
-              <td width="30%" style="vertical-align: top">記事の内容</td>
+              <td width="30%" style="vertical-align: top; white-space: pre-line;">記事の内容</td>
               <td><%= @article.body %></td>
             </tr>
             <tr>
@@ -56,9 +56,9 @@
           <% @article.comments.each do |comment| %>
             <div class="balloon">
               <div class="faceicon">
-                <%= link_to user_path(comment.user) do %>
+                <%= link_to admin_user_path(comment.user) do %>
                   <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %>
-                  <div class="text-dark">&nbsp;<%= comment.user.screen_name %></div>
+                  <div class="text-dark">&nbsp;<%= truncate(comment.user.screen_name, length: 10) %></div>
                 <% end %>
               </div>
               <div class="chatting">
@@ -66,11 +66,11 @@
                   <p><%= comment.comment %></p>
                 </div>
               </div>
-              <div class="comment-date" style="margin: 10px 0 0 5px">
-                <%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %>
-              </div>
               <div class="text-right" style="margin: -15px 5px 5px 0;">
                 <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, data: {confirm: "コメントを削除しますか？"}, class: "btn btn-sm btn-danger" %>
+                <div class="comment-date" style="margin: 10px 0 0 5px">
+                  <%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+                </div>
               </div>
             </div>
           <% end %>
