@@ -96,6 +96,7 @@ footer {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 50 !important;
 }
 
 .back-img {
@@ -515,6 +516,7 @@ td {
   float: left;
   margin-right: -140px;
   width: 80px;
+
 }
 
 .balloon .faceicon img{
@@ -529,7 +531,7 @@ td {
 .says {
   display: inline-block;
   position: relative;
-  margin: 16px 0px 0 90px;
+  margin: 0 0 0 90px;
   padding: 17px 13px;
   border-radius: 12px;
   background: #f5f5f5;
@@ -549,6 +551,7 @@ td {
   margin: 0;
   padding: 0;
 }
+
 
 // -----------------------------------------
 
@@ -690,6 +693,10 @@ input:active, a:active {
   .my_page_img {
     height: 200px !important;
     width: 200px !important;
+  }
+
+  .tab {
+    font-size: 18px !important;
   }
 
   .follow-count {
