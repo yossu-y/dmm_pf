@@ -21,10 +21,12 @@ class User < ApplicationRecord
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
-
-  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visiter_id', dependent: :destroy
-  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
   
+  # 自分からの通知
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visiter_id', dependent: :destroy
+  # 相手からの
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+
   # バリテーション
   validates :screen_name, length: { maximum: 25 }, presence: true
   validates :introduction, length: { maximum: 350 }

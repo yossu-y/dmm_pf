@@ -29,12 +29,14 @@
         <!-- 編集している記事が下書きの場合 -->
       <% if @article.is_draft == true %>
         <div class="actions">
+          <!-- nameはコントローラーで指定したもの -->
           <%= f.submit "下書きを更新", :name => "update_draft", class: "btn btn-light" %>
           <%= f.submit "投稿", :name => "publicize_draft", class: "btn btn-info" %>
         </div>
         <!-- 編集している記事が投稿済みの場合 -->
       <% else %>
         <div class="actions">
+          <!-- nameはコントローラーで指定したもの -->
           <%= link_to "キャンセル", article_path(@article), class: "btn btn-light" %>
           <%= f.submit "投稿を更新", :name => "update_post", class: "btn btn-info" %>
         </div>

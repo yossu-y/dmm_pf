@@ -30,6 +30,7 @@
           <%= f.text_field :tag_name, class: "form form-control" %>
         </div>
         <div class="actions">
+          <!-- nameはコントローラーで指定したもの -->
           <%= f.submit "下書きに保存", :name => "draft", class: "btn btn-light" %>
           <%= f.submit "投稿する", :name => "post", class: "btn btn-info" %>
         </div>
