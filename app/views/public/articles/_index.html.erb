@@ -1,4 +1,4 @@
-<div class="container px-3">
+<div class="container px-2">
   <div class="row">
     <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5 list">
       <% articles.each do |article| %>
@@ -15,7 +15,7 @@
             <div class="card-icon">
               <%= link_to article.user, class: "text-dark" do %>
                 <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
-                <%= article.user.screen_name %>
+                <%= truncate(article.user.screen_name, length:7) %>
               <% end %>
             </div>
             <div class="card-item">

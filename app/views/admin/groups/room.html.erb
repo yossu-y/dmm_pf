@@ -1,6 +1,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-2">
+      
       <h3><%= @group.name %>のチャットルーム</h3>
       <p>参加者</p>
       <div class="group-user" style="margin: 5px 0 0 15px">
@@ -10,13 +11,14 @@
           <% end %>
         <% end %>
       </div>
+      
       <div class="col-10 col-md-10 col-sm-10 mx-2 mx-sm-auto px-0 my-5">
         <div id="messages-index">
           <% @messages.each do |message| %>
             <div class="balloon">
               <div class="faceicon">
-                  <%= image_tag message.user.get_profile_image, class: "icon-mini rounded-circle" %>
-                  <div class="text-dark">&nbsp;<%= message.user.screen_name %></div>
+                <%= image_tag message.user.get_profile_image, class: "icon-mini rounded-circle" %>
+                <div class="text-dark">&nbsp;<%= message.user.screen_name %></div>
               </div>
               <div class="chatting">
                 <div class="says">
@@ -32,6 +34,7 @@
           <% end %>
         </div>
       </div>
+      
     </div>
   </div>
 </div>

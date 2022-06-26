@@ -12,13 +12,14 @@ Rails.application.routes.draw do
     root to: "homes#top"
     get "about" => "homes#about", as: "about"
 
-    get "articles/draft" => "articles#draft", as: "draft"
+    get "users/:id/article/draft" => "articles#draft", as: "draft"
     get "tag_search" => "articles#tag_search"
     resources :articles do
       resources :comments, only: [:create, :destroy]
       resource :like, only: [:create, :destroy]
     end
 
+    get "article/:id/like_users" => "users#like_users", as: "like_users"
     get "users/unsubscribe/:id" => "users#unsubscribe", as: "unsubscribe"
     patch "users/withdraw" => "users#withdraw"
     resources :users, only: [:edit, :update, :show, :index] do

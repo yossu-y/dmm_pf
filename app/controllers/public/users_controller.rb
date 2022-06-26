@@ -10,16 +10,18 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # ユーザーの投稿した記事一覧
-    @articles = @user.articles.where(is_draft: false).order(created_at: :desc)
+    @articles = @user.articles.where(is_draft: false).order(updated_at: :desc)
     # ユーザーのいいねした記事一覧
     @likes = @user.likes.all.order(updated_at: :desc)
     # pluckでarticle_idのみ取得
     @like_articles = Article.find(@likes.pluck(:article_id))
     # 参加中のグループ一覧
     @groups = @user.groups.all.order(created_at: :desc)
-    # フォロー中から退会ユーザーを非表示にする
+    # オーナーのグループ一覧
+    @owner_groups = Group.where(owner_id: @user)
+    # フォロー中ユーザーから退会ユーザーを非表示にする
     @followings = @user.followings.where(is_deleted: false)
-    # フォロワーから退会ユーザーを非表示にする
+    # フォロワーユーザーから退会ユーザーを非表示にする
     @followers = @user.followers.where(is_deleted: false)
   end
 
@@ -33,6 +35,13 @@ class Public::UsersController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def like_users
+    @article = Article.find(params[:id])
+    @likes = @article.likes.all
+    # pluckでuser_idのみ取得
+    @users = User.find(@likes.pluck(:user_id))
   end
 
   def unsubscribe

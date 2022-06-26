@@ -3,13 +3,15 @@
     <div class="col-11 col-md-11 col-sm-11 mx-2 mx-auto px-0 my-2">
       <div class="mx-5"><h3 class="mb-2 mini-title">新規投稿</h3></div>
       <%= render "layouts/errors", obj: @article %>
+
       <div class="draft">
-        <%= link_to draft_path, class: "text-light" do %>
+        <%= link_to draft_path(current_user.id), class: "text-light" do %>
           <button type="button" class="btn btn-outline-dark">
             <i class="fa-solid fa-pen-ruler"></i>下書きを更新
           </button>
         <% end %>
       </div>
+
       <%= form_with model: @article, local: true do |f| %>
         <div class="form-group">
           <%= f.label :image, "画像" %><br>
@@ -28,10 +30,12 @@
           <%= f.text_field :tag_name, class: "form form-control" %>
         </div>
         <div class="actions">
+          <!-- nameはコントローラーで指定したもの -->
           <%= f.submit "下書きに保存", :name => "draft", class: "btn btn-light" %>
           <%= f.submit "投稿する", :name => "post", class: "btn btn-info" %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>

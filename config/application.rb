@@ -18,8 +18,11 @@ module DmmPf
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_record.default_timezone = :local
     config.time_zone = "Asia/Tokyo"
     config.i18n.default_locale = :ja
     config.i18n.load_path += Dir[Rails.root.join('config/locales/*.yml').to_s]
+    # config.paths.add 'lib', eager_load: true
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end

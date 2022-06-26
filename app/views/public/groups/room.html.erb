@@ -1,6 +1,7 @@
 <div class="container px-2">
   <div class="row">
     <div class="col-10 col-md-10 col-sm-11 mx-auto px-0 my-5">
+
       <div class="mx-1">
         <h3 class="mb-3 mini-title">
           <%= link_to group_users_path, class: "text-dark" do %>
@@ -8,9 +9,11 @@
           <% end %>
         </h3>
       </div>
+
       <%= link_to group_path(@group) do %>
-        <i class="fa-solid fa-angle-left"></i>ルームを出る
+        <i class="fa-solid fa-angle-left"></i> ルームを出る
       <% end %>
+
       <div class="group-user" style="margin: 5px 0 0 15px">
         <% @group_users.first(20).each do |user| %>
           <%= link_to user_path(user) do %>
@@ -18,12 +21,13 @@
           <% end %>
         <% end %>
       </div>
-      <div class="message-form">
-        <%= render "public/messages/form", group: @group, message: @message %>
-      </div>
       <div id="messages-index">
         <%= render "public/messages/index", messages: @group.messages %>
       </div>
+      <div class="message-form">
+        <%= render "public/messages/form", group: @group, message: @message %>
+      </div>
+
     </div>
   </div>
 </div>

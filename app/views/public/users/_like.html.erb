@@ -1,13 +1,14 @@
 <div class="container px-1">
   <div class="row">
+
     <table class="table table-hover table-inverse" style="margin-top: 15px">
-      <% like_articles.each do |article| %>
+    <% like_articles.each do |article| %>
       <tr>
-        <td width="15%">
+        <td width="10%">
           <%= image_tag article.get_image, class: "posting-img" %>
         </td>
         <td width="50%"><%= truncate(article.title, length:25) %></td>
-        <td width="12%">
+        <td width="13%">
           <%= link_to article_path(article), class: "text-dark" do %>
             <button type="button" class="btn btn-outline-dark">詳細</button>
           <% end %>
@@ -16,10 +17,13 @@
           <%= link_to article.user do %>
             <%= image_tag article.user.get_profile_image, class: "icon-mini rounded-circle text-center" %><br>
           <% end %>
-          <%= "#{time_ago_in_words(article.updated_at)}前" %>
+          <!-- likeを指定していいねした時間を表示させる -->
+          <% like = Like.find_by(user_id: current_user.id, article_id: article.id) %>
+          <%= "#{time_ago_in_words(like.created_at)}前" %>
         </td>
       </tr>
-      <% end %>
+    <% end %>
     </table>
+
   </div>
 </div>

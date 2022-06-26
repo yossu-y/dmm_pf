@@ -1,23 +1,26 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-9 col-md-9 col-sm-9 mx-2 mx-sm-auto px-0 my-2">
-      <div class="text-center"><h3 class="mb-4 mini-title text-center">お問い合わせ内容確認</h3></div>
+      <div class="text-center">
+        <h3 class="mb-4 mini-title text-center">お問い合わせ内容確認</h3>
+      </div>
+
       <table class="table text-center" style="border: none">
-        <tr style="border: none">
-          <td class="text-center" style="width: 50%; border: none;">お名前</td>
+        <tr>
+          <td style="width: 50%; border: none;">お名前</td>
           <td style="border: none;"><%= @contact.name %></td>
         </tr>
-        <tr style="border: none">
-          <td class="text-center" style="width: 50%; border: none;">メールアドレス</td>
+        <tr>
+          <td style="border: none;">メールアドレス</td>
           <td style="border: none;"><%= @contact.email %></td>
         </tr>
-        <tr style="border: none">
-          <td class="text-center" style="width: 50%; border: none;">お問い合わせ項目</td>
+        <tr>
+          <td style="border: none;">お問い合わせ項目</td>
           <td style="border: none;"><%= @contact.subject_i18n %></td>
         </tr>
         <tr style="border: none">
-          <td class="text-center" style="border: none">メッセージ</td>
-          <td style="white-space: pre-wrap; border: none;"><%= @contact.message %></td>
+          <td style="border: none">お問い合わせ内容</td>
+          <td class="text-left" style="white-space: pre-wrap; border: none;"><%= @contact.message %></td>
         </tr>
         <tr>
           <td style="border: none;">

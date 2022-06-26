@@ -1,31 +1,33 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-3">
   <div class="row">
-    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
-      <div class="mx-3"><h3 class="mb-4 mini-title">コミュニティ一覧</h3></div>
-        <table class="table table-hover table-inverse">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>コミュニティ名</th>
-              <th style="text-align: left">参加人数</th>
-              <th>オーナー</th>
-              <th>作成日</th>
-              <th>詳細</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% groups.each do |group| %>
-            <tr>
-              <td><%= group.id %></td>
-              <td><%= group.name %></td>
-              <td><%= group.users.count %></td>
-              <td><%= group.owner.name %></td>
-              <td><%= group.created_at.strftime("%Y年%m月%d日") %></td>
-              <td><%= link_to "詳細", admin_group_path(group), class: "btn btn-info" %></td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
+    <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5">
+    <div class="mx-3"><h3 class="mb-4 mini-title">コミュニティ一覧</h3></div>
+
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>コミュニティ名</th>
+            <th style="text-align: left">参加人数</th>
+            <th>オーナー</th>
+            <th>作成日</th>
+            <th>詳細</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% groups.each do |group| %>
+          <tr>
+            <td><%= group.id %></td>
+            <td><%= group.name %></td>
+            <td><%= group.users.count %></td>
+            <td><%= group.owner.name %></td>
+            <td><%= group.created_at.strftime("%Y年%m月%d日") %></td>
+            <td><%= link_to "詳細", admin_group_path(group), class: "btn btn-info btn-sm" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
     </div>
   </div>
 </div>

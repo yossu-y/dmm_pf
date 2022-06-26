@@ -1,15 +1,35 @@
 <div class="container px-1">
   <div class="row">
+
+    <!-- オーナーのグループ一覧 -->
     <table class="table table-hover table-inverse" style="margin-top: 15px">
+      <% owner_groups.each do |group| %>
+      <tr style="cursor: pointer" onclick="window.location.href='<%= group_path(group) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
+        <td width="25%">
+          <%= image_tag group.get_image, class: "posting-img" %><br>
+        </td>
+        <td><%= group.name %></td>
+        <td class="date" width="20%">
+          <strong><%= group.users.count %></strong>人が参加中
+          <p style="margin-bottom: 0; color: #ff9500">&nbsp;オーナー</p>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <!-- 参加中のグループ一覧 -->
+    <table class="table table-hover table-inverse">
       <% groups.each do |group| %>
       <tr style="cursor: pointer" onclick="window.location.href='<%= group_path(group) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
         <td width="25%">
           <%= image_tag group.get_image, class: "posting-img" %>
         </td>
         <td><%= group.name %></td>
-        <td class="date" width="20%"><strong><%= group.users.count %></strong>人が参加中</td>
+        <td class="date" width="20%">
+          <strong><%= group.users.count %></strong>人が参加中
+        </td>
       </tr>
       <% end %>
     </table>
+
   </div>
 </div>

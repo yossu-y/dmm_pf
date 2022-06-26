@@ -1,7 +1,8 @@
-<div class="container px-5 px-sm-0">
+<div class="container px-3">
   <div class="row">
-    <div class="col-11 col-md-11 col-sm-11 mx-2 mx-sm-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-11 mx-auto px-0 my-5">
       <h3 class="title">投稿詳細</h3>
+
         <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
           <tbody>
             <tr>
@@ -43,10 +44,13 @@
             </tr>
             <tr>
               <td>投稿を削除</td>
-              <td><%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %></td>
+              <td>
+                <%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %>
+              </td>
             </tr>
           </tbody>
         </table>
+
         <div class="admin-comment">
           <h4>記事についたコメント</h4>
           <% @article.comments.each do |comment| %>
@@ -66,12 +70,12 @@
                 <%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %>
               </div>
               <div class="text-right" style="margin: -15px 5px 5px 0;">
-                <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+                <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, data: {confirm: "コメントを削除しますか？"}, class: "btn btn-sm btn-danger" %>
               </div>
             </div>
           <% end %>
         </div>
+
     </div>
   </div>
 </div>
-
