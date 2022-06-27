@@ -5,7 +5,13 @@ class Public::CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = current_user.comments.new(comment_params)
     @comment.article_id = @article.id
-    @comment.save
+    if @comment.save
+    else
+      # コメント失敗時のみメッセージ
+      redirect_to request.referer
+      flash[:alert] = "コメントは140文字以内で入力してください"
+    end
+
     # 自分の記事へのコメントは通知しない
     if @article.user_id != current_user.id
       @article.create_notification_comment!(current_user, @comment.id)

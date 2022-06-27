@@ -4,7 +4,7 @@
       <!-- scopeでname属性を指定 -->
       <%= form_with model: @message, scope: :message, url: group_messages_path(@group, @message), method: :post, local: false do |f| %>
         <div class="form-group message-form">
-          <%= f.text_area :message, placeholder: "コメントを入力", rows: "3", class: "form-control" %><br>
+          <%= f.text_area :message, placeholder: "メッセージを入力", rows: "3", class: "form-control" %><br>
         </div>
         <div class="actions">
           <%= f.submit "送信", class: "push-btn" %>

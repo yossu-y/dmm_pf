@@ -6,12 +6,12 @@
       <table class="table table-hover table-inverse">
         <thead>
           <tr>
-            <th>会員ID</th>
+            <th width="10%">会員ID</th>
             <th>氏名</th>
             <th>ニックネーム</th>
             <th>メールアドレス</th>
-            <th>詳細</th>
-            <th style="text-align: center">ステータス</th>
+            <th width="10%">詳細</th>
+            <th style="text-align: center">状態</th>
           </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
           <tr>
             <td><%= user.id %></td>
             <td><%= user.name %></td>
-            <td><%= user.screen_name %></td>
+            <td><%= truncate(user.screen_name, length:10) %></td>
             <td><%= user.email %></td>
             <td><%= link_to "詳細", admin_user_path(user), class: "btn btn-info btn-sm" %></td>
             <td style="text-align: center">

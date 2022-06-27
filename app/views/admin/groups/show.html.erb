@@ -20,11 +20,15 @@
           </tr>
           <tr>
             <td>コミュニティ説明</td>
-            <td><%= @group.introduction %></td>
+            <td style="white-space: pre-line;"><%= @group.introduction %></td>
           </tr>
           <tr>
             <td>コミュニティオーナー</td>
-            <td><%= @group.owner.name %></td>
+            <td>
+              <%= link_to admin_user_path(@group.owner) do %>
+                <%= @group.owner.name %>
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td>参加人数</td>

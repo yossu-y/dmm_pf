@@ -64,7 +64,7 @@ class Public::ArticlesController < ApplicationController
     flash[:alert] = "※20文字以上のタグは削除しました" if tag_list.any? { |tag| tag.length >= 21 }
     # 下書きを公開
     if params[:publicize_draft]
-      #@article.attributes = article_params
+      # @article.attributes = article_params
       @article.attributes = article_params.merge(is_draft: false)
       if @article.save(context: :publicize)
         @article.save_tag(tag_list)
