@@ -6,7 +6,7 @@
       <h3 class="site-name">Leniect</h3>
     </div>
     <div class="form-box">
-      <%= form_with model: @user, url: registration_path(resource_name) do |f| %>
+      <%= form_with model: @user, url: user_registration_path do |f| %>
         <%#= render "public/shared/error_messages", resource: resource %>
         <%= f.text_field :name, placeholder: "氏名", autofocus: true, class: "name-form" %>
         <%= f.text_field :screen_name, placeholder: "ニックネーム", class: "name-form" %>

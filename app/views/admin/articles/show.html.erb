@@ -24,7 +24,11 @@
             </tr>
             <tr>
               <td>投稿者（ニックネーム）</td>
-              <td><%= @article.user.screen_name %></td>
+              <td>
+                <%= link_to admin_user_path(@article.user) do %>
+                  <%= @article.user.screen_name %>
+                <% end %>
+              </td>
             </tr>
             <tr>
               <td>記事のタイトル</td>

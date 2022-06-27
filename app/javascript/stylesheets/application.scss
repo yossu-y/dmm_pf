@@ -365,7 +365,7 @@ footer {
   margin-top: 0px;
 }
 
-td {
+.my-page td {
   vertical-align: middle !important;
 }
 
@@ -519,12 +519,6 @@ td {
   float: left;
   margin-right: -140px;
   width: 80px;
-
-}
-
-.balloon .faceicon img{
-  width: 100%;
-  height: auto;
 }
 
 .balloon .chatting {
@@ -683,11 +677,14 @@ input:hover, a.form-control:hover, a.btn:hover {
   transform: translateY(-1px);
 }
 
+
 input:active, a:active {
   box-shadow: none;
   position: relative;
   top: 2px;
 }
+
+
 
 
 // レスポンシブ対応
@@ -724,6 +721,12 @@ input:active, a:active {
     height: 300px !important;
     width: 300px !important;
   }
+
+  .icon {
+    height: 85px !important;
+    width: 85px !important;
+  }
+
   .tab {
     font-size: 15px !important;
     text-align: center;

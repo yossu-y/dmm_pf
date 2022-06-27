@@ -29,9 +29,8 @@ set :environment, rails_env
 # cronのログの吐き出し場所
 set :output, "#{Rails.root}/log/cron.log"
 
-#30分に一度、data_resetメゾッドが実行される記述
-#テストする際は下記を3.minuteとかに変えた方がいいかもしれません。
-every 6.hour do
+#8時間に一度、data_resetメゾッドが実行される記述
+every 8.hours do
   begin
     rake "delete_guest_user_data:destroy"
   rescue => e

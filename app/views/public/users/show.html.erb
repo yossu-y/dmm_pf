@@ -20,9 +20,7 @@
               <% end %>
             </td>
             <td class="follow-button" width="20%">
-              <% if @user.screen_name != "guest" %>
-                <p><%= render "public/relationships/btn", user: @user %></p>
-              <% end %>
+              <p><%= render "public/relationships/btn", user: @user %></p>
             </td>
           </tr>
           <tr>
