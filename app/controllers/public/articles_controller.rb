@@ -27,6 +27,7 @@ class Public::ArticlesController < ApplicationController
 
   def create
     @article = current_user.articles.new(article_params)
+    # splitを使うことで、文字列を分割する/uniqで同じものを表示できなくなる
     tag_list = params[:article][:tag_name].split("、").uniq
     # ActiveRecord::Base.transaction do
     # タグの文字が20以上は削除する
@@ -99,11 +100,13 @@ class Public::ArticlesController < ApplicationController
     redirect_to user_path(current_user), notice: "記事を削除しました！"
   end
 
+  # タグから投稿を検索したページ
   def tag_search
     @tag = Tag.find(params[:tag_id])
-    @tag_articles = @tag.articles.all
+    @articles = @tag.articles.all
   end
 
+  # 下書き一覧ページ
   def draft
     @user = User.find(params[:id])
     @articles = @user.articles.where(is_draft: true).order(updated_at: :desc)

@@ -4,17 +4,12 @@ class Article < ApplicationRecord
   has_rich_text :body
 
   # リレーション
-
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :article_tags, dependent: :destroy
   has_many :tags, through: :article_tags
   has_many :notifications, dependent: :destroy
-
-  # バリテーション
-  validates :title, presence: true, on: :publicize
-  validates :body,  presence: true, on: :publicize
 
   # 投稿時のバリテーション
   with_options presence: true, on: :publicize do
@@ -26,6 +21,7 @@ class Article < ApplicationRecord
     (image.attached?)? image: "no_image.jpg"
   end
 
+  # いいねされているか判断するメソッド
   def liked_by?(user)
     likes.exists?(user_id: user.id)
   end
@@ -39,17 +35,14 @@ class Article < ApplicationRecord
   end
 
   # タグ機能
-
   def save_tag(sent_tags)
     current_tags = self.tags.pluck(:name) unless self.tags.nil?
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
-
     # 古いタグを消す
     old_tags.each do |old|
       self.tags.delete Tag.find_by(name: old)
     end
-
     # 新しいタグを
     new_tags.each do |new|
       new_article_tag = Tag.find_or_create_by(name: new)

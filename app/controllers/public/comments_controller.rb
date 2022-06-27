@@ -7,11 +7,10 @@ class Public::CommentsController < ApplicationController
     @comment.article_id = @article.id
     if @comment.save
     else
-      # コメント失敗時のみメッセージ
+      # コメント失敗時メッセージ
       redirect_to request.referer
       flash[:alert] = "コメントは140文字以内で入力してください"
     end
-
     # 自分の記事へのコメントは通知しない
     if @article.user_id != current_user.id
       @article.create_notification_comment!(current_user, @comment.id)
