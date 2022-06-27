@@ -42,14 +42,16 @@ class Public::GroupsController < ApplicationController
   def destroy
     # 削除機能は管理者のみ実装
   end
-
+  
+  # グループ内のチャットルーム
   def room
     @group = Group.find(params[:id])
     @messages = @group.messages.all
     # 退会ユーザーは表示しない
     @group_users = @group.users.where(is_deleted: false)
   end
-
+  
+  # グループに参加しているユーザー一覧
   def group_users
     @group = Group.find(params[:id])
     @users = @group.users.where(is_deleted: false)
