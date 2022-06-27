@@ -9,7 +9,14 @@
       <!--タブで選択された要素部分-->
       <div class="tabbox-contents">
         <div class="tabbox box-show">
-          <%= render "public/articles/index", articles: @articles %>
+          <!-- tag_searchでも部分テンプレートとして使用するため、container,row,colを記載 -->
+          <div class="container px-2">
+            <div class="row">
+              <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5 list">
+                <%= render "public/articles/index", articles: @articles %>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="tabbox">
           <%= render "public/groups/index", groups: @groups %>
