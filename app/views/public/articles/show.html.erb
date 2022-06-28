@@ -32,7 +32,7 @@
           <td width="16%" style="padding-left: 30px" id="like_buttons_<%= @article.id %>">
             <%= render "public/likes/btn", article: @article %>
           </td>
-          <td width="40%"><%= link_to "いいねしたユーザー", like_users_path %></td>
+          <td width="45%"><%= link_to "いいねしたユーザー", like_users_path %></td>
           <td width="13%" class="comments-counter">
             <%= render "public/comments/counter", article: @article %>
           </td>
