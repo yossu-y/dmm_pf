@@ -13,8 +13,8 @@
               <!-- 15文字まで表示させる -->
               <strong><%= truncate(article.title, length:15) %></strong>
             </td>
-            <td width="15%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info" %></td>
-            <td width="15%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger" %></td>
+            <td width="15%"><%= link_to "編集", edit_article_path(article), class: "btn btn-info btn-sm" %></td>
+            <td width="15%"><%= link_to "削除", article_path(article), method: :delete, data: {confirm: "下書きを削除しますか？"}, class: "btn btn-danger btn-sm" %></td>
             <td width="17%"><%= "#{time_ago_in_words(article.updated_at)}前" %></td>
           </tr>
           <% end %>
