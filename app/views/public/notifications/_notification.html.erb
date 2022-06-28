@@ -5,7 +5,7 @@
   <tr>
     <%= image_tag visiter.get_profile_image, class: "icon-mini rounded-circle" %>
     <%= link_to user_path(visiter), class: "text-dark", style: "text-decoration:underline" do %>
-      <%= visiter.screen_name %> さん
+      <%= truncate(visiter.screen_name, length:15) %> さん
     <% end %>が
     <% case notification.action %>
       <% when "comment" %>
