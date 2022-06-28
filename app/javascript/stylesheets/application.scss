@@ -770,11 +770,11 @@ input:active, a:active {
 }
 
 @media screen and (max-width: 425px) {
-  
+
   .mini-title {
     font-size: 30px;
   }
-  
+
   .my_page_img {
     height: 120px !important;
     width: 120px !important;
@@ -813,6 +813,15 @@ input:active, a:active {
     width: 23% !important;
     flex-basis: 165px;
   }
+
+  .instructon {
+    margin: 0 !important;
+  }
+
+  .menu h3 {
+    margin-left: 0 !important;
+  }
+
 
 
 }
