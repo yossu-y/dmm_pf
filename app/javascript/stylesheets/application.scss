@@ -770,9 +770,11 @@ input:active, a:active {
 }
 
 @media screen and (max-width: 425px) {
+  
   .mini-title {
     font-size: 30px;
   }
+  
   .my_page_img {
     height: 120px !important;
     width: 120px !important;
@@ -792,11 +794,24 @@ input:active, a:active {
     height: 65px !important;
     width: 65px !important;
   }
+
   td {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  .card {
+    margin: 3px !important;
+    width: 20% !important;
+    flex-basis: 165px;
+  }
+
+  .group-card {
+    margin: 3px !important;
+    width: 23% !important;
+    flex-basis: 165px;
   }
 
 
