@@ -365,7 +365,7 @@ footer {
   margin-top: 0px;
 }
 
-.my-page td {
+.line td {
   vertical-align: middle !important;
 }
 
@@ -587,6 +587,12 @@ label {
 .hidden {
   display: none;
 }
+
+.menu li {
+  margin-left: 60px;
+  padding: 4px;
+}
+
 // ----------------------------------------------
 
 /* admin */
