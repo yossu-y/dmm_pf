@@ -1,4 +1,4 @@
-# <サイト名（未定）>
+# <Leniect>
 
 ## サイト概要
 
@@ -27,7 +27,12 @@
 - 挑戦する人を応援したい時
 
 ## 設計書
-<...>
+- ER図 <br>
+  https://app.diagrams.net/#G1rJSS9Xa3Ze-DOBJs6U7BcYUf6emtbxG9 <br>
+- テーブル定義書 <br>
+  https://docs.google.com/spreadsheets/d/1eWdAKsrbjxZpbldWAU-J_gw3qcG7xk4QqEKL__mChCg/edit#gid=1373217982 <br>
+- アプリケーション詳細設計図 <br>
+  https://docs.google.com/spreadsheets/d/1rwE8D8PuolZSSyBTw08bW0jUkJV0p9sU0Vm49qbYe9o/edit#gid=844155663 <br>
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -36,6 +41,9 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用素材
-- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+## 参考サイト
+- コメント一覧デザイン <br>
+  https://saruwakakun.com/html-css/reference/speech-bubble <br>
+- 会員登録デザイン <br>
+  https://sounansa.net/archives/1522 <br>
+
