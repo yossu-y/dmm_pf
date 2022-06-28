@@ -28,7 +28,7 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   # バリテーション
-  validates :screen_name, length: { maximum: 25 }, presence: true
+  validates :screen_name, length: { maximum: 30 }, presence: true
   validates :introduction, length: { maximum: 350 }
 
   def get_profile_image
