@@ -1,9 +1,13 @@
-<div class="container">
-  <div class="row justify-content-center py-5">
-    <h3><b>お問い合わせありがとうございました！</b></h3><br><br>
-    <p>内容を確認しまして、順次ご返信させていただきます。</p>
+<div class="container px-2">
+  <div class="row">
+    <div class="col-10 col-md-10 col-sm-11 mx-auto px-0 my-2">
+      <div class="text-center mt-5">
+        <h3><b>お問い合わせありがとうございました！</b></h3><br>
+        内容を確認しまして、順次ご返信させていただきます。
+      </div>
+      <div class="text-center mt-3">
+        <%= link_to "マイページへ", user_path(current_user.id) %>
+      </dvi>
+    </div>
   </div>
-  <div class="text-center">
-    <%= link_to "マイページへ", user_path(current_user.id) %>
-  </dvi>
 </div>
