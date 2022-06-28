@@ -112,14 +112,10 @@
 
 <!-- ユーザーログイン時に表示される検索窓 -->
 <% if user_signed_in? %>
-  <div class="search" style="margin: 5px">
-    <%= render "public/searches/form" %>
-  </div>
+  <%= render "public/searches/form" %>
 <!-- 管理者ログイン時に表示される検索窓 -->
 <% elsif admin_signed_in? %>
-  <div class="search" style="margin: 5px">
-    <%= render "admin/searches/form" %>
-  </div>
+  <%= render "admin/searches/form" %>
 <!-- ログインしていない状態だと表示されない -->
 <% else %>
 <% end %>
