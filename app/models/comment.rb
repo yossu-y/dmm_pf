@@ -1,5 +1,7 @@
 class Comment < ApplicationRecord
 
+  default_scope -> { order(created_at: :desc) }
+
   # リレーション
   belongs_to :user
   belongs_to :article
