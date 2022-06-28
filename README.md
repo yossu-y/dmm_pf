@@ -27,12 +27,12 @@
 - 挑戦する人を応援したい時
 
 ## 設計書
-- ER図
-  https://app.diagrams.net/#G1rJSS9Xa3Ze-DOBJs6U7BcYUf6emtbxG9
-- テーブル定義書
-  https://docs.google.com/spreadsheets/d/1eWdAKsrbjxZpbldWAU-J_gw3qcG7xk4QqEKL__mChCg/edit#gid=1373217982
-- アプリケーション詳細設計図
-  https://docs.google.com/spreadsheets/d/1rwE8D8PuolZSSyBTw08bW0jUkJV0p9sU0Vm49qbYe9o/edit#gid=844155663
+- ER図 <br>
+  https://app.diagrams.net/#G1rJSS9Xa3Ze-DOBJs6U7BcYUf6emtbxG9 <br>
+- テーブル定義書 <br>
+  https://docs.google.com/spreadsheets/d/1eWdAKsrbjxZpbldWAU-J_gw3qcG7xk4QqEKL__mChCg/edit#gid=1373217982 <br>
+- アプリケーション詳細設計図 <br>
+  https://docs.google.com/spreadsheets/d/1rwE8D8PuolZSSyBTw08bW0jUkJV0p9sU0Vm49qbYe9o/edit#gid=844155663 <br>
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -42,8 +42,8 @@
 - IDE：Cloud9
 
 ## 参考サイト
-- コメント一覧
-  https://saruwakakun.com/html-css/reference/speech-bubble
-- 会員登録
-  https://sounansa.net/archives/1522
+- コメント一覧デザイン <br>
+  https://saruwakakun.com/html-css/reference/speech-bubble <br>
+- 会員登録デザイン <br>
+  https://sounansa.net/archives/1522 <br>
 
