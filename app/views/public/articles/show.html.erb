@@ -36,11 +36,15 @@
           <td width="13%" class="comments-counter">
             <%= render "public/comments/counter", article: @article %>
           </td>
-          <td></td>
+          <td>
+            <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【#{ @article.title }】", target: '_blank' do %>
+              <i class="fab fa-twitter" style="color: #3399FF; font-size: 20px"></i>
+            <% end %>
+          </td>
         </tr>
         <tr>
           <td colspan="3"><%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-          <td>
+          <td width="30%">
             <% if @article.user == current_user %>
               <%= link_to "編集", edit_article_path(@article), class: "btn btn-info btn-sm" %>
               <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
