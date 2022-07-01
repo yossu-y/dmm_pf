@@ -32,11 +32,12 @@
           <td width="16%" style="padding-left: 30px" id="like_buttons_<%= @article.id %>">
             <%= render "public/likes/btn", article: @article %>
           </td>
-          <td width="45%"><%= link_to "いいねしたユーザー", like_users_path %></td>
+          <td width="30%"><%= link_to "いいね一覧", like_users_path %></td>
           <td width="13%" class="comments-counter">
             <%= render "public/comments/counter", article: @article %>
           </td>
           <td>
+            <%= social_share_button_tag(@article.title, :allow_sites => %w(twitter facebook google_bookmark email )) %>
             <%#= link_to "https://twitter.com/share?url=#{ request.url }&text=【#{ @article.title }】", target: '_blank' do %>
               <!--<i class="fab fa-twitter" style="color: #3399FF; font-size: 20px"></i>-->
             <%# end %>
@@ -44,16 +45,17 @@
         </tr>
         <tr>
           <td colspan="3"><%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-          <td width="30%">
+          <td>
             <% if @article.user == current_user %>
               <%= link_to "編集", edit_article_path(@article), class: "btn btn-info btn-sm" %>
               <%= link_to "削除", article_path, method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
             <% end %>
+
           </td>
         </tr>
         <tr>
           <td colspan="4">
-            <%= social_share_button_tag(@article.title, :allow_sites => %w(twitter facebook google_bookmark pinterest email )) %>
+
           </td>
         </tr>
         <tr>
