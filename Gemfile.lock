@@ -79,6 +79,13 @@ GEM
       xpath (~> 3.2)
     childprocess (4.1.0)
     chronic (0.10.2)
+    coffee-rails (5.0.0)
+      coffee-script (>= 2.2.0)
+      railties (>= 5.2.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     devise (4.8.1)
@@ -94,6 +101,7 @@ GEM
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
     erubi (1.10.0)
+    execjs (2.8.1)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -190,6 +198,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    social-share-button (1.2.4)
+      coffee-rails
     spring (3.1.1)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -250,6 +260,7 @@ DEPENDENCIES
   rails (~> 6.1.6)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
+  social-share-button
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
