@@ -44,7 +44,7 @@
           </td>
         </tr>
         <tr>
-          <td colspan="3"><%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %> 投稿</td>
+          <td style="vertical-align: middle" colspan="3"><%= @article.updated_at.strftime("%Y年%m月%d日 %H:%M") %> 投稿</td>
           <td>
             <% if @article.user == current_user %>
               <%= link_to "編集", edit_article_path(@article), class: "btn btn-info btn-sm" %>
