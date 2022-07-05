@@ -4,6 +4,11 @@
       <div class="mx-1"><h3 class="mb-3 mini-title">コミュニティ編集</h3></div>
       <%= render "layouts/errors", obj: @group %>
 
+      <div class="img">
+        <p>登録中の画像</p>
+        <%= image_tag @group.get_image, class: "show-img" %>
+      </div>
+
       <%= form_with model: @group, local: true do |f| %>
         <div class="form-group">
           <%= f.label :コミュニティ画像 %><br>
