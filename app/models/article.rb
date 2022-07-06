@@ -30,7 +30,7 @@ class Article < ApplicationRecord
     if search != ""
       @article = Article.where(['title LIKE(?)', "%#{keyword}%"])
     else
-      @article = Article.where(is_draft: false)
+      @article = Article.all
     end
   end
 
