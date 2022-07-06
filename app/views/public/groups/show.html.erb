@@ -1,61 +1,64 @@
 <div class="container px-2">
   <div class="row">
-    <div class="col-9 col-md-10 col-sm-9 mx-auto px-0 my-5">
-      <div class="mx-3 mb-5"></div>
+    <div class="col-10 col-md-10 col-sm-11 mx-auto px-0 my-2">
+      <div class="mx-2 mb-5"></div>
 
       <table class="table">
         <tr>
-          <td class="img" colspan="4">
+          <td class="img" colspan="3">
             <%= image_tag @group.get_image, class: "show-img" %>
           </td>
         </tr>
         <tr>
-          <td width="30%">コミュニティ名：</td>
-          <td colspan="3"><%= @group.name %></td>
-        </tr>
-        <tr>
-          <td width="30%">コミュニティ紹介：</td>
-          <td height="80" colspan="3" style="white-space: pre-line">
-            <%= @group.introduction %>
-          </td>
-        </tr>
-        <tr>
-          <td width="30%">コミュニティ作成者：</td>
-          <td colspan="2">
-            <%= link_to @group.owner, class: "text-dark", style: "text-decoration:underline" do %>
-              <%= image_tag @group.owner.get_profile_image, class: "rounded-circle icon-mini" %>
-              <%= @group.owner.screen_name %>
-            <% end %>
-          </td>
-          <td width="14%">
-            <% if @group.is_owned_by?(current_user) %>
-              <div class="actions">
-                <%= link_to "編集", edit_group_path(@group), class: "btn btn-info btn-sm" %>
-              </div>
-            <% end %>
-          </td>
-        </tr>
-        <tr>
-          <td width="30%">
-            参加者(<%= @group_users.count %>人)：
-          </td>
           <td colspan="3">
-            <!-- 表示を20個に制限 -->
-            <% @group_users.first(20).each do |user| %>
-              <%= link_to user_path(user) do %>
-                <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
+            <div class="explanation">コミュニティ名</div>
+            <div class="info"><%= @group.name %></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" height="80">
+            <div class="explanation">コミュニティ紹介</div>
+            <div class="info"  style="white-space: pre-line"><%= @group.introduction %></div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="explanation">コミュニティ作成者</div>
+            <div class="info">
+              <%= link_to @group.owner, class: "text-dark" do %>
+                <%= image_tag @group.owner.get_profile_image, class: "rounded-circle icon-mini" %>
+                <%= @group.owner.screen_name %>
               <% end %>
-            <% end %>
+
+              <% if @group.is_owned_by?(current_user) %>
+                <div class="action text-right" style="margin-top: 0; padding-top: 0">
+                  <%= link_to "コミュニティを編集", edit_group_path(@group), class: "btn btn-info btn-sm" %>
+                </div>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="explanation">参加者(<%= @group_users.count %>人)</div>
+            <!-- 表示を20個に制限 -->
+            <div class="info">
+              <% @group_users.first(20).each do |user| %>
+                <%= link_to user_path(user) do %>
+                  <%= image_tag user.get_profile_image, class: "group-user-icon rounded-circle" %>
+                <% end %>
+              <% end %>
+            </div>
           </td>
         </tr>
       </table>
 
       <div style="text-align: right">
         <% if @group.is_owned_by?(current_user) %>
-          <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-success" %>
+          <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-info" %>
         <% else %>
           <% if @group.includesUser?(current_user) %>
-            <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-success" %>
+            <%= link_to "チャット画面へ", room_path(@group), class: "btn btn-info" %>
             <%= link_to "退会する", group_group_user_path(@group), method: :delete, data: {confirm: "退会してよろしいですか？"}, class: "btn btn-danger" %>
           <% else %>
             <%= link_to "参加する", group_group_user_path(@group), method: :post, data: {confirm: "コミュニティに参加しますか？"}, class: "btn btn-info" %>

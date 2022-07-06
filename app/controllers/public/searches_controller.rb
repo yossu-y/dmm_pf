@@ -7,7 +7,7 @@ class Public::SearchesController < ApplicationController
       # whereを使って退会済みユーザーを非表示
       @users = User.where(is_deleted: false).search(params[:search], params[:keyword])
     elsif @range == "投稿"
-      @articles = Article.search(params[:search], params[:keyword])
+      @articles = Article.where(is_draft: false).search(params[:search], params[:keyword])
     else @range = "コミュニティ"
       @groups = Group.search(params[:search], params[:keyword])
     end

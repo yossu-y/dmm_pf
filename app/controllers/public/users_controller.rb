@@ -36,7 +36,7 @@ class Public::UsersController < ApplicationController
       render "edit"
     end
   end
-  
+
   # 投稿にいいねしたユーザー一覧ページ
   def like_users
     @article = Article.find(params[:id])

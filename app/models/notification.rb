@@ -2,7 +2,7 @@ class Notification < ApplicationRecord
 
   # 新着順に表示
   default_scope -> { order(created_at: :desc) }
-  
+
   # リレーション
   belongs_to :article, optional: true
   belongs_to :comment, optional: true

@@ -1,12 +1,12 @@
 <div class="container px-0">
   <div class="row">
-    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-5">
+    <div class="col-11 col-md-11 col-sm-12 mx-auto px-0 my-4">
       <!-- 退会済みのユーザーの場合はマイページを表示しない -->
       <% if @user.is_deleted? %>
         <h4 class="text-center" style="margin-top: 30px">※退会済みのユーザーです。</h4>
       <% else %>
 
-        <div class="mx-4 mb-5"><h3 class="mini-title">マイページ</h3></div>
+        <div class="mx-3 mb-5"><h3 class="mini-title">マイページ</h3></div>
         <table class="table">
           <tr>
             <td rowspan="2" width="10%" valign="top"><%= image_tag @user.get_profile_image, class: "my_page_img rounded-circle" %></td>
