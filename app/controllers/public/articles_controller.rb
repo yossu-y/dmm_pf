@@ -1,6 +1,6 @@
 class Public::ArticlesController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.where(is_draft: false).order(updated_at: :desc)
@@ -118,10 +118,11 @@ class Public::ArticlesController < ApplicationController
     params.require(:article).permit(:title, :body, :is_draft, :image)
   end
 
-  def correct_user
+  def ensure_correct_user
     @article = Article.find(params[:id])
-    @user = @article.user
-    redirect_to(articles_path) unless @user == current_user
+    if @article.user != current_user
+      redirect_to articles_path, alert: "他ユーザーの投稿は編集できません。"
+    end
   end
 
 end

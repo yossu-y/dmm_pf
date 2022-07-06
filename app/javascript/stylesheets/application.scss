@@ -15,6 +15,18 @@ header ul {
   margin: 15px 0 0 0;
 }
 
+header li:nth-child(1) {
+  margin-top: 5px;
+}
+header li:nth-child(2) {
+  margin-top: 5px;
+}
+header li:nth-child(3) {
+  margin-top: 5px;
+}
+header li:nth-child(4) {
+  margin-top: 5px;
+}
 header li:nth-child(5) {
   margin-top: -12px;
 }
@@ -114,7 +126,7 @@ footer {
 
 .actions {
   text-align: right !important;
-  margin-top: 30px !important;
+  margin-top: 20px !important;
 }
 
 .form-group {
@@ -506,6 +518,15 @@ footer {
   padding: 0;
 }
 
+.social-share-button {
+  text-align: center;
+  height: 1.5rem;
+  .ssb-icon {
+    height: 27px;
+    width: 40px;
+  }
+}
+
 // コメント・メッセージのレイアウト
 
 .balloon {
@@ -529,7 +550,7 @@ footer {
 .says {
   display: inline-block;
   position: relative;
-  margin: 0 0 0 90px;
+  margin: 0 0 0 96px;
   padding: 17px 13px;
   border-radius: 12px;
   background: #f5f5f5;
@@ -564,6 +585,18 @@ label {
 
 .withdraw {
   margin-top: 10px
+}
+
+.explanation {
+  font-size: 17px;
+  font-weight: 550;
+}
+
+.info {
+  background-color: #faebd7;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 5px;
 }
 
 

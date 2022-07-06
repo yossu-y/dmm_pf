@@ -65,8 +65,8 @@ class Public::GroupsController < ApplicationController
 
   def ensure_correct_user
     @group = Group.find(params[:id])
-    unless @group.owner.id == current_user.id
-      redirect_to groups_path
+    if @group.owner.id != current_user.id
+      redirect_to groups_path, alert: "他ユーザーが作成したグループは編集できません。"
     end
   end
 

@@ -4,80 +4,97 @@
       <h3 class="title">投稿詳細</h3>
 
         <table class="table table-borderless" style="border: 1px solid black; border-collapse: collapse;">
-          <tbody>
-            <tr>
-              <td colspan="2" style="text-align: center">
-                <%= image_tag @article.get_image, class: "my_page_img" %>
-              </td>
-            </tr>
-            <tr>
-              <td width="30%">投稿ID</td>
-              <td><%= @article.id %></td>
-            </tr>
-            <tr>
-              <td width="30%">投稿日</td>
-              <td><%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %></td>
-            </tr>
-            <tr>
-              <td width="30%">投稿者（氏名）</td>
-              <td><%= @article.user.name %></td>
-            </tr>
-            <tr>
-              <td>投稿者（ニックネーム）</td>
-              <td>
+          <tr>
+            <td class="text-center">
+              <%= image_tag @article.get_image, class: "my_page_img" %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">投稿ID</div>
+              <div class="info"><%= @article.id %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">投稿日</div>
+              <div class="info"><%= @article.created_at.strftime("%Y年%m月%d日 %H:%M") %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">投稿者（氏名）</div>
+              <div class="info"><%= @article.user.name %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">投稿者（ニックネーム）</div>
+              <div class="info">
                 <%= link_to admin_user_path(@article.user) do %>
                   <%= @article.user.screen_name %>
                 <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td>記事のタイトル</td>
-              <td><%= @article.title %></td>
-            </tr>
-            <tr>
-              <td width="30%" style="vertical-align: top; white-space: pre-line;">記事の内容</td>
-              <td><%= @article.body %></td>
-            </tr>
-            <tr>
-              <td>記事についたタグ</td>
-              <td>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">記事のタイトル</div>
+              <div class="info"><%= @article.title %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">記事の内容</div>
+              <div class="info" style="vertical-align: top; white-space: pre-line;"><%= @article.body %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">記事についたタグ</div>
+              <div class="info">
                 <% @article_tags.each do |tag| %>
                   <%= tag.name %>,
                 <% end %>
-              </td>
-            </tr>
-            <tr>
-              <td>投稿を削除</td>
-              <td>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
                 <%= link_to "投稿を削除", admin_article_path(@article), method: :delete, data: {confirm: "投稿を削除しますか？"}, class: "btn btn-danger" %>
-              </td>
-            </tr>
-          </tbody>
+              </div>
+            </td>
+          </tr>
         </table>
 
         <div class="admin-comment">
           <h4>記事についたコメント</h4>
           <% @article.comments.each do |comment| %>
-            <div class="balloon">
+
+            <div class="balloon" style="margin-bottom: 5px">
               <div class="faceicon">
                 <%= link_to admin_user_path(comment.user) do %>
                   <%= image_tag comment.user.get_profile_image, class: "icon-mini rounded-circle" %>
-                  <div class="text-dark">&nbsp;<%= truncate(comment.user.screen_name, length: 10) %></div>
+                  <div class="text-dark">
+                    <%= truncate(comment.user.screen_name, length: 10) %>
+                  </div>
                 <% end %>
               </div>
-              <div class="chatting">
+              <div class="chatting row">
                 <div class="says">
-                  <p><%= comment.comment %></p>
+                  <p style="white-space: pre-line;"><%= comment.comment %></p>
                 </div>
               </div>
-              <div class="text-right" style="margin: -15px 5px 5px 0;">
-                <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, data: {confirm: "コメントを削除しますか？"}, class: "btn btn-sm btn-danger" %>
+              <div class="text-right" style="margin: -5px 5px 5px 0;">
                 <div class="comment-date" style="margin: 10px 0 0 5px">
                   <%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %>
                 </div>
+                <%= link_to "削除", admin_article_comment_path(comment.article, comment), method: :delete, remote: true, data: {confirm: "コメントを削除しますか？"}, class: "btn btn-sm btn-danger" %>
               </div>
             </div>
           <% end %>
+
         </div>
 
     </div>

@@ -11,33 +11,45 @@
             </td>
           </tr>
           <tr>
-            <td width="25%%">会員ID</td>
-            <td><%= @user.id %></td>
-          </tr>
-          <tr>
-            <td>氏名</td>
-            <td><%= @user.name %></td>
-          </tr>
-          <tr>
-            <td>ニックネーム</td>
-            <td><%= @user.screen_name %></td>
-          </tr>
-          <tr>
-            <td>自己紹介</td>
-            <td style="white-space: pre-line;"><%= @user.introduction %></td>
-          </tr>
-          <tr>
-            <td>メールアドレス</td>
-            <td><%= @user.email %></td>
-          </tr>
-          <tr>
-            <td>会員ステータス</td>
             <td>
-              <% if @user.active_for_authentication? %>
-                <b class="text-success">有効</b>
-              <% else %>
-                <b class="text-danger">退会</b>
-              <% end %>
+              <div class="explanation">会員ID</div>
+              <div class="info"><%= @user.name %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">氏名</div>
+              <div class="info"><%= @user.name %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">ニックネーム</div>
+              <div class="info"><%= @user.screen_name %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">メールアドレス</div>
+              <div class="info"><%= @user.email %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">自己紹介</div>
+              <div class="info" style="white-space: pre-wrap"><%= @user.introduction %></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="explanation">会員ステータス</div>
+              <div class="info">
+                <% if @user.active_for_authentication? %>
+                  <strong class="text-info">有効</strong>
+                <% else %>
+                  <strong class="text-warning">退会</strong>
+                <% end %>
+              </div>
             </td>
           </tr>
         </tbody>

@@ -65,3 +65,5 @@ end
 gem "enum_help"
 
 gem "whenever", require: false
+gem "social-share-button"
+
