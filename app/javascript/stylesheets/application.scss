@@ -1,4 +1,6 @@
 
+
+
 @import "skippr";
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
@@ -48,7 +50,7 @@ header li:nth-child(5) {
 }
 
 body {
-  font-family: serif !important;
+  font-family: serif, sans-serif !important;
   position: relative;
   min-height: 100vh;
   padding-bottom: 120px;
@@ -804,6 +806,10 @@ input:active, a:active {
 }
 
 @media screen and (max-width: 425px) {
+
+  .navbar {
+    // position: fixed;
+  }
 
   .mini-title {
     font-size: 30px;
