@@ -19,6 +19,7 @@ require "rails_helper"
           test_user.screen_name = ""
           is_expected.to eq false;
         end
+        
 
       end
     end
