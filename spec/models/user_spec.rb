@@ -19,7 +19,10 @@ require "rails_helper"
           test_user.screen_name = ""
           is_expected.to eq false;
         end
-        
+        it "ニックネームが30文字以下である" do
+          user.screen_name = Faker::Lorem.characters(number:31)
+          expect(user.valid?).to eq false;
+        end
 
       end
     end
