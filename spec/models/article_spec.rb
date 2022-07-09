@@ -4,7 +4,7 @@ RSpec.describe "Articleモデルのテスト", type: :model do
   describe "バリデーションのテスト" do
     # factoriesで作成したダミーデータを使用します。
     let(:user) { FactoryBot.create(:user) }
-    let!(:article) { build(:article, user_id: user.id) }
+    let!(:article) { build(:article, user_id: user.id) }s
 
     # test_articleを作成し、空欄での登録ができるか確認します。
     subject { test_article.valid? }
