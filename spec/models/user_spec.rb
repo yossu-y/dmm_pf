@@ -23,7 +23,23 @@ require "rails_helper"
           user.screen_name = Faker::Lorem.characters(number:31)
           expect(user.valid?).to eq false;
         end
-
       end
+
+      context "emailカラム" do
+        it "メールアドレスがない場合" do
+          test_user.email = ""
+          is_expected.to eq false;
+        end
+      end
+
+      context "introductionカラム" do
+        it "自己紹介が350文字以下である" do
+          user.introduction = Faker::Lorem.characters(number:351)
+          expect(user.valid?).to eq false;
+        end
+      end
+
+
+
     end
   end
