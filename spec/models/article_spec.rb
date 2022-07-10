@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Articleモデルのテスト", type: :model do
   describe "バリデーションのテスト" do
@@ -35,16 +35,34 @@ RSpec.describe "Articleモデルのテスト", type: :model do
   end
 
   describe "アソシエーションのテスト" do
+
     context "userモデルとの関係" do
       it "N:1となっている" do
         expect(Article.reflect_on_association(:user).macro).to eq :belongs_to
       end
     end
 
-    # has_manyの関係性で記述するのもありです。
-    context 'Commentモデルとの関係' do
-      it '1:Nとなっている' do
+    context "Likeモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(Article.reflect_on_association(:likes).macro).to eq :has_many
+      end
+    end
+
+    context "Commentモデルとの関係" do
+      it "1:Nとなっている" do
         expect(Article.reflect_on_association(:comments).macro).to eq :has_many
+      end
+    end
+
+    context "Tagモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(Article.reflect_on_association(:tags).macro).to eq :has_many
+      end
+    end
+
+    context "Notificationモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(Article.reflect_on_association(:notifications).macro).to eq :has_many
       end
     end
 
