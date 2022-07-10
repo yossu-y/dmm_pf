@@ -39,7 +39,57 @@ require "rails_helper"
         end
       end
 
-
-
     end
+
+    describe "バリテーションのテスト" do
+      context "Commentモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:comments).macro).to eq :has_many
+        end
+      end
+
+      context "Articleモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:articles).macro).to eq :has_many
+        end
+      end
+
+      context "Likeモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:likes).macro).to eq :has_many
+        end
+      end
+
+      context "Group_Usersモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:group_users).macro).to eq :has_many
+        end
+      end
+
+      context "Groupモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:groups).macro).to eq :has_many
+        end
+      end
+
+      context "Messageモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:messages).macro).to eq :has_many
+        end
+      end
+
+      context "Notificationsモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:notifications).macro).to eq :has_many
+        end
+      end
+
+      context "Contactsモデルとの関係" do
+        it "1:Nとなっている" do
+          expect(User.reflect_on_association(:group_users).macro).to eq :has_many
+        end
+      end
+    end
+
   end
+

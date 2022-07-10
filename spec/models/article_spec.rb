@@ -4,7 +4,7 @@ RSpec.describe "Articleモデルのテスト", type: :model do
   describe "バリデーションのテスト" do
     # factoriesで作成したダミーデータを使用します。
     let(:user) { FactoryBot.create(:user) }
-    let!(:article) { build(:article, user_id: user.id) }s
+    let!(:article) { build(:article, user_id: user.id) }
 
     # test_articleを作成し、空欄での登録ができるか確認します。
     subject { test_article.valid? }
@@ -45,6 +45,18 @@ RSpec.describe "Articleモデルのテスト", type: :model do
     context 'Commentモデルとの関係' do
       it '1:Nとなっている' do
         expect(Article.reflect_on_association(:comments).macro).to eq :has_many
+      end
+    end
+
+    context "Tagモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(Article.reflect_on_association(:tags).macro).to eq :has_many
+      end
+    end
+
+    context "Notificationモデルとの関係" do
+      it "1:Nとなっている" do
+        expect(Article.reflect_on_association(:notifications).macro).to eq :has_many
       end
     end
 
