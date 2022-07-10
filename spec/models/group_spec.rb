@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
   RSpec.describe "Groupモデルのテスト", type: :model do
 
@@ -34,17 +34,31 @@ require 'rails_helper'
       end
 
       describe "アソシエーションのテスト" do
-        context "userモデルとの関係" do
+
+        context "Userモデルとの関係" do
           it "N:1となっている" do
             expect(Group.reflect_on_association(:users).macro).to eq :has_many
           end
         end
 
-        context "messageモデルとの関係" do
+        context "Messageモデルとの関係" do
           it "1:Nとなっている" do
             expect(Group.reflect_on_association(:messages).macro).to eq :has_many
           end
         end
+
+        context "Ownerモデルとの関係" do
+          it "N:1となっている" do
+            expect(Group.reflect_on_association(:owner).macro).to eq :belongs_to
+          end
+        end
+
+        context "Group_Userモデルとの関係" do
+          it "1:Nとなっている" do
+            expect(Group.reflect_on_association(:group_users).macro).to eq :has_many
+          end
+        end
+
       end
 
     end

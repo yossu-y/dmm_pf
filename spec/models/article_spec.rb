@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Articleモデルのテスト", type: :model do
   describe "バリデーションのテスト" do
