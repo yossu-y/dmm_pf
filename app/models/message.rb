@@ -7,6 +7,6 @@ class Message < ApplicationRecord
   belongs_to :group
 
   # バリテーション
-  validates :message, presence: true
+  validates :message, presence: true, length: { maximum: 500 }
 
 end
