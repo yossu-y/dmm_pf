@@ -4,7 +4,7 @@ class Contact < ApplicationRecord
   belongs_to :user
 
   # バリテーション
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true
   validates :message, presence: true, length: {in: 2..500}
 
