@@ -71,3 +71,5 @@ gem "enum_help"
 gem "whenever", require: false
 gem "social-share-button"
 
+gem 'omniauth-google-oauth2'
+gem 'omniauth', '1.9.1'
