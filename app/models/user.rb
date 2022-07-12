@@ -75,7 +75,7 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       # deviseのuserカラムに name を追加している場合は以下のコメントアウトも追記します
       user.name = auth.info.name
-      user.screen_name = auth.info.screen_name
+      user.screen_name = auth.info.name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
     end
