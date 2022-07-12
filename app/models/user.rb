@@ -81,7 +81,6 @@ class User < ApplicationRecord
     end
   end
 
-
   # ゲストログインメソッド
   def self.guest
     find_or_create_by!(name: "guestuser", screen_name: "guest", email: "guest@example.com") do |user|
