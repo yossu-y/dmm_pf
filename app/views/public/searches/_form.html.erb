@@ -1,4 +1,4 @@
-<div class="search-box" style="margin-right: 15px">
+<div class="search-box" style="padding-right: 10px">
   <%= form_with url: search_path, local: true, method: :get do |f| %>
     <%= f.text_field :keyword, placeholder: " 検索ワードを入力", class: "search-input", size: 30, style: "padding: 5px; margin: 3px" %>
     <%= f.select :range, options_for_select([["ユーザー"], ["投稿"], ["コミュニティ"]]), class: "search-tag" %>
