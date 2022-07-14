@@ -1,6 +1,6 @@
 class ArticleTag < ApplicationRecord
 
-  # リレーション
+  # アソシエーション
   belongs_to :tag
   belongs_to :article
 

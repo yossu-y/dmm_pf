@@ -1,6 +1,6 @@
 class Contact < ApplicationRecord
 
-  # リレーション
+  # アソシエーション
   belongs_to :user
 
   # バリテーション

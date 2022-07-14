@@ -15,7 +15,8 @@
         </div>
         <div class="form-group">
           <%= f.label :コミュニティ紹介 %><br>
-          <%= f.text_area :introduction, class: "form-control", rows: 20 %>
+          <%= f.text_area :introduction, class: "form-control js-group-introduction", rows: 20 %>
+          <p class="js-group-introduction-count text-right"></p>
         </div>
         <div class="actions">
           <%= link_to "キャンセル", groups_path, class: "btn btn-light" %>
