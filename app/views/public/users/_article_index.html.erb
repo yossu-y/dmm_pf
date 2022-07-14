@@ -4,7 +4,7 @@
     <table class="table table-hover table-inverse line" style="margin-top: 15px">
       <% articles.each do |article| %>
       <tr>
-        <td width="10%">
+        <td width="20%">
           <%= image_tag article.get_image, class: "posting-img" %>
         </td>
         <td><%= truncate(article.title, length:25) %></td>
