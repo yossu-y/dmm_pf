@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+.navbar {
+  border-bottom: solid 1px #000000;
+}
+
 header ul {
   margin: 15px 0 0 0;
 }
@@ -86,10 +90,8 @@ footer {
 
 .search-box {
   margin-top: 1px !important;
-  list-style: none;
   text-align: right;
-  border-top: solid 1px #000000;
-  padding-top: 25px !important;
+  padding-top: 15px !important;
 }
 
 .n-circle {
@@ -703,7 +705,6 @@ input:active, a:active {
 
 
 
-
 // レスポンシブ対応
 
 @media screen and (max-width: 1024px) {
@@ -776,6 +777,7 @@ input:active, a:active {
   // header {
   //   position: fixed;
   //   z-index: 50;
+  //   background-color: #dcdcdc;
   // }
 
   .mini-title {
