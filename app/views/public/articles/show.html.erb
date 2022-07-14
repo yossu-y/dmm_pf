@@ -68,10 +68,10 @@
           <td colspan="3">
             <%= link_to @article.user do %>
               <id class="text-dark" style="font-size:22px">
-                <strong><%= @article.user.screen_name %></strong>
-              </id><br><br>
+                &nbsp;<strong><%= @article.user.screen_name %></strong>
+              </id><br>
             <% end %>
-            <%= truncate(@article.user.introduction, length: 200) %>
+            &nbsp;<%= truncate(@article.user.introduction, length: 200) %>
           </td>
         </tr>
       </table>
