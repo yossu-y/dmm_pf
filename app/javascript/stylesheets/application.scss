@@ -773,9 +773,10 @@ input:active, a:active {
 
 @media screen and (max-width: 425px) {
 
-  .navbar {
-    // position: fixed;
-  }
+  // header {
+  //   position: fixed;
+  //   z-index: 50;
+  // }
 
   .mini-title {
     font-size: 30px;
