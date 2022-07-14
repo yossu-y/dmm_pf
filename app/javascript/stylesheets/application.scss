@@ -1,6 +1,4 @@
 
-
-
 @import "skippr";
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
@@ -537,18 +535,14 @@ footer {
   overflow: hidden;
   padding-bottom: 10px;
 }
-
 .balloon .faceicon {
   margin-right: -140px;
   width: 80px;
   float: left;
 }
-
-
 .balloon .chatting {
   width: 100%;
 }
-
 .says {
   display: inline-block;
   position: relative;
@@ -557,7 +551,6 @@ footer {
   border-radius: 12px;
   background: #f5f5f5;
 }
-
 .says:after {
   content: "";
   display: inline-block;
@@ -567,7 +560,6 @@ footer {
   border: 12px solid transparent;
   border-right: 12px solid #f5f5f5;
 }
-
 .says p {
   margin: 0;
   padding: 0;
@@ -580,20 +572,16 @@ footer {
   margin: 0 0 5px 0;
   text-align: right;
 }
-
 label {
   font-size: 20px;
 }
-
 .withdraw {
   margin-top: 10px
 }
-
 .explanation {
   font-size: 17px;
   font-weight: 550;
 }
-
 .info {
   background-color: #faebd7;
   border-radius: 10px;
@@ -609,21 +597,17 @@ label {
   cursor: pointer;
   color: #5e78c1;
 }
-
 .menu h3:hover {
   color: #b04188;
   text-decoration: underline;
 }
-
 .menu ul {
   margin: 0 0 1em 0;
   font-size: 14px;
 }
-
 .hidden {
   display: none;
 }
-
 .menu li {
   margin-left: 60px;
   padding: 4px;
@@ -654,7 +638,6 @@ input.btn-login:hover, a.btn-login:hover {
   color: #fff;
   font-weight: bold;
 }
-
 input.guest-login, a.guest-login {
   border: 2px solid #f5f5f5 !important;
   background: #009bbf !important;
@@ -663,7 +646,6 @@ input.guest-login, a.guest-login {
   font-weight: bolder;
   color: #fff;
 }
-
 input.guest-login:hover, a.guest-login:hover {
   border: 2px solid #f5f5f5 !important;
   background: #00a7db !important;
@@ -671,7 +653,6 @@ input.guest-login:hover, a.guest-login:hover {
   font-weight: bold;
   max-width: 100% !important;
 }
-
 input.btn-follow, a.btn-follow {
   border: 2px solid #f5f5f5 !important;
   background: #ee7b1a !important;
@@ -681,7 +662,6 @@ input.btn-follow, a.btn-follow {
   color: #fff;
   height: 35px;
 }
-
 input.btn-follow:hover, a.btn-follow:hover {
   border: 2px solid #f5f5f5 !important;
   background: #ff9500 !important;
@@ -702,24 +682,19 @@ input.push-btn, a.push-btn {
   width: 60px;
   height: 35px;
 }
-
 input.push-btn:hover, a.push-btn:hover {
   border: 2px solid #d3d3d3 !important;
   background-color: #f5f5f5;
   font-weight: bold;
 }
-
 input:hover, a.form-control:hover, a.btn:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
-
 .card:hover, .group-card:hover {
   box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
   transform: translateY(-1px);
 }
-
-
 input:active, a:active {
   box-shadow: none;
   position: relative;
@@ -736,11 +711,9 @@ input:active, a:active {
     height: 200px !important;
     width: 200px !important;
   }
-
   .tab {
     font-size: 18px !important;
   }
-
   .follow-count {
     padding-right: 0 !important;
     margin-right: 0 !important;
@@ -763,36 +736,29 @@ input:active, a:active {
     height: 300px !important;
     width: 300px !important;
   }
-
   .icon {
     height: 85px !important;
     width: 85px !important;
   }
-
   .tab {
     font-size: 15px !important;
     text-align: center;
   }
-
   td {
     padding-left: 0 !important;
     padding-right: 1 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-
   .follow-button {
     width: 30%;
   }
-
   .like_button {
     width: 14%;
   }
-
   .date {
     display: none;
   }
-
   .introduction {
     display: none;
   }
@@ -828,40 +794,33 @@ input:active, a:active {
   .search-input {
     width: 160px;
   }
-
   .show-img {
     height: 250px !important;
     width: 250px !important;
   }
-
   .icon {
     height: 65px !important;
     width: 65px !important;
   }
-
   td {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-
   .card {
     margin: 3px !important;
     width: 20% !important;
     flex-basis: 165px;
   }
-
   .group-card {
     margin: 3px !important;
     width: 23% !important;
     flex-basis: 165px;
   }
-
   .instructon {
     margin: 0 !important;
   }
-
   .menu h3 {
     margin-left: 0 !important;
   }
