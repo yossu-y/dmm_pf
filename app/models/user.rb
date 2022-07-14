@@ -7,8 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :profile_image
 
-  # リレーション
-
+  # アソシエーション
   has_many :articles, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
@@ -24,20 +23,20 @@ class User < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
   # 自分からの通知
-  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visiter_id', dependent: :destroy
+  has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
   # 相手からの通知
-  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+  has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
   # バリテーション
   validates :screen_name, length: { maximum: 30 }, presence: true
   validates :introduction, length: { maximum: 350 }
+  validates :email, presence: true
 
   def get_profile_image
     (profile_image.attached?)? profile_image: "no-image-icon.jpg"
   end
 
   # フォロー機能のメソッド
-
   def follow(user)
     relationships.create(followed_id: user.id)
   end
@@ -51,7 +50,6 @@ class User < ApplicationRecord
   end
 
   # 検索機能のメソッド
-
   def self.search(search, keyword)
     if search != ""
       @user = User.where(['screen_name LIKE(?)', "%#{keyword}%"])

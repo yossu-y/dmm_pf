@@ -1,6 +1,6 @@
 class GroupUser < ApplicationRecord
 
-  # リレーション
+  # アソシエーション
   belongs_to :user
   belongs_to :group
 

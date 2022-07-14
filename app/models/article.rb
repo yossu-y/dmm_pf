@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   has_one_attached :image
   has_rich_text :body
 
-  # リレーション
+  # アソシエーション
   belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
