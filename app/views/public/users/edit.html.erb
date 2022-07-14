@@ -23,7 +23,8 @@
         </div>
         <div class="form-group">
           <%= f.label :introduction, "自己紹介" %><br>
-          <%= f.text_area :introduction, class: "form-content-info form-control" %>
+          <%= f.text_area :introduction, class: "form-content-info form-control js-introduction" %>
+          <p class="js-introduction-count text-right"></p>
         </div>
         <div class="actions">
           <%= link_to "退会", unsubscribe_path, class: "btn btn-danger" %>
