@@ -45,9 +45,9 @@
               <div class="explanation">会員ステータス</div>
               <div class="info">
                 <% if @user.active_for_authentication? %>
-                  <strong class="text-info">有効</strong>
+                  <strong class="text-success">有効</strong>
                 <% else %>
-                  <strong class="text-warning">退会</strong>
+                  <strong class="text-danger">退会</strong>
                 <% end %>
               </div>
             </td>
