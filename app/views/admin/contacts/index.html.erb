@@ -16,7 +16,7 @@
         </thead>
         <tbody>
           <% @contacts.each do |contact| %>
-          <tr>
+          <tr style="cursor: pointer" onclick="window.location.href='<%= admin_contact_path(contact) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
             <td><%= contact.id %></td>
             <td><%= contact.name %></td>
             <td><%= contact.subject_i18n %></td>
