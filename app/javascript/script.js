@@ -101,3 +101,7 @@ document.addEventListener("turbolinks:load", function (){
   });
 });
 
+$(document).ready(function() {
+    $('#my-tags').tagit({tagLimit:10});
+});
+

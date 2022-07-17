@@ -73,3 +73,5 @@ gem "social-share-button"
 
 gem 'omniauth-google-oauth2'
 gem 'omniauth', '1.9.1'
+
+gem "jquery-ui-rails"

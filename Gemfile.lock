@@ -125,6 +125,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     jwt (2.4.1)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -295,6 +297,7 @@ DEPENDENCIES
   faker
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
+  jquery-ui-rails
   listen (~> 3.3)
   mysql2
   omniauth (= 1.9.1)
