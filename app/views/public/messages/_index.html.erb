@@ -11,9 +11,15 @@
       <% end %>
     </div>
     <div class="chatting row">
-      <div class="says">
-        <p style="white-space: pre-line;"><%= message.message %></p>
-      </div>
+      <% if message.user == current_user %>
+        <div class="user-says">
+          <p style="white-space: pre-line;"><%= message.message %></p>
+        </div>
+      <% else %>
+        <div class="says">
+          <p style="white-space: pre-line;"><%= message.message %></p>
+        </div>
+      <% end %>
     </div>
 
     <div class="text-right" style="margin: -20px 5px 5px 0;">
