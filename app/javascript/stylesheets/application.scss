@@ -567,6 +567,27 @@ footer {
   margin: 0;
   padding: 0;
 }
+.user-says {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 96px;
+  padding: 17px 13px;
+  border-radius: 12px;
+  background: #add8e6;
+}
+.user-says:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  left: -24px;
+  border: 12px solid transparent;
+  border-right: 12px solid #add8e6;
+}
+.user-says p {
+  margin: 0;
+  padding: 0;
+}
 
 
 // -----------------------------------------
@@ -615,11 +636,7 @@ label {
   margin-left: 60px;
   padding: 4px;
 }
-
-// ----------------------------------------------
-
-/* admin */
-
+// ----------------------------------
 .admin-actions {
   margin-top: 20px;
 }
