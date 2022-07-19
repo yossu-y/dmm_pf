@@ -17,9 +17,7 @@
       <% end %>
     </div>
     <div class="devise-link">
-      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %>
-        Googleアカウントで登録する<br>
-      <% end %>
+      <%= link_to "Googleアカウントで登録する", user_google_oauth2_omniauth_authorize_path, method: :post %>
       <%= render "public/shared/links" %>
     </div>
   </div>
