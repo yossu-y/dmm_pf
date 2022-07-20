@@ -18,7 +18,6 @@
 header ul {
   margin: 15px 0 0 0;
 }
-
 header li:nth-child(1) {
   margin-top: 5px;
 }
@@ -746,6 +745,12 @@ input:active, a:active {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .navbar-nav {
+    display: inline-block;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .my_page_img {
     height: 150px !important;
@@ -795,11 +800,12 @@ input:active, a:active {
 
 @media screen and (max-width: 425px) {
 
-  // header {
-  //   position: fixed;
-  //   z-index: 50;
-  //   background-color: #dcdcdc;
-  // }
+  header {
+    width: 100%;
+    position: fixed;
+    z-index: 50;
+    background-color: white;
+  }
 
   .mini-title {
     font-size: 30px;
@@ -811,10 +817,12 @@ input:active, a:active {
     margin-right: 6px !important;
   }
 
+  .search-box {
+    padding-top: 130px !important;
+  }
   .search-form {
     margin: 0 !important;
   }
-
   .search-input {
     width: 160px;
   }
