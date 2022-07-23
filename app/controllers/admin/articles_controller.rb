@@ -2,7 +2,7 @@ class Admin::ArticlesController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @articles = Article.all
+    @articles = Article.where(is_draft: false)
   end
 
   def show
