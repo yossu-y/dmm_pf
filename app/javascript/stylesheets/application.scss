@@ -520,13 +520,40 @@ footer {
   padding: 0;
 }
 
-.social-share-button {
-  text-align: center;
-  height: 1.5rem;
-  .ssb-icon {
-    height: 27px;
-    width: 40px;
-  }
+// .social-share-button {
+//   text-align: center;
+//   height: 1.5rem;
+//   .ssb-icon {
+//     height: 27px;
+//     width: 40px;
+//   }
+// }
+
+.share-btn {
+  position: relative;
+}
+.share-btn:hover .share-text {
+  display: inline;
+}
+.share-text {
+  position: absolute;
+  display: none;
+  padding: 2px;
+  background-color: black;
+  width:120px;
+  left: -44px;
+  top: 100%;
+  margin-top: 12px;
+}
+.share-text:after{
+  border-bottom: 12px solid black;
+  border-left: 10px solid;
+  border-right: 10px solid;
+  top: -12px;
+  left: 35%;
+  content: "";
+  position: absolute;
+  color: white;
 }
 
 // コメント・メッセージのレイアウト
@@ -612,6 +639,9 @@ label {
   margin-top: 5px;
 }
 
+.admin-actions {
+  margin-top: 20px;
+}
 
 /* aboutページの開閉メニュー */
 .menu h3 {
@@ -635,10 +665,7 @@ label {
   margin-left: 60px;
   padding: 4px;
 }
-// ----------------------------------
-.admin-actions {
-  margin-top: 20px;
-}
+
 
 // ボタン
 
