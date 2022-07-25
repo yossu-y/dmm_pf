@@ -32,7 +32,7 @@
             <div class="explanation">コミュニティオーナー</div>
             <div class="info">
               <%= link_to admin_user_path(@group.owner) do %>
-                <%= @group.owner.name %>
+                <%= @group.owner.name %>（<%= @group.owner.screen_name %>）
               <% end %>
             </div>
           </td>

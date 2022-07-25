@@ -9,7 +9,7 @@
             <th width="10%">会員ID</th>
             <th>氏名</th>
             <th>ニックネーム</th>
-            <th>メールアドレス</th>
+            <th width="25%">メールアドレス</th>
             <th style="text-align: center">状態</th>
           </tr>
         </thead>
@@ -18,7 +18,7 @@
           <tr style="cursor: pointer" onclick="window.location.href='<%= admin_user_path(user) %>'" onmouseover="this.style.backgroundColor='#dcdcdc'" onmouseout="this.style.backgroundColor='#fff'">
             <td><%= user.id %></td>
             <td><%= user.name %></td>
-            <td><%= truncate(user.screen_name, length:10) %></td>
+            <td><%= truncate(user.screen_name, length:20) %></td>
             <td><%= user.email %></td>
             <td style="text-align: center">
               <% if user.active_for_authentication? %>
