@@ -11,9 +11,10 @@ class Public::NotificationsController < ApplicationController
     # 24時にリセットされるコード
     @notifications = current_user.passive_notifications.all
     # index画面を開くとchecked: trueに変わって通知マークが消える
-    @notifications.where( checked: false ).each do |notification|
-      notification.update(checked: true)
-    end
+    # @notifications.where( checked: false ).each do |notification|
+    #   notification.update(checked: true)
+    # end
+     @notifications.where(checked: false).update_all(checked: true)
     # 24時に通知が消える
     @notifications.where( created_at: Time.zone.now.all_day )
     @notifications = @notifications.where( created_at: Time.zone.now.all_day )
