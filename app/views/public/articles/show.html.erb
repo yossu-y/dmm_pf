@@ -38,15 +38,17 @@
           </td>
           <td style="vertical-align: middle">
             <%#= social_share_button_tag(@article.title, :allow_sites => %w(twitter facebook google_bookmark email) ) %>
-
             <%= link_to "https://twitter.com/share?url=#{ request.url }&text=【#{ @article.title }】", target: "_blank" do %>
-              <i class="fab fa-twitter" style="color: #3399FF; font-size: 20px"></i>
+              <i class="fab fa-twitter share-btn" style="color: #3399FF; font-size: 20px">
+                <p class="share-text">Twitterでシェア</p>
+              </i>
             <% end %>&nbsp;&nbsp;
 
             <%= link_to "http://www.facebook.com/sharer.php?u=#{ request.url }&text=【#{ @article.title }】", target: "_blank" do %>
-              <i class="fa-brands fa-facebook-square" style="color: #4169e1; font-size: 22px"></i>
+              <i class="fa-brands fa-facebook-square share-btn" style="color: #4169e1; font-size: 22px">
+                <p class="share-text">Facebookでシェア</p>
+              </i>
             <% end %>
-
           </td>
         </tr>
         <tr>
@@ -67,7 +69,7 @@
           </td>
           <td colspan="3">
             <%= link_to @article.user do %>
-              <id class="text-dark" style="font-size:22px; margin-bottom: 3px">
+              <id class="text-dark" style="font-size:22px; margin-bottom: 4px">
                 &nbsp;<strong><%= @article.user.screen_name %></strong>
               </id><br>
             <% end %>
