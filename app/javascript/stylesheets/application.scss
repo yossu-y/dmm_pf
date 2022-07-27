@@ -529,27 +529,7 @@ footer {
 //   }
 // }
 
-.share-btn {
-  position   : relative;
-}
-.share-btn:hover .share-text {
-  display: inline;
-}
 
-/*色は適当です。*/
-.share-text {
-  position   : absolute;
-  display: none;
-  padding: 2px;
-  color: aliceblue;
-  border-radius: 5px;
-  background-color:purple;
-  width:110px;
-  top: 25px;
-  left: 0px;
-  font-size: 12px;
-  text-align: center;
-}
 
 // コメント・メッセージのレイアウト
 
