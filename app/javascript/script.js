@@ -101,3 +101,10 @@ document.addEventListener("turbolinks:load", function (){
   });
 });
 
+// comment-input.addEventListener('keyup', (e) => {
+//   //入力された文字が5文字以上なら、という条件文
+//   if (5 <= e.target.value.length) {
+//     button.disabled = false;
+//   }
+// })
+
