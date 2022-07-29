@@ -3,15 +3,15 @@
     <div class="col-12 col-md-12 col-sm-12 mx-auto px-0 my-5 list">
       <% articles.each do |article| %>
         <div class="card">
+          <%= link_to article_path(article.id) do %>
           <div class="card-img">
-            <%= link_to article_path(article.id) do %>
-              <%= image_tag article.get_image, class: "card-img" %>
-            <% end %>
+            <%= image_tag article.get_image, class: "card-img" %>
           </div>
           <div class="card-body">
             <div class="card-title">
               <%= truncate(article.title, length:16) %>
             </div>
+          <% end %>
             <div class="card-icon">
               <%= link_to article.user, class: "text-dark" do %>
                 <%= image_tag article.user.get_profile_image, class: "rounded-circle icon-mini" %>
