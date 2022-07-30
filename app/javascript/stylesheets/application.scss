@@ -138,7 +138,7 @@ footer {
 /* ログイン・新規登録 */
 .login-container{
   position: relative;
-  width: 310px;
+  width: 305px;
   margin: 80px auto;
   padding: 20px 40px 40px;
   text-align: center;
@@ -529,8 +529,6 @@ footer {
 //   }
 // }
 
-
-
 // コメント・メッセージのレイアウト
 
 .balloon {
@@ -859,6 +857,14 @@ input:active, a:active {
 
   .top-title-home {
     padding-top: 90px;
+  }
+
+  .login-container {
+    margin-top: 170px;
+  }
+
+  .admin-title {
+    padding-top: 150px;
   }
 
 }
