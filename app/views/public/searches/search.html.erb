@@ -1,7 +1,15 @@
-<% if @range == "ユーザー" %>
-  <%= render "public/users/index", users: @users %>
-<% elsif @range == "投稿" %>
-  <%= render "public/articles/index", articles: @articles %>
-<% else @range == "コミュニティ" %>
-  <%= render "public/groups/index", groups: @groups %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% if @range == "ユーザー" %>
+      <%= render "public/users/index", users: @users %>
+    <% elsif @range == "投稿" %>
+    <div class="px-4">
+      <%= render "public/articles/index", articles: @articles %>
+    </div>
+    <% else @range == "コミュニティ" %>
+    <div class="px-4">
+      <%= render "public/groups/index", groups: @groups %>
+    </div>
+    <% end %>
+  </div>
+</div>
