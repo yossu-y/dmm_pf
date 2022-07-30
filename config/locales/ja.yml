@@ -6,7 +6,7 @@ ja:
         like_article: "記事について"
         like_comment: "記事についたコメントについて"
         like_group: "コミュニティについて"
-        other: "その他お問い合わせ"
+        other: "その他"
       progress_status:
         unsupported: "未対応"
         support: "対応中"
