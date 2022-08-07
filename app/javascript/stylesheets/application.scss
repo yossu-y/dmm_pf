@@ -185,8 +185,8 @@ footer {
 }
 
 .avatar{
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   margin: 10px auto 30px;
   border-radius: 100%;
   border: 1px solid #ee7b1a;
@@ -197,18 +197,17 @@ footer {
   width: 100%;
   padding: 10px;
   text-align: center;
-  height:40px;
+  height: 40px;
   border: 1px solid #ccc;;
   background: #fafafa;
   transition:0.2s ease-in-out;
 }
 
 .site-name {
-  font-family: cursive !important;
-  padding-top: 35px;
+  font-family: cursive, sans-serif !important;
+  padding-top: 45px;
   font-size: 40px;
   font-weight: bolder;
-  font-family: cursive !important;
 }
 
 .form-box input:focus{
